@@ -31,4 +31,4 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ghcr.io/MyOrg/MyRepo:latest
+        tags: ghcr.io/zvamper/surftogether:latest
