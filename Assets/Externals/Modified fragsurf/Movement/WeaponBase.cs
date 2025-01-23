@@ -4,7 +4,7 @@ using UnityEngine;
 public abstract class WeaponBase : MonoBehaviour
 {
     public string weaponName;
-    public float knockMeter;
+    public float knockMeterIncrement;
     public float knockbackForce;
     public float range;
 

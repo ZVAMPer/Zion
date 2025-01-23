@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainScene.unity
     guid: fcde39c9d7f2d954b9c02d05b59a9a83
+  - enabled: 1
+    path: Assets/Scenes/PhysicsGym.unity
+    guid: 31415d8587a41cb45afaaac1932dfe4d
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

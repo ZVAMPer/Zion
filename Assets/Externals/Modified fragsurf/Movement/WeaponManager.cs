@@ -1,10 +1,12 @@
-// Assets/Scripts/Weapons/WeaponManager.cs
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class WeaponManager : MonoBehaviour
 {
     public WeaponBase[] weapons;
     private int currentWeaponIndex = 0;
+    public TMP_Text weaponNameText; // Reference to the UI Text component
 
     void Start()
     {
@@ -20,6 +22,10 @@ public class WeaponManager : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             EquipWeapon(1);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            EquipWeapon(2);
         }
 
         if (Input.GetMouseButtonDown(0))
@@ -38,5 +44,14 @@ public class WeaponManager : MonoBehaviour
         }
 
         currentWeaponIndex = index;
+        UpdateWeaponNameUI();
+    }
+
+    void UpdateWeaponNameUI()
+    {
+        if (weaponNameText != null)
+        {
+            weaponNameText.text = weapons[currentWeaponIndex].weaponName;
+        }
     }
 }
