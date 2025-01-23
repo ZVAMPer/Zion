@@ -4,53 +4,72 @@ using UnityEngine;
 
 public class NetworkCommandLine : MonoBehaviour
 {
-   private NetworkManager netManager;
+    private NetworkManager netManager;
 
-   void Start()
-   {
-       netManager = GetComponentInParent<NetworkManager>();
+    void Start()
+    {
+        netManager = GetComponentInParent<NetworkManager>();
 
-       if (Application.isEditor) return;
+        // If running in Unity Editor, skip
+        if (Application.isEditor) return;
 
-       var args = GetCommandlineArgs();
+        // 1) Check environment variable first (Docker/Coolify can set this)
+        string envMode = System.Environment.GetEnvironmentVariable("APP_MODE");
+        if (!string.IsNullOrEmpty(envMode))
+        {
+            StartBasedOnMode(envMode);
+            return;
+        }
 
-       if (args.TryGetValue("-mode", out string mode))
-       {
-           switch (mode)
-           {
-               case "server":
-                   netManager.StartServer();
-                   Debug.Log("Server started");
-                   break;
-               case "host":
-                   netManager.StartHost();
-                   Debug.Log("Host started");
-                   break;
-               case "client":
-                   netManager.StartClient();
-                   Debug.Log("Client started");
-                   break;
-           }
-       }
-   }
+        // 2) Otherwise, fallback to original command-line argument parsing
+        var args = GetCommandLineArgs();
+        if (args.TryGetValue("-mode", out string mode))
+        {
+            StartBasedOnMode(mode);
+        }
+    }
 
-   private Dictionary<string, string> GetCommandlineArgs()
-   {
-       Dictionary<string, string> argDictionary = new Dictionary<string, string>();
+    private void StartBasedOnMode(string mode)
+    {
+        switch (mode.ToLower())
+        {
+            case "server":
+                netManager.StartServer();
+                Debug.Log("Server started");
+                break;
+            case "host":
+                netManager.StartHost();
+                Debug.Log("Host started");
+                break;
+            case "client":
+                netManager.StartClient();
+                Debug.Log("Client started");
+                break;
+            default:
+                Debug.LogWarning($"Unknown mode: {mode}");
+                break;
+        }
+    }
 
-       var args = System.Environment.GetCommandLineArgs();
+    private Dictionary<string, string> GetCommandLineArgs()
+    {
+        Dictionary<string, string> argDictionary = new Dictionary<string, string>();
 
-       for (int i = 0; i < args.Length; ++i)
-       {
-           var arg = args[i].ToLower();
-           if (arg.StartsWith("-"))
-           {
-               var value = i < args.Length - 1 ? args[i + 1].ToLower() : null;
-               value = (value?.StartsWith("-") ?? false) ? null : value;
+        var args = System.Environment.GetCommandLineArgs();
+        for (int i = 0; i < args.Length; ++i)
+        {
+            var arg = args[i].ToLower();
+            if (arg.StartsWith("-"))
+            {
+                var value = (i < args.Length - 1) ? args[i + 1] : null;
+                if (value != null && value.StartsWith("-"))
+                {
+                    value = null;
+                }
 
-               argDictionary.Add(arg, value);
-           }
-       }
-       return argDictionary;
-   }
+                argDictionary.Add(arg, value?.ToLower());
+            }
+        }
+        return argDictionary;
+    }
 }
