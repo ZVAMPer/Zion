@@ -436,23 +436,40 @@ namespace Fragsurf.Movement
             _moveData.Value = md;
         }
 
-        public void ResetPosition()
+        public void Reset()
         {
             if (!IsServer) return;
-            
+
+            // Reset movement data
             MoveData md = _moveData.Value;
             md.velocity = Vector3.zero;
             md.origin = _startPosition;
+            md.viewAngles = Vector3.zero; // Add this field to MoveData if missing
+            md.crouching = false;
+            md.sprinting = false;
             _moveData.Value = md;
-            
-            // Force immediate position update
+
+            // Reset transforms
             transform.position = _startPosition;
+            transform.rotation = Quaternion.identity;
+            
+            if (playerRotationTransform != null)
+                playerRotationTransform.localRotation = Quaternion.identity;
+            
+            if (viewTransform != null)
+            {
+                viewTransform.localPosition = _moveData.Value.viewTransformDefaultLocalPos;
+                viewTransform.localRotation = Quaternion.identity;
+            }
+
+            // Force network sync
             GetComponent<NetworkTransform>().Teleport(
                 _startPosition,
-                transform.rotation,
+                Quaternion.identity,
                 Vector3.one
             );
         }
+
 
 
         /// <summary>

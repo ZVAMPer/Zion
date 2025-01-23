@@ -23,22 +23,20 @@ public class Respawn : NetworkBehaviour
 
         if (transform.position.y < floorY)
         {
-            // Use SurfCharacter's reset method or directly modify moveData
             if (_surfCharacter != null)
             {
-                _surfCharacter.ResetPosition(); // Call server-side reset
+                _surfCharacter.Reset();
             }
             else
             {
-                // Fallback: Update transform and notify NetworkTransform
-                transform.position = _spawnPosition;
+                // Fallback for non-SurfCharacter objects
+                transform.SetPositionAndRotation(_spawnPosition, Quaternion.identity);
                 GetComponent<NetworkTransform>().Teleport(
                     _spawnPosition,
-                    transform.rotation,
+                    Quaternion.identity,
                     Vector3.one
                 );
             }
         }
     }
 }
-
