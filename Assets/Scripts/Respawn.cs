@@ -1,23 +1,44 @@
 using UnityEngine;
+using Unity.Netcode;
+using Unity.Netcode.Components;
 
-public class Respawn : MonoBehaviour
+public class Respawn : NetworkBehaviour
 {
-    Vector3 position;
-    public float floorY = -300;
+    public float floorY = -300f;
+    private Vector3 _spawnPosition;
+    private Fragsurf.Movement.SurfCharacter _surfCharacter;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void OnNetworkSpawn()
     {
-        position = transform.position;
-        position.y = position.y + 5;
+        base.OnNetworkSpawn();
+        if (!IsServer) return;
+
+        _spawnPosition = transform.position + Vector3.up * 5f;
+        _surfCharacter = GetComponent<Fragsurf.Movement.SurfCharacter>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
+        if (!IsServer) return;
+
         if (transform.position.y < floorY)
         {
-            transform.position = position;
+            // Use SurfCharacter's reset method or directly modify moveData
+            if (_surfCharacter != null)
+            {
+                _surfCharacter.ResetPosition(); // Call server-side reset
+            }
+            else
+            {
+                // Fallback: Update transform and notify NetworkTransform
+                transform.position = _spawnPosition;
+                GetComponent<NetworkTransform>().Teleport(
+                    _spawnPosition,
+                    transform.rotation,
+                    Vector3.one
+                );
+            }
         }
     }
 }
+
