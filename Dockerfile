@@ -25,4 +25,4 @@ COPY ServerBuilds/ ./
 EXPOSE 7777/udp
 
 # 6) By default, just show usage. We'll override command at runtime.
-CMD ["./MyGameServer.x86_64", "-mode", "server"]
+CMD ["./SurfTogetherServer_0.1.000.x86_64", "-mode", "server"]
