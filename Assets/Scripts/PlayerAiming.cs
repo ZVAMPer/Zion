@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Fragsurf.Movement;
+using UnityEngine;
 
 public class PlayerAiming : MonoBehaviour
 {
@@ -29,6 +30,11 @@ public class PlayerAiming : MonoBehaviour
 
 	[HideInInspector]
 	public Vector2 punchAngleVel;
+	
+
+	[HideInInspector]
+	public Vector3 RealRotation => realRotation;
+
 
 	private void Start()
 	{
