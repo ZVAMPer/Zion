@@ -44,7 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c075edde4f02cb47858e35ae8bb516f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
   weaponName: Gravity Gun
   knockMeterIncrement: 0
   knockbackForce: 0
@@ -151,7 +150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9868616366b4374ca1513b07c29795f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
   weaponName: Air Gun
   knockMeterIncrement: 10
   knockbackForce: 100
@@ -363,10 +361,12 @@ GameObject:
   - component: {fileID: -2383799080553391299}
   - component: {fileID: 2967712749654444520}
   - component: {fileID: 1164867184617588103}
+  - component: {fileID: 3786806790650466401}
+  - component: {fileID: 4047889288085064102}
   - component: {fileID: 1350184908907806227}
   - component: {fileID: -6901023689994074576}
   m_Layer: 8
-  m_Name: Player
+  m_Name: PlayeriWithWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -529,6 +529,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   floorY: 1.7
+--- !u!114 &3786806790650466401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6070953435829712526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb9bca413d8eb304bb4ecbaef5df2834, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockMeter: 0
+  knockMeterUIPrefab: {fileID: 0}
+--- !u!114 &4047889288085064102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6070953435829712526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e101248daec74334fad1246325237cd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - {fileID: 8887303038261607819}
+  - {fileID: 2048810137447308238}
+  - {fileID: 8407004146241351847}
+  weaponNameText: {fileID: 3198907823865003673}
 --- !u!54 &1350184908907806227
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -981,7 +1012,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0c410f20ba2854d9ffa0279ed5e23e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
   weaponName: Fist
   knockMeterIncrement: 20
   knockbackForce: 100
