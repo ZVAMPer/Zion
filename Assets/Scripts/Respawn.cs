@@ -1,23 +1,50 @@
 using UnityEngine;
+using Unity.Netcode;
+using Unity.Netcode.Components;
 
-public class Respawn : MonoBehaviour
+public class Respawn : NetworkBehaviour
 {
-    Vector3 position;
-    public float floorY = -300;
+    public float floorY = -300f;
+    private Vector3 _spawnPosition;
+    private Fragsurf.Movement.SurfCharacter _surfCharacter;
+    private Vector3 _initialSpawnPosition;
+    private Quaternion _initialSpawnRotation;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void OnNetworkSpawn()
     {
-        position = transform.position;
-        position.y = position.y + 5;
+        base.OnNetworkSpawn();
+        if (!IsServer) return;
+
+        _surfCharacter = GetComponent<Fragsurf.Movement.SurfCharacter>();
+        if (_surfCharacter != null)
+        {
+            // Memorize the initial spawn position and rotation
+            _initialSpawnPosition = transform.position;
+            _initialSpawnRotation = transform.rotation;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
+        if (!IsServer) return;
+
         if (transform.position.y < floorY)
         {
-            transform.position = position;
+            if (_surfCharacter != null)
+            {
+                // Use the memorized initial position and rotation for respawning
+                _surfCharacter.ResetClientRpc(_initialSpawnPosition, _initialSpawnRotation);
+            }
+            else
+            {
+                // Fallback for non-SurfCharacter objects
+                transform.SetPositionAndRotation(_initialSpawnPosition, _initialSpawnRotation);
+                GetComponent<NetworkTransform>().Teleport(
+                    _initialSpawnPosition,
+                    _initialSpawnRotation,
+                    Vector3.one
+                );
+            }
         }
     }
 }
