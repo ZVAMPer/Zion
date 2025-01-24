@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Threading.Tasks;
+using System;
 
 public class LobbyManager : MonoBehaviour
 {
@@ -53,14 +54,12 @@ public class LobbyManager : MonoBehaviour
     {
         statusText.text = "Hosting your game...";
         hostStatusText.text = "Hosting...";
-        string code = await RelayManager.Instance.StartHost();
-        if (!string.IsNullOrEmpty(code))
-        {
+        try {
+            string code = await RelayManager.Instance.StartHost();
             ownJoinCodeText.text = $"{code}";
             statusText.text = "Hosting started successfully.";
-        }
-        else
-        {
+        } catch {
+            Debug.LogWarning("Failed to start relay host");
             ownJoinCodeText.text = "";
             statusText.text = "Failed to host your game.";
             if (autoHostRetry)

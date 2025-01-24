@@ -30,11 +30,11 @@ public class RelayManager : MonoBehaviour
     /// <summary>
     /// Starts hosting a new game by creating a Relay allocation and starting the host.
     /// </summary>
-    public async Task<string> StartHost()
+    public async Task<string> StartHost() 
     {
-        try
+        // Create a Relay allocation with a maximum number of players
+        try 
         {
-            // Create a Relay allocation with a maximum number of players
             allocation = await RelayService.Instance.CreateAllocationAsync(8); // Adjust maxPlayers as needed
 
             // Get the join code for clients to connect
@@ -58,9 +58,7 @@ public class RelayManager : MonoBehaviour
         }
         catch (RelayServiceException e)
         {
-            // Wait for a few seconds before retrying
-            Debug.LogError($"Relay Host Start Failed: {e.Message}");
-            return null;
+            throw new InvalidOperationException("Failed to start relay host", e);
         }
     }
 
