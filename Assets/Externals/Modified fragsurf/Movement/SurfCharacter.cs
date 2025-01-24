@@ -68,6 +68,8 @@ namespace Fragsurf.Movement {
 
         private bool underwater = false;
 
+        private WeaponManager weaponManager;
+
         ///// Properties /////
 
         public MoveType moveType { get { return MoveType.Walk; } }
@@ -214,6 +216,8 @@ namespace Fragsurf.Movement {
             _moveData.useStepOffset = useStepOffset;
             _moveData.stepOffset = stepOffset;
 
+            weaponManager = GetComponent<WeaponManager>();
+
         }
 
         private void Update () {
@@ -260,6 +264,12 @@ namespace Fragsurf.Movement {
             prevPosition = transform.position;
 
             _colliderObject.transform.rotation = Quaternion.identity;
+
+            // Handle weapon usage
+            if (weaponManager != null)
+            {
+                weaponManager.Update();
+            }
 
         }
         
@@ -382,4 +392,3 @@ namespace Fragsurf.Movement {
     }
 
 }
-
