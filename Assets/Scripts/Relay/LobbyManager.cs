@@ -151,10 +151,14 @@ public class LobbyManager : MonoBehaviour
 
         if (isOverlayActive)
         {
+            // Focus the input field
+            joinCodeInput.ActivateInputField();
             EnableCursor();
         }
         else
         {
+            // Defocus the input field
+            joinCodeInput.DeactivateInputField();
             DisableCursor();
         }
     }
