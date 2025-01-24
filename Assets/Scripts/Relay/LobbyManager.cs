@@ -85,6 +85,7 @@ public class LobbyManager : MonoBehaviour
         }
 
         statusText.text = "Attempting to join...";
+        RelayManager.Instance.LeaveGame();
         bool success = await RelayManager.Instance.JoinGame(code);
         if (success)
         {
