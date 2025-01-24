@@ -13,6 +13,8 @@ public class RelayManager : MonoBehaviour
 
     private void Awake()
     {
+
+        
         // Singleton pattern to ensure only one instance exists
         if (Instance != null && Instance != this)
         {
@@ -28,6 +30,8 @@ public class RelayManager : MonoBehaviour
     {
         try
         {
+            
+            
             Allocation allocation = await RelayService.Instance.CreateAllocationAsync(4); // Adjust maxPlayers as needed
 
             // Get the join code for clients to connect
