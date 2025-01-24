@@ -4,17 +4,19 @@ using Unity.Services.Relay.Models;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
 using System.Threading.Tasks;
+using System;
+using Unity.VisualScripting;
 
 public class RelayManager : MonoBehaviour
 {
     public static RelayManager Instance { get; private set; }
 
     private string joinCode;
+    private Allocation allocation;
+    private JoinAllocation joinAllocation;
 
     private void Awake()
     {
-
-        
         // Singleton pattern to ensure only one instance exists
         if (Instance != null && Instance != this)
         {
@@ -25,19 +27,20 @@ public class RelayManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    // Host a Relay server and return the join code
+    /// <summary>
+    /// Starts hosting a new game by creating a Relay allocation and starting the host.
+    /// </summary>
     public async Task<string> StartHost()
     {
         try
         {
-            
-            
-            Allocation allocation = await RelayService.Instance.CreateAllocationAsync(4); // Adjust maxPlayers as needed
+            // Create a Relay allocation with a maximum number of players
+            allocation = await RelayService.Instance.CreateAllocationAsync(8); // Adjust maxPlayers as needed
 
             // Get the join code for clients to connect
             joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
 
-            // Configure the transport with Relay parameters
+            // Configure the Unity Transport with Relay parameters
             var transport = NetworkManager.Singleton.GetComponent<UnityTransport>();
             transport.SetRelayServerData(
                 allocation.RelayServer.IpV4,
@@ -55,19 +58,24 @@ public class RelayManager : MonoBehaviour
         }
         catch (RelayServiceException e)
         {
+            // Wait for a few seconds before retrying
             Debug.LogError($"Relay Host Start Failed: {e.Message}");
             return null;
         }
     }
 
-    // Join a Relay server using a join code
-    public async Task JoinGame(string code)
+    /// <summary>
+    /// Joins an existing game using a join code.
+    /// </summary>
+    /// <param name="code">The join code of the host to join.</param>
+    public async Task<bool> JoinGame(string code)
     {
         try
         {
-            JoinAllocation joinAllocation = await RelayService.Instance.JoinAllocationAsync(code);
+            // Join the Relay allocation using the provided join code
+            joinAllocation = await RelayService.Instance.JoinAllocationAsync(code);
 
-            // Configure the transport with Relay parameters
+            // Configure the Unity Transport with Relay parameters
             var transport = NetworkManager.Singleton.GetComponent<UnityTransport>();
             transport.SetRelayServerData(
                 joinAllocation.RelayServer.IpV4,
@@ -81,16 +89,51 @@ public class RelayManager : MonoBehaviour
             // Start the client
             NetworkManager.Singleton.StartClient();
             Debug.Log($"Client joined with code: {code}");
+
+            return true;
         }
         catch (RelayServiceException e)
         {
             Debug.LogError($"Relay Join Failed: {e.Message}");
+            return false;
         }
     }
 
-    // Retrieve the current join code
+    /// <summary>
+    /// Leaves the current game, whether hosting or joining.
+    /// </summary>
+    public void LeaveGame()
+    {
+        if (NetworkManager.Singleton.IsClient)
+        {
+            // If client, stop the client
+            NetworkManager.Singleton.Shutdown();
+            joinAllocation = null;
+            Debug.Log("Client has left the game.");
+        }
+    }
+
+    /// <summary>
+    /// Retrieves the current join code if hosting.
+    /// </summary>
     public string GetJoinCode()
     {
         return joinCode;
+    }
+
+    /// <summary>
+    /// Checks if the player is currently hosting.
+    /// </summary>
+    public bool IsHosting()
+    {
+        return NetworkManager.Singleton.IsHost;
+    }
+
+    /// <summary>
+    /// Checks if the player is currently a client.
+    /// </summary>
+    public bool IsClient()
+    {
+        return NetworkManager.Singleton.IsClient && !NetworkManager.Singleton.IsHost;
     }
 }
