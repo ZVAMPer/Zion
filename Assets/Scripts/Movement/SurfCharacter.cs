@@ -4,6 +4,7 @@ using Unity.Netcode;
 using Unity.Netcode.Components;
 using UnityEngine.LowLevelPhysics;
 using System.Runtime.CompilerServices;
+using System;
 
 namespace Fragsurf.Movement
 {
@@ -365,12 +366,14 @@ namespace Fragsurf.Movement
 
             // If you want to update transform.rotation based on `viewAngles.y`,
             // you can do it here. Example:
-            // if (playerRotationTransform != null)
-            // {
-            //     // Only rotate the body around Y axis:
-            //     float yaw = _localMoveData.viewAngles.y;
-            //     playerRotationTransform.rotation = Quaternion.Euler(0f, yaw, 0f);
-            // }
+            if (playerRotationTransform != null)
+            {
+                // Only rotate the body around Y axis:
+                float yaw = _localMoveData.viewAngles.y;
+                transform.rotation = Quaternion.Euler(0f, yaw, 0f);
+            }
+            
+            
         }
 
         /// <summary>
