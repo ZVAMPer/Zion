@@ -23,10 +23,9 @@ namespace Fragsurf.Movement
             Box
         }
 
-
         [Header("Physics Settings")]
         public Vector3 colliderSize = new Vector3(1f, 2f, 1f);
-        [HideInInspector] 
+        [HideInInspector]
         public ColliderType collisionType { get { return ColliderType.Capsule; } }
         public float weight = 75f;
         public float rigidbodyPushForce = 2f;
@@ -91,8 +90,8 @@ namespace Fragsurf.Movement
         }
         public Vector3 baseVelocity { get { return _baseVelocity; } }
         public Vector3 forward { get { return viewTransform != null ? viewTransform.forward : Vector3.forward; } }
-        public Vector3 right   { get { return viewTransform != null ? viewTransform.right   : Vector3.right;   } }
-        public Vector3 up      { get { return viewTransform != null ? viewTransform.up      : Vector3.up;      } }
+        public Vector3 right { get { return viewTransform != null ? viewTransform.right : Vector3.right; } }
+        public Vector3 up { get { return viewTransform != null ? viewTransform.up : Vector3.up; } }
 
         [Header("Animator Support")]
         [SerializeField]
@@ -123,12 +122,36 @@ namespace Fragsurf.Movement
             base.OnNetworkSpawn();
 
             // If this is not your character, you may want to disable the local camera, etc.
-            if ( NetworkManager.Singleton.IsClient)
+            if (NetworkManager.Singleton.IsClient)
             {
                 armature.gameObject.SetActive(!IsOwner);
                 // Example: 
                 // var cam = viewTransform.GetComponent<Camera>();
                 // if (cam) cam.enabled = false;
+            }
+
+            if (!IsOwner)
+            {
+                // Subscribe to network variable changes
+                _isGrounded.OnValueChanged += OnIsGroundedChanged;
+                _isMoving.OnValueChanged += OnIsMovingChanged;
+                _inputX.OnValueChanged += OnInputXChanged;
+                _inputY.OnValueChanged += OnInputYChanged;
+                _turn.OnValueChanged += OnTurnChanged;
+                _jump.OnValueChanged += OnJumpChanged;
+            }
+        }
+
+        private void OnDestroy()
+        {
+            if (!IsOwner)
+            {
+                _isGrounded.OnValueChanged -= OnIsGroundedChanged;
+                _isMoving.OnValueChanged -= OnIsMovingChanged;
+                _inputX.OnValueChanged -= OnInputXChanged;
+                _inputY.OnValueChanged -= OnInputYChanged;
+                _turn.OnValueChanged -= OnTurnChanged;
+                _jump.OnValueChanged -= OnJumpChanged;
             }
         }
 
@@ -250,18 +273,18 @@ namespace Fragsurf.Movement
             }
 
             // --- Gather local input ---
-            float vertical     = Input.GetAxisRaw("Vertical");
-            float horizontal   = Input.GetAxisRaw("Horizontal");
-            bool sprinting     = Input.GetButton("Sprint");
-            bool jumpPressed   = Input.GetButton("Jump");
-            bool crouchHeld    = Input.GetButton("Crouch");
-            bool jumpDown      = Input.GetButtonDown("Jump");   // if needed
-            bool crouchDown    = Input.GetButtonDown("Crouch"); // if needed
+            float vertical = Input.GetAxisRaw("Vertical");
+            float horizontal = Input.GetAxisRaw("Horizontal");
+            bool sprinting = Input.GetButton("Sprint");
+            bool jumpPressed = Input.GetButton("Jump");
+            bool crouchHeld = Input.GetButton("Crouch");
+            bool jumpDown = Input.GetButtonDown("Jump");   // if needed
+            bool crouchDown = Input.GetButtonDown("Crouch"); // if needed
 
             // If you have a separate PlayerAiming script that sets pitch & yaw:
             var playerAiming = GetComponent<PlayerAiming>();
-            Vector3 currentViewAngles = playerAiming != null 
-                ? playerAiming.RealRotation 
+            Vector3 currentViewAngles = playerAiming != null
+                ? playerAiming.RealRotation
                 : Vector3.zero;
 
             // Store these in our local MoveData
@@ -275,8 +298,8 @@ namespace Fragsurf.Movement
             // Convert axes to movement
             if (!Mathf.Approximately(horizontal, 0f))
             {
-                _localMoveData.sideMove = horizontal > 0f 
-                    ? movementConfig.acceleration 
+                _localMoveData.sideMove = horizontal > 0f
+                    ? movementConfig.acceleration
                     : -movementConfig.acceleration;
             }
             else
@@ -294,19 +317,23 @@ namespace Fragsurf.Movement
                 _localMoveData.forwardMove = 0f;
             }
 
+            // --- Update Network Variables ---
+            _isGrounded.Value = _groundObject != null;
+            _isMoving.Value = Mathf.Abs(horizontal) > 0.1f || Mathf.Abs(vertical) > 0.1f;
+            _inputX.Value = horizontal;
+            _inputY.Value = vertical;
+            _turn.Value = _localMoveData.viewAngles.y;
+            _jump.Value = jumpPressed;
+
             // --- Animator Support: Update Animator Parameters ---
             if (_animator != null && NetworkManager.Singleton.IsClient && IsOwner)
             {
-                bool isGrounded = _groundObject != null;
-                bool isMoving = Mathf.Abs(horizontal) > 0.1f || Mathf.Abs(vertical) > 0.1f;
-                float turn = _localMoveData.viewAngles.y;
-
-                _animator.SetBool("Grounded", isGrounded); // Animator Support
-                _animator.SetBool("Moving", isMoving);     // Animator Support
-                _animator.SetFloat("InputX", horizontal);  // Animator Support
-                _animator.SetFloat("InputY", vertical);    // Animator Support
-                _animator.SetFloat("Turn", turn);          // Animator Support
-                _animator.SetBool("Jump", jumpPressed);    // Animator Support
+                _animator.SetBool("Grounded", _isGrounded.Value);
+                _animator.SetBool("Moving", _isMoving.Value);
+                _animator.SetFloat("InputX", _inputX.Value);
+                _animator.SetFloat("InputY", _inputY.Value);
+                _animator.SetFloat("Turn", _turn.Value);
+                _animator.SetBool("Jump", _jump.Value);
             }
 
             // We do the actual movement in FixedUpdate. 
@@ -361,9 +388,9 @@ namespace Fragsurf.Movement
 
                 foreach (Collider trigger in _triggers)
                 {
-                    if (trigger == null) 
+                    if (trigger == null)
                         continue;
-                    
+
                     if (trigger.GetComponentInParent<Water>())
                     {
                         _underwater = true;
@@ -433,9 +460,9 @@ namespace Fragsurf.Movement
         /// Since we have client authority, only the owner can do this.
         /// If the server wants to force a reset, it can send a ClientRpc that calls this on the owner.
         /// </summary>
-        public void Reset()
+        public void ResetCharacter()
         {
-            if (!IsOwner) 
+            if (!IsOwner)
                 return;
 
             // Reset movement data
@@ -513,7 +540,61 @@ namespace Fragsurf.Movement
             );
         }
 
-        // Animator Support: Reference to Animator
-        
+        // Network Variables for Animator Parameters
+        private NetworkVariable<bool> _isGrounded = new NetworkVariable<bool>(false, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+        private NetworkVariable<bool> _isMoving = new NetworkVariable<bool>(false, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+        private NetworkVariable<float> _inputX = new NetworkVariable<float>(0f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+        private NetworkVariable<float> _inputY = new NetworkVariable<float>(0f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+        private NetworkVariable<float> _turn = new NetworkVariable<float>(0f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+        private NetworkVariable<bool> _jump = new NetworkVariable<bool>(false, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+
+        // Callback methods to update animator on other clients
+        private void OnIsGroundedChanged(bool oldValue, bool newValue)
+        {
+            if (_animator != null)
+            {
+                _animator.SetBool("Grounded", newValue);
+            }
+        }
+
+        private void OnIsMovingChanged(bool oldValue, bool newValue)
+        {
+            if (_animator != null)
+            {
+                _animator.SetBool("Moving", newValue);
+            }
+        }
+
+        private void OnInputXChanged(float oldValue, float newValue)
+        {
+            if (_animator != null)
+            {
+                _animator.SetFloat("InputX", newValue);
+            }
+        }
+
+        private void OnInputYChanged(float oldValue, float newValue)
+        {
+            if (_animator != null)
+            {
+                _animator.SetFloat("InputY", newValue);
+            }
+        }
+
+        private void OnTurnChanged(float oldValue, float newValue)
+        {
+            if (_animator != null)
+            {
+                _animator.SetFloat("Turn", newValue);
+            }
+        }
+
+        private void OnJumpChanged(bool oldValue, bool newValue)
+        {
+            if (_animator != null)
+            {
+                _animator.SetBool("Jump", newValue);
+            }
+        }
     }
 }
