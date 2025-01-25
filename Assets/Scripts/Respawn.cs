@@ -28,8 +28,6 @@ public class Respawn : NetworkBehaviour
     {
         if (!IsServer) return;
 
-        if (!IsOwner) return;
-
         if (transform.position.y < floorY)
         {
             if (_surfCharacter != null)
