@@ -339,6 +339,22 @@ namespace Fragsurf.Movement
 
             // We do the actual movement in FixedUpdate. 
             // But we could also do it in Update if you prefer.
+            HandleLocalRotation();
+        }
+
+        private void HandleLocalRotation()
+        {
+            if (IsOwner)
+            {
+                float yaw = _localMoveData.viewAngles.y;
+                _turn.Value = yaw;  // So other clients see it
+
+                // Locally, do the rotation:
+                if (playerRotationTransform != null)
+                {
+                    playerRotationTransform.rotation = Quaternion.Euler(0f, yaw, 0f);
+                }
+            }
         }
 
         private void FixedUpdate()
@@ -589,6 +605,12 @@ namespace Fragsurf.Movement
             if (_animator != null)
             {
                 _animator.SetFloat("Turn", newValue);
+            }
+
+            // ALSO rotate this remote player's model around Y:
+            if (!IsOwner && playerRotationTransform != null)
+            {
+                playerRotationTransform.rotation = Quaternion.Euler(0f, newValue, 0f);
             }
         }
 
