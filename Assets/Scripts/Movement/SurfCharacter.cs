@@ -365,12 +365,12 @@ namespace Fragsurf.Movement
 
             // If you want to update transform.rotation based on `viewAngles.y`,
             // you can do it here. Example:
-            if (playerRotationTransform != null)
-            {
-                // Only rotate the body around Y axis:
-                float yaw = _localMoveData.viewAngles.y;
-                playerRotationTransform.rotation = Quaternion.Euler(0f, yaw, 0f);
-            }
+            // if (playerRotationTransform != null)
+            // {
+            //     // Only rotate the body around Y axis:
+            //     float yaw = _localMoveData.viewAngles.y;
+            //     playerRotationTransform.rotation = Quaternion.Euler(0f, yaw, 0f);
+            // }
         }
 
         /// <summary>
