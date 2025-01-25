@@ -349,11 +349,11 @@ namespace Fragsurf.Movement
                 float yaw = _localMoveData.viewAngles.y;
                 _turn.Value = yaw;  // So other clients see it
 
-                // Locally, do the rotation:
-                if (playerRotationTransform != null)
-                {
-                    playerRotationTransform.rotation = Quaternion.Euler(0f, yaw, 0f);
-                }
+                // // Locally, do the rotation:
+                // if (playerRotationTransform != null)
+                // {
+                //     playerRotationTransform.rotation = Quaternion.Euler(0f, yaw, 0f);
+                // }
             }
         }
 
@@ -607,11 +607,6 @@ namespace Fragsurf.Movement
                 _animator.SetFloat("Turn", newValue);
             }
 
-            // ALSO rotate this remote player's model around Y:
-            if (!IsOwner && playerRotationTransform != null)
-            {
-                playerRotationTransform.rotation = Quaternion.Euler(0f, newValue, 0f);
-            }
         }
 
         private void OnJumpChanged(bool oldValue, bool newValue)
