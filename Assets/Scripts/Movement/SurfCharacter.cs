@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Unity.Netcode;
 using Unity.Netcode.Components;
+using UnityEngine.LowLevelPhysics;
 
 namespace Fragsurf.Movement
 {
@@ -20,6 +21,9 @@ namespace Fragsurf.Movement
             Capsule,
             Box
         }
+
+        [SerializeField]
+        private Animator _animator; // Animator Support
 
         [Header("Physics Settings")]
         public Vector3 colliderSize = new Vector3(1f, 2f, 1f);
@@ -114,11 +118,14 @@ namespace Fragsurf.Movement
             base.OnNetworkSpawn();
 
             // If this is not your character, you may want to disable the local camera, etc.
-            if (!IsOwner && viewTransform != null)
+            if (!IsOwner)
             {
+                _animator.gameObject.SetActive(true);
                 // Example: 
                 // var cam = viewTransform.GetComponent<Camera>();
                 // if (cam) cam.enabled = false;
+            } else {
+                _animator.gameObject.SetActive(false);
             }
         }
 
@@ -282,6 +289,21 @@ namespace Fragsurf.Movement
             else
             {
                 _localMoveData.forwardMove = 0f;
+            }
+
+            // --- Animator Support: Update Animator Parameters ---
+            if (_animator != null)
+            {
+                bool isGrounded = _groundObject != null;
+                bool isMoving = Mathf.Abs(horizontal) > 0.1f || Mathf.Abs(vertical) > 0.1f;
+                float turn = _localMoveData.viewAngles.y;
+
+                _animator.SetBool("Grounded", isGrounded); // Animator Support
+                _animator.SetBool("Moving", isMoving);     // Animator Support
+                _animator.SetFloat("InputX", horizontal);  // Animator Support
+                _animator.SetFloat("InputY", vertical);    // Animator Support
+                _animator.SetFloat("Turn", turn);          // Animator Support
+                _animator.SetBool("Jump", jumpPressed);    // Animator Support
             }
 
             // We do the actual movement in FixedUpdate. 
@@ -487,5 +509,8 @@ namespace Fragsurf.Movement
                 Vector3.one
             );
         }
+
+        // Animator Support: Reference to Animator
+        
     }
 }

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 2b89d5eb331d7cb4e992a241a222f614
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 180600
+  packageName: Soldier Animations
+  packageVersion: 1.2
+  assetPath: Assets/Kevin Iglesias/Soldier Animations/AnimatorControllers/Bazooka/SoldierBazooka
+    - Crawling01 - CombatIdle01.controller
+  uploadId: 719163

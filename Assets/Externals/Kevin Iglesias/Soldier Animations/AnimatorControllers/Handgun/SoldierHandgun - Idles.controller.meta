@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 89de71b0c450bad44b56036b1a2f0177
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 180600
+  packageName: Soldier Animations
+  packageVersion: 1.2
+  assetPath: Assets/Kevin Iglesias/Soldier Animations/AnimatorControllers/Handgun/SoldierHandgun
+    - Idles.controller
+  uploadId: 719163

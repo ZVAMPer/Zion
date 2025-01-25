@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 403457c7f6084bd42a8e8c56dba939ed
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 180600
+  packageName: Soldier Animations
+  packageVersion: 1.2
+  assetPath: Assets/Kevin Iglesias/Soldier Animations/AnimatorControllers/AssaultRifle/SoldierAssaultRifle
+    - Crawling01 - Shots.controller
+  uploadId: 719163

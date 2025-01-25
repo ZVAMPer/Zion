@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: e34002d9764781043bbb65757921b445
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 180600
+  packageName: Soldier Animations
+  packageVersion: 1.2
+  assetPath: Assets/Kevin Iglesias/Soldier Animations/AnimatorControllers/Handgun/SoldierHandgun
+    - Grenade01.controller
+  uploadId: 719163
