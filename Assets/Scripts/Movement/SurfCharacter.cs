@@ -292,7 +292,7 @@ namespace Fragsurf.Movement
             }
 
             // --- Animator Support: Update Animator Parameters ---
-            if (_animator != null)
+            if (_animator != null && NetworkManager.Singleton.IsClient && IsOwner)
             {
                 bool isGrounded = _groundObject != null;
                 bool isMoving = Mathf.Abs(horizontal) > 0.1f || Mathf.Abs(vertical) > 0.1f;
