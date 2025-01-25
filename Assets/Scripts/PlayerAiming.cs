@@ -1,7 +1,8 @@
 ﻿using Fragsurf.Movement;
+using Unity.Netcode;
 using UnityEngine;
 
-public class PlayerAiming : MonoBehaviour
+public class PlayerAiming : NetworkBehaviour
 {
 	[Header("References")]
 	public Transform bodyTransform;
@@ -39,12 +40,13 @@ public class PlayerAiming : MonoBehaviour
 	private void Start()
 	{
 		// Lock the mouse
-		Cursor.lockState = CursorLockMode.Locked;
+		// Cursor.lockState = CursorLockMode.Locked;
 		Cursor.visible   = false;
 	}
 
 	private void Update()
 	{
+		if (!IsOwner) return;
 		// Fix pausing
 		if (Mathf.Abs(Time.timeScale) <= 0)
 			return;
