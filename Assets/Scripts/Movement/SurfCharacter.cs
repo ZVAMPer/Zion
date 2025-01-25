@@ -181,7 +181,7 @@ namespace Fragsurf.Movement
             cameraCheckRb.useGravity = false;
             cameraCheckRb.isKinematic = true;
 
-            // _cameraWaterCheck = _cameraWaterCheckObject.AddComponent<CameraWaterCheck>();
+            _cameraWaterCheck = _cameraWaterCheckObject.AddComponent<CameraWaterCheck>();
 
             _prevPosition = transform.position;
 
