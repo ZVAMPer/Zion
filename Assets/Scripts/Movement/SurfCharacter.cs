@@ -363,13 +363,25 @@ namespace Fragsurf.Movement
             // 4) Update the real transform from localMoveData
             transform.position = _localMoveData.origin;
 
-            // If you want to update transform.rotation based on `viewAngles.y`,
-            // you can do it here. Example:
+            // Update rotation based on viewAngles.y
             if (playerRotationTransform != null)
             {
                 // Only rotate the body around Y axis:
                 float yaw = _localMoveData.viewAngles.y;
                 playerRotationTransform.rotation = Quaternion.Euler(0f, yaw, 0f);
+            }
+
+            // **[Updated] Inform ClientNetworkTransform of the new rotation using Teleport**
+            var clientNetTransform = GetComponent<ClientNetworkTransform>();
+            if (clientNetTransform != null && playerRotationTransform != null)
+            {
+                // Use Teleport to update both position and rotation.
+                // Since position is already set to _localMoveData.origin, we can pass it directly.
+                clientNetTransform.Teleport(
+                    _localMoveData.origin,
+                    playerRotationTransform.rotation,
+                    Vector3.one // Assuming uniform scale; adjust if necessary
+                );
             }
         }
 
@@ -581,11 +593,22 @@ namespace Fragsurf.Movement
             }
         }
 
+        /// <summary>
+        /// **[Modified]**
+        /// Callback to handle turn changes and update the armature's rotation on non-owner clients.
+        /// </summary>
         private void OnTurnChanged(float oldValue, float newValue)
         {
             if (_animator != null)
             {
                 _animator.SetFloat("Turn", newValue);
+            }
+
+            // **[Added] Update the armature's rotation on non-owner clients**
+            if (!IsOwner && armature != null)
+            {
+                // Apply only yaw rotation
+                armature.transform.rotation = Quaternion.Euler(0f, newValue, 0f);
             }
         }
 

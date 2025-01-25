@@ -20,7 +20,6 @@ public class Respawn : NetworkBehaviour
         {
             // Memorize the initial spawn position and rotation
             _initialSpawnPosition = transform.position;
-            _initialSpawnRotation = transform.rotation;
         }
     }
 
@@ -33,15 +32,15 @@ public class Respawn : NetworkBehaviour
             if (_surfCharacter != null)
             {
                 // Use the memorized initial position and rotation for respawning
-                _surfCharacter.ResetClientRpc(_initialSpawnPosition, _initialSpawnRotation);
+                // _surfCharacter.ResetClientRpc(_initialSpawnPosition, _initialSpawnRotation);
             }
             else
             {
                 // Fallback for non-SurfCharacter objects
-                transform.SetPositionAndRotation(_initialSpawnPosition, _initialSpawnRotation);
+                transform.SetPositionAndRotation(_initialSpawnPosition, transform.rotation);
                 GetComponent<NetworkTransform>().Teleport(
                     _initialSpawnPosition,
-                    _initialSpawnRotation,
+                    transform.rotation,
                     Vector3.one
                 );
             }
