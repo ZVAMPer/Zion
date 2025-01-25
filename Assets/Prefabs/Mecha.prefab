@@ -334,7 +334,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  _animator: {fileID: 6012983918096338090}
   colliderSize: {x: 1, y: 2, z: 1}
   weight: 75
   rigidbodyPushForce: 2
@@ -382,6 +381,8 @@ MonoBehaviour:
     underwaterFriction: 2
     underwaterGravity: 6
     underwaterVelocityDampening: 2
+  _animator: {fileID: 6012983918096338090}
+  armature: {fileID: 7187000460436671492}
 --- !u!114 &1164867184617588103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2040,6 +2041,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7036213049465896255, guid: f515c41abd7fd45e18955d0a2edcdb7a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7079907948950423443, guid: f515c41abd7fd45e18955d0a2edcdb7a, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -2277,5 +2282,10 @@ Transform:
 --- !u!95 &6012983918096338090 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: f515c41abd7fd45e18955d0a2edcdb7a, type: 3}
+  m_PrefabInstance: {fileID: 151148394952552763}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7187000460436671492 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7036213049465896255, guid: f515c41abd7fd45e18955d0a2edcdb7a, type: 3}
   m_PrefabInstance: {fileID: 151148394952552763}
   m_PrefabAsset: {fileID: 0}

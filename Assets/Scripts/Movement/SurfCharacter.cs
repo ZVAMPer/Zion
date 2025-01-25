@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using Unity.Netcode.Components;
 using UnityEngine.LowLevelPhysics;
+using System.Runtime.CompilerServices;
 
 namespace Fragsurf.Movement
 {
@@ -22,8 +23,6 @@ namespace Fragsurf.Movement
             Box
         }
 
-        [SerializeField]
-        private Animator _animator; // Animator Support
 
         [Header("Physics Settings")]
         public Vector3 colliderSize = new Vector3(1f, 2f, 1f);
@@ -95,6 +94,12 @@ namespace Fragsurf.Movement
         public Vector3 right   { get { return viewTransform != null ? viewTransform.right   : Vector3.right;   } }
         public Vector3 up      { get { return viewTransform != null ? viewTransform.up      : Vector3.up;      } }
 
+        [Header("Animator Support")]
+        [SerializeField]
+        private Animator _animator; // Animator Support
+        [SerializeField]
+        private GameObject armature;
+
         // Debug: Draw bounding box
         private void OnDrawGizmos()
         {
@@ -118,14 +123,12 @@ namespace Fragsurf.Movement
             base.OnNetworkSpawn();
 
             // If this is not your character, you may want to disable the local camera, etc.
-            if (!IsOwner)
+            if ( NetworkManager.Singleton.IsClient)
             {
-                _animator.gameObject.SetActive(true);
+                armature.gameObject.SetActive(!IsOwner);
                 // Example: 
                 // var cam = viewTransform.GetComponent<Camera>();
                 // if (cam) cam.enabled = false;
-            } else {
-                _animator.gameObject.SetActive(false);
             }
         }
 
