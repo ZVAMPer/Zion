@@ -47,6 +47,7 @@ public class PlayerAiming : NetworkBehaviour
 	private void Update()
 	{
 		if (!IsOwner) return;
+		
 		// Fix pausing
 		if (Mathf.Abs(Time.timeScale) <= 0)
 			return;
