@@ -123,9 +123,9 @@ namespace Fragsurf.Movement
             base.OnNetworkSpawn();
 
             // If this is not your character, you may want to disable the local camera, etc.
-            if (NetworkManager.Singleton.IsClient)
+            if (NetworkManager.Singleton.IsClient )
             {
-                armature.gameObject.SetActive(!IsOwner);
+                // armature.gameObject.SetActive(!IsOwner);
                 // Example: 
                 // var cam = viewTransform.GetComponent<Camera>();
                 // if (cam) cam.enabled = false;
