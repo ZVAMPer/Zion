@@ -112,9 +112,8 @@ public class PlayerHealth : NetworkBehaviour
     /// Server RPC to apply damage from clients.
     /// Ensures that only the server processes the damage.
     /// </summary>
-    /// <param name="damageAmount">Amount of damage to apply.</param>
-    [ServerRpc]
-    public void ApplyDamageServerRpc(int damageAmount)
+    /// <param name="damageAmount">Amount of damage to apply.</param
+    public void ApplyDamage(int damageAmount)
     {
         Debug.Log($"Received damage request from client: {damageAmount}");
         Debug.Log("Applying damage on server.");
