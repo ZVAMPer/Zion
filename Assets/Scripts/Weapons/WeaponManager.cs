@@ -17,7 +17,10 @@ public class WeaponManager : NetworkBehaviour
 
     public void Update()
     {
-        if (!IsOwner) return;
+        if (!IsOwner) {
+            Debug.Log("Not owner discarded");
+            return;
+        }
         
         if (!Input.GetMouseButton(0)) {
             animator.SetBool("Fire", false);
