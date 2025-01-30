@@ -7,15 +7,15 @@ using UnityEngine;
 public class PlayerDeath : NetworkBehaviour
 {
     // NetworkObject networkObject;
-    NetworkTransform networkTransform;
+    // NetworkTransform networkTransform;
     SurfCharacter surfCharacter;
     Respawn respawn;
 
-    Rigidbody rb;
+    // Rigidbody rb;
 
-    NetworkRigidbody networkRigidbody;
+    // NetworkRigidbody networkRigidbody;
 
-    NetworkAnimator networkAnimator;
+    // NetworkAnimator networkAnimator;
 
     WeaponManager weaponManager;
     PlayerHealth playerHealth;
@@ -36,12 +36,12 @@ public class PlayerDeath : NetworkBehaviour
     void Awake()
     {
         // networkObject = GetComponent<NetworkObject>();
-        networkTransform = GetComponent<NetworkTransform>();
+        // networkTransform = GetComponent<NetworkTransform>();
         surfCharacter = GetComponent<SurfCharacter>();
         respawn = GetComponent<Respawn>();
-        rb = GetComponent<Rigidbody>();
-        networkRigidbody = GetComponent<NetworkRigidbody>();
-        networkAnimator = GetComponent<NetworkAnimator>();
+        // rb = GetComponent<Rigidbody>();
+        // networkRigidbody = GetComponent<NetworkRigidbody>();
+        // networkAnimator = GetComponent<NetworkAnimator>();
         weaponManager = GetComponent<WeaponManager>();
         playerHealth = GetComponent<PlayerHealth>();
         playerAiming = GetComponentInChildren<PlayerAiming>();
@@ -55,12 +55,12 @@ public class PlayerDeath : NetworkBehaviour
     {
         //  Disable every component that is not needed when the player is dead
         // networkObject.enabled = false;
-        networkTransform.enabled = false;
+        // networkTransform.enabled = false;
         surfCharacter.enabled = false;
         respawn.enabled = false;
-        rb.isKinematic = true;
-        networkRigidbody.enabled = false;
-        networkAnimator.enabled = false;
+        // rb.isKinematic = true;
+        // networkRigidbody.enabled = false;
+        // networkAnimator.enabled = false;
         weaponManager.enabled = false;
         playerHealth.enabled = false;
         playerAiming.enabled = false;
@@ -77,15 +77,15 @@ public class PlayerDeath : NetworkBehaviour
     [ServerRpc(RequireOwnership = false)]
     public void ReviveServerRpc()
     {
-        playerHealth.ReviveServerRpc();
+        // playerHealth.ReviveServerRpc();
         //  Enable every component that was disabled when the player died
         // networkObject.enabled = true;
-        networkTransform.enabled = true;
+        // networkTransform.enabled = true;
         surfCharacter.enabled = true;
         respawn.enabled = true;
-        rb.isKinematic = false;
-        networkRigidbody.enabled = true;
-        networkAnimator.enabled = true;
+        // rb.isKinematic = false;
+        // networkRigidbody.enabled = true;
+        // networkAnimator.enabled = true;
         weaponManager.enabled = true;
         playerHealth.enabled = true;
         playerAiming.enabled = true;
@@ -102,19 +102,19 @@ public class PlayerDeath : NetworkBehaviour
     {
         //  Disable every component that is not needed when the player is dead
         // networkObject.enabled = false;
-        networkTransform.enabled = false;
-        surfCharacter.enabled = false;
-        respawn.enabled = false;
-        rb.isKinematic = true;
-        networkRigidbody.enabled = false;
-        networkAnimator.enabled = false;
-        weaponManager.enabled = false;
-        playerHealth.enabled = false;
-        playerAiming.enabled = false;
+        // networkTransform.enabled = false;
+        // surfCharacter.enabled = false;
+        // respawn.enabled = false;
+        // rb.isKinematic = true;
+        // networkRigidbody.enabled = false;
+        // networkAnimator.enabled = false;
+        // weaponManager.enabled = false;
+        // playerHealth.enabled = false;
+        // playerAiming.enabled = false;
         armature.SetActive(true);
         animator.enabled = false;
-        weaponRifle.enabled = false;
-        capsuleCollider.enabled = false;
+        // weaponRifle.enabled = false;
+        // capsuleCollider.enabled = false;
         
         //  Revive the player after 5 seconds
         Invoke(nameof(Revive), 5f);
@@ -124,19 +124,19 @@ public class PlayerDeath : NetworkBehaviour
     {
         //  Enable every component that was disabled when the player died
         // networkObject.enabled = true;
-        networkTransform.enabled = true;
-        surfCharacter.enabled = true;
-        respawn.enabled = true;
-        rb.isKinematic = false;
-        networkRigidbody.enabled = true;
-        networkAnimator.enabled = true;
-        weaponManager.enabled = true;
-        playerHealth.enabled = true;
-        playerAiming.enabled = true;
+        // networkTransform.enabled = true;
+        // surfCharacter.enabled = true;
+        // respawn.enabled = true;
+        // rb.isKinematic = false;
+        // networkRigidbody.enabled = true;
+        // networkAnimator.enabled = true;
+        // weaponManager.enabled = true;
+        // playerHealth.enabled = true;
+        // playerAiming.enabled = true;
         animator.enabled = true;
         armature.SetActive(false);
-        weaponRifle.enabled = true;
-        capsuleCollider.enabled = true;
+        // weaponRifle.enabled = true;
+        // capsuleCollider.enabled = true;
 
     }
 
