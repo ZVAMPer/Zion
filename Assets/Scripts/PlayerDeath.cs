@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PlayerDeath : NetworkBehaviour
 {
-    NetworkObject networkObject;
+    // NetworkObject networkObject;
     NetworkTransform networkTransform;
     SurfCharacter surfCharacter;
     Respawn respawn;
@@ -35,7 +35,7 @@ public class PlayerDeath : NetworkBehaviour
     // Awake is called when the script instance is being loaded
     void Awake()
     {
-        networkObject = GetComponent<NetworkObject>();
+        // networkObject = GetComponent<NetworkObject>();
         networkTransform = GetComponent<NetworkTransform>();
         surfCharacter = GetComponent<SurfCharacter>();
         respawn = GetComponent<Respawn>();
@@ -54,7 +54,7 @@ public class PlayerDeath : NetworkBehaviour
     public void DieServerRpc()
     {
         //  Disable every component that is not needed when the player is dead
-        networkObject.enabled = false;
+        // networkObject.enabled = false;
         networkTransform.enabled = false;
         surfCharacter.enabled = false;
         respawn.enabled = false;
@@ -78,7 +78,7 @@ public class PlayerDeath : NetworkBehaviour
     public void ReviveServerRpc()
     {
         //  Enable every component that was disabled when the player died
-        networkObject.enabled = true;
+        // networkObject.enabled = true;
         networkTransform.enabled = true;
         surfCharacter.enabled = true;
         respawn.enabled = true;
@@ -100,7 +100,7 @@ public class PlayerDeath : NetworkBehaviour
     public void Die()
     {
         //  Disable every component that is not needed when the player is dead
-        networkObject.enabled = false;
+        // networkObject.enabled = false;
         networkTransform.enabled = false;
         surfCharacter.enabled = false;
         respawn.enabled = false;
@@ -122,7 +122,7 @@ public class PlayerDeath : NetworkBehaviour
     public void Revive()
     {
         //  Enable every component that was disabled when the player died
-        networkObject.enabled = true;
+        // networkObject.enabled = true;
         networkTransform.enabled = true;
         surfCharacter.enabled = true;
         respawn.enabled = true;
