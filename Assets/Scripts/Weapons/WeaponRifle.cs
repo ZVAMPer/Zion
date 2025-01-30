@@ -1,12 +1,12 @@
 using UnityEngine;
 using System.Collections;
+using Unity.Netcode;
 
-public class WeaponRifle : WeaponBase
+public class WeaponRifle : WeaponBase  
 {
     // Configuration Parameters
     [Header("Magazine Settings")]
     public int magazineSize = 30;           // Total bullets in a magazine
-    public int bulletCount;                 // Current bullets in the magazine
 
     [Header("Firing Settings")]
     public float fireRate = 0.1f;           // Time between bursts
@@ -34,10 +34,16 @@ public class WeaponRifle : WeaponBase
     // References
     private Camera playerCamera;             // Reference to the player's camera
 
+    // Networked Variables
+    public NetworkVariable<int> bulletCount = new NetworkVariable<int>();
+
     // Initialization
     void Start()
     {
-        bulletCount = magazineSize; // Initialize the magazine
+        if (IsServer)
+        {
+            bulletCount.Value = magazineSize; // Initialize the magazine on the server
+        }
 
         // Validate references
         if (muzzlePoint == null)
@@ -57,13 +63,31 @@ public class WeaponRifle : WeaponBase
         {
             Debug.LogError("Main Camera not found. Please ensure your player camera is tagged as 'MainCamera'.");
         }
+
+        // Subscribe to bullet count changes for UI updates
+        bulletCount.OnValueChanged += OnBulletCountChanged;
+    }
+
+    void OnDestroy()
+    {
+        bulletCount.OnValueChanged -= OnBulletCountChanged;
+    }
+
+    void OnBulletCountChanged(int oldCount, int newCount)
+    {
+        // Update the UI with the new bullet count
+        // Example:
+        // bulletUI.text = newCount.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-        HandleInput();
-        HandleAutomaticReload();
+        if (IsOwner)
+        {
+            HandleInput();
+            HandleAutomaticReload();
+        }
     }
 
     /// <summary>
@@ -75,20 +99,20 @@ public class WeaponRifle : WeaponBase
         // Replace "Fire1" with your actual input axis or key
         isFiring = Input.GetButton("Fire1");
 
-        // Check for manual reload input (e.g., pressing 'R')
-        if (Input.GetButtonDown("Reload"))
-        {
-            AttemptReload();
-        }
-
         // Handle firing logic
-        if (isFiring && !isReloading && bulletCount > 0)
+        if (isFiring && !isReloading && bulletCount.Value > 0)
         {
             if (Time.time - lastFireTime >= fireRate)
             {
-                FireBurst();
+                FireBurstServerRpc();
                 lastFireTime = Time.time;
             }
+        }
+
+        // Check for manual reload input (e.g., pressing 'R')
+        if (Input.GetButtonDown("Reload"))
+        {
+            AttemptReloadServerRpc();
         }
     }
 
@@ -97,22 +121,23 @@ public class WeaponRifle : WeaponBase
     /// </summary>
     private void HandleAutomaticReload()
     {
-        if (bulletCount <= 0 && !isReloading)
+        if (bulletCount.Value <= 0 && !isReloading)
         {
             if (Time.time - lastReloadAttempt >= reloadCooldown)
             {
-                StartCoroutine(Reload());
+                AttemptReloadServerRpc();
                 lastReloadAttempt = Time.time;
             }
         }
     }
 
     /// <summary>
-    /// Attempts to start reloading if cooldown has passed.
+    /// ServerRPC to attempt reloading.
     /// </summary>
-    private void AttemptReload()
+    [ServerRpc]
+    private void AttemptReloadServerRpc(ServerRpcParams rpcParams = default)
     {
-        if (!isReloading && Time.time - lastReloadAttempt >= reloadCooldown && bulletCount < magazineSize)
+        if (!isReloading && bulletCount.Value < magazineSize)
         {
             StartCoroutine(Reload());
             lastReloadAttempt = Time.time;
@@ -120,15 +145,30 @@ public class WeaponRifle : WeaponBase
     }
 
     /// <summary>
+    /// ServerRPC to fire a burst.
+    /// </summary>
+    [ServerRpc]
+    private void FireBurstServerRpc(ServerRpcParams rpcParams = default)
+    {
+        if (isReloading || bulletCount.Value <= 0)
+            return;
+
+        FireBurst();
+    }
+
+    /// <summary>
     /// Fires a burst of bullets.
     /// </summary>
     private void FireBurst()
     {
-        int bulletsToFire = Mathf.Min(burstCount, bulletCount);
+        int bulletsToFire = Mathf.Min(burstCount, bulletCount.Value);
         for (int i = 0; i < bulletsToFire; i++)
         {
             FireSingleBullet();
         }
+
+        // Notify all clients to play firing effects
+        PlayFireEffectsClientRpc();
     }
 
     /// <summary>
@@ -136,8 +176,8 @@ public class WeaponRifle : WeaponBase
     /// </summary>
     private void FireSingleBullet()
     {
-        bulletCount--;
-        Debug.Log("Fired a bullet. Remaining: " + bulletCount);
+        bulletCount.Value--;
+        Debug.Log("Fired a bullet. Remaining: " + bulletCount.Value);
 
         if (playerCamera == null)
         {
@@ -149,7 +189,7 @@ public class WeaponRifle : WeaponBase
         Vector3 rayOrigin = playerCamera.transform.position;
         Vector3 rayDirection = playerCamera.transform.forward;
 
-        // Perform the raycast
+        // Perform the raycast on the server
         RaycastHit hit;
         bool hasHit = Physics.Raycast(rayOrigin, rayDirection, out hit, bulletRange, playerLayerMask);
 
@@ -157,7 +197,7 @@ public class WeaponRifle : WeaponBase
         {
             Debug.Log("Hit: " + hit.collider.name);
 
-            // Check if the hit object has a PlayerHealth component or adjust based on your player identification
+            // Example: Apply damage if the hit object has a PlayerHealth component
             // PlayerHealth player = hit.collider.GetComponent<PlayerHealth>();
             // if (player != null)
             // {
@@ -168,19 +208,25 @@ public class WeaponRifle : WeaponBase
         // Determine the end point of the trail
         Vector3 endPoint = hasHit ? hit.point : rayOrigin + rayDirection * bulletRange;
 
-        // Draw the bullet trail from muzzle point to hit point or max range
-        if (bulletTrailPrefab != null)
+        // Notify clients to draw the bullet trail
+        DrawTrailClientRpc(muzzlePoint.position, endPoint);
+    }
+
+    /// <summary>
+    /// ClientRPC to draw the bullet trail on all clients.
+    /// </summary>
+    [ClientRpc]
+    private void DrawTrailClientRpc(Vector3 origin, Vector3 destination)
+    {
+        if (bulletTrailPrefab != null && muzzlePoint != null)
         {
-            StartCoroutine(DrawTrail(muzzlePoint.position, endPoint));
-        } 
+            StartCoroutine(DrawTrail(origin, destination));
+        }
     }
 
     /// <summary>
     /// Coroutine to draw a bullet trail from origin to destination using TrailRenderer.
     /// </summary>
-    /// <param name="origin">Start position of the trail (muzzle point).</param>
-    /// <param name="destination">End position of the trail (hit point or max range).</param>
-    /// <returns></returns>
     private IEnumerator DrawTrail(Vector3 origin, Vector3 destination)
     {
         // Instantiate the trail prefab at the muzzle point
@@ -231,12 +277,15 @@ public class WeaponRifle : WeaponBase
         isReloading = true;
         Debug.Log("Reloading...");
 
+        // Notify all clients to play reload effects
+        PlayReloadEffectsClientRpc();
+
         // Wait for the reload time to simulate reloading
         yield return new WaitForSeconds(reloadTime);
 
-        bulletCount = magazineSize;
+        bulletCount.Value = magazineSize;
         isReloading = false;
-        Debug.Log("Reloaded. Bullets available: " + bulletCount);
+        Debug.Log("Reloaded. Bullets available: " + bulletCount.Value);
     }
 
     /// <summary>
@@ -244,12 +293,38 @@ public class WeaponRifle : WeaponBase
     /// </summary>
     public override void UseWeapon()
     {
-        // This method can be used to trigger firing from other scripts
-        // isFiring = true;
+        if (IsOwner && !isReloading && bulletCount.Value > 0)
+        {
+            FireBurstServerRpc();
+        }
     }
 
     /// <summary>
     /// Overrides the aimationCode property from WeaponBase.
     /// </summary>
     public override int aimationCode { get => 1; }
+
+    /// <summary>
+    /// ClientRPC to play firing effects on all clients.
+    /// </summary>
+    [ClientRpc]
+    private void PlayFireEffectsClientRpc()
+    {
+        // Implement firing visual and audio effects
+        // Example:
+        // muzzleFlash.Play();
+        // audioSource.PlayOneShot(fireSound);
+    }
+
+    /// <summary>
+    /// ClientRPC to play reloading effects on all clients.
+    /// </summary>
+    [ClientRpc]
+    private void PlayReloadEffectsClientRpc()
+    {
+        // Implement reloading visual and audio effects
+        // Example:
+        // reloadAnimation.Play();
+        // audioSource.PlayOneShot(reloadSound);
+    }
 }
