@@ -68,13 +68,13 @@ public class PlayerDeath : NetworkBehaviour
         animator.enabled = false;
         weaponRifle.enabled = false;
         capsuleCollider.enabled = false;
-        
-        DieClientRpc();
+
+
         //  Revive the player after 5 seconds
         // Invoke(nameof(Revive), 5f);
     }
 
-    [ClientRpc]
+
     public void DieClientRpc()
     {
         //  Disable every component that is not needed when the player is dead

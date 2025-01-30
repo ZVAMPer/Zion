@@ -29,6 +29,7 @@ public class PlayerHealth : NetworkBehaviour
         if (currentHealth.Value <= 0)
         {
             playerDeath.DieServerRpc();
+            playerDeath.DieClientRpc();
         }
     }
 }
