@@ -33,6 +33,8 @@ public class WeaponRifle : WeaponBase
 
     // References
     private Camera playerCamera;             // Reference to the player's camera
+    [SerializeField]
+    private TMPro.TMP_Text bulletCountText;  // Reference to the UI Text component
 
     // Initialization
     void Start()
@@ -64,6 +66,7 @@ public class WeaponRifle : WeaponBase
     {
         HandleInput();
         HandleAutomaticReload();
+        bulletCountText.text = bulletCount.ToString(); // Update the UI text
     }
 
     /// <summary>

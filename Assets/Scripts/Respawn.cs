@@ -1,6 +1,8 @@
 using UnityEngine;
 using Unity.Netcode;
 using Unity.Netcode.Components;
+using Unity.VisualScripting;
+using UnityEngine.Rendering.Universal;
 
 public class Respawn : NetworkBehaviour
 {
@@ -10,12 +12,41 @@ public class Respawn : NetworkBehaviour
     private Vector3 _initialSpawnPosition;
     private Quaternion _initialSpawnRotation;
 
+    GameObject respawnPointA;
+    GameObject respawnPointB;
+
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
         if (!IsServer) return;
 
         _surfCharacter = GetComponent<Fragsurf.Movement.SurfCharacter>();
+
+        //  Find two respawn points with tag "RespawnPoint"
+        GameObject[] respawnPoints = GameObject.FindGameObjectsWithTag("Respawn");
+
+        if (respawnPoints.Length >= 2)
+        {
+            respawnPointA = respawnPoints[0];
+            respawnPointB = respawnPoints[1];
+        }
+        
+        if (respawnPointA != null && respawnPointB != null)
+        {
+            if (IsHost)
+            {
+                transform.position = respawnPointA.transform.position;
+                transform.rotation = respawnPointA.transform.rotation;
+            }
+            else
+            {
+                transform.position = respawnPointB.transform.position;
+                transform.rotation = respawnPointB.transform.rotation;
+            }
+
+            return;
+        }
+
         if (_surfCharacter != null)
         {
             // Memorize the initial spawn position and rotation

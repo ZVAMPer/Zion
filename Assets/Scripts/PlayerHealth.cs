@@ -12,6 +12,8 @@ public class PlayerHealth : NetworkBehaviour
 
     [SerializeField]
     public NetworkVariable<int> currentHealth = new NetworkVariable<int>(100); // Current health value
+    [SerializeField]
+    private TMPro.TMP_Text healthText;
 
     PlayerDeath playerDeath;
 
@@ -20,12 +22,14 @@ public class PlayerHealth : NetworkBehaviour
         base.OnNetworkSpawn();
         playerDeath = GetComponent<PlayerDeath>();
         currentHealth.Value = maxHealth;
+        healthText.text = currentHealth.Value.ToString();
     }
 
     [ServerRpc(RequireOwnership = false)]
     public void TakeDamageServerRpc(int damage)
     {
         currentHealth.Value -= damage;
+        healthText.text = currentHealth.Value.ToString();
         if (currentHealth.Value <= 0)
         {
             playerDeath.DieServerRpc();
@@ -36,5 +40,6 @@ public class PlayerHealth : NetworkBehaviour
     public void ReviveServerRpc()
     {
         currentHealth.Value = maxHealth;
+        healthText.text = currentHealth.Value.ToString();
     }
 }
