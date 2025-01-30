@@ -15,6 +15,13 @@ public class PlayerHealth : NetworkBehaviour
 
     PlayerDeath playerDeath;
 
+    public override void OnNetworkSpawn()
+    {
+        base.OnNetworkSpawn();
+        playerDeath = GetComponent<PlayerDeath>();
+        currentHealth.Value = maxHealth;
+    }
+
     [ServerRpc(RequireOwnership = false)]
     public void TakeDamageServerRpc(int damage)
     {

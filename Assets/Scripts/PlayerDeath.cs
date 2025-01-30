@@ -60,7 +60,7 @@ public class PlayerDeath : NetworkBehaviour
         weaponRifle.enabled = false;
         
         //  Revive the player after 5 seconds
-        Invoke(nameof(Revive), 5f);
+        // Invoke(nameof(Revive), 5f);
     }
 
     public void Revive()
