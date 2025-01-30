@@ -176,7 +176,7 @@ public class WeaponRifle : WeaponBase
                 {
                     // Apply damage via ServerRpc
                     Debug.Log("Applying damage to player: " + playerHealth.gameObject.name);
-                    playerHealth.ApplyDamage(40); // Example damage value
+                    playerHealth.currentHealth.Value -= 40; // Example damage value
                 }
             }
         }
