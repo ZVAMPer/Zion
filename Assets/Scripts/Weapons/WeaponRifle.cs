@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using Unity.Netcode;
-using NUnit.Framework.Constraints;
+using System;
 
 public class WeaponRifle : WeaponBase
 {
@@ -174,28 +174,28 @@ public class WeaponRifle : WeaponBase
         // Draw the bullet trail from muzzle point to hit point or max range
         if (bulletTrailPrefab != null)
         {
-            GameObject trail = SpawnBulletTrailServerRpc(muzzlePoint.position, endPoint);
-            StartCoroutine(DrawTrail(trail, muzzlePoint.position, endPoint));
+            FireSingleBulletServerRpc(muzzlePoint.position, endPoint);
         } 
     }
 
     [ServerRpc]
-    private GameObject SpawnBulletTrailServerRpc(Vector3 origin, Vector3 destination)
+    private void FireSingleBulletServerRpc(Vector3 origin, Vector3 destination)
     {
-        GameObject trail = Instantiate(bulletTrailPrefab, origin, Quaternion.identity);
-        var instanceNetworkObject = trail.GetComponent<NetworkObject>();
-        instanceNetworkObject.Spawn();
-        return trail;
+        StartCoroutine(DrawTrail(origin, destination));
     }
-
     /// <summary>
     /// Coroutine to draw a bullet trail from origin to destination using TrailRenderer.
     /// </summary>
     /// <param name="origin">Start position of the trail (muzzle point).</param>
     /// <param name="destination">End position of the trail (hit point or max range).</param>
     /// <returns></returns>
-    private IEnumerator DrawTrail(GameObject trail, Vector3 origin, Vector3 destination)
+    private IEnumerator DrawTrail(Vector3 origin, Vector3 destination)
     {
+        // Instantiate the trail prefab at the muzzle point
+        GameObject trail = Instantiate(bulletTrailPrefab, origin, Quaternion.identity);
+        var instanceNetworkObject = trail.GetComponent<NetworkObject>();
+        instanceNetworkObject.Spawn(); // Only sever can spawn objects
+
         // Get the TrailRenderer component
         TrailRenderer trailRenderer = trail.GetComponent<TrailRenderer>();
         if (trailRenderer != null)
