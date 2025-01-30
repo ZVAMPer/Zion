@@ -47,4 +47,24 @@ public class Respawn : NetworkBehaviour
             }
         }
     }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void RespawnServerRpc()
+    {
+        if (_surfCharacter != null)
+        {
+            // Use the memorized initial position and rotation for respawning
+            _surfCharacter.ResetClientRpc(_initialSpawnPosition, _initialSpawnRotation);
+        }
+        else
+        {
+            // Fallback for non-SurfCharacter objects
+            transform.SetPositionAndRotation(_initialSpawnPosition, _initialSpawnRotation);
+            GetComponent<NetworkTransform>().Teleport(
+                _initialSpawnPosition,
+                _initialSpawnRotation,
+                Vector3.one
+            );
+        }
+    }
 }

@@ -39,4 +39,10 @@ public class PlayerHealth : NetworkBehaviour
             playerDeath.DieServerRpc();
         }
     }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void ReviveServerRpc()
+    {
+        currentHealth.Value = maxHealth;
+    }
 }

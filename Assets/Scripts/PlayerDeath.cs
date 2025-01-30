@@ -71,7 +71,29 @@ public class PlayerDeath : NetworkBehaviour
 
 
         //  Revive the player after 5 seconds
-        // Invoke(nameof(Revive), 5f);
+        Invoke(nameof(ReviveServerRpc), 5f);
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void ReviveServerRpc()
+    {
+        //  Enable every component that was disabled when the player died
+        networkObject.enabled = true;
+        networkTransform.enabled = true;
+        surfCharacter.enabled = true;
+        respawn.enabled = true;
+        rb.isKinematic = false;
+        networkRigidbody.enabled = true;
+        networkAnimator.enabled = true;
+        weaponManager.enabled = true;
+        playerHealth.enabled = true;
+        playerAiming.enabled = true;
+        animator.enabled = true;
+        armature.SetActive(false);
+        weaponRifle.enabled = true;
+        capsuleCollider.enabled = true;
+
+        respawn.RespawnServerRpc();
     }
 
 
@@ -94,7 +116,7 @@ public class PlayerDeath : NetworkBehaviour
         capsuleCollider.enabled = false;
         
         //  Revive the player after 5 seconds
-        // Invoke(nameof(Revive), 5f);
+        Invoke(nameof(Revive), 5f);
     }
 
     public void Revive()
