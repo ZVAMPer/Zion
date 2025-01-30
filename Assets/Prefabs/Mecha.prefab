@@ -12984,7 +12984,7 @@ MonoBehaviour:
     underwaterVelocityDampening: 2
   _animator: {fileID: 1239978841734347120}
   armature: {fileID: 7187000460436671492}
-  ui: {fileID: 0}
+  ui: {fileID: 8595123617037360551}
 --- !u!114 &1164867184617588103
 MonoBehaviour:
   m_ObjectHideFlags: 0
