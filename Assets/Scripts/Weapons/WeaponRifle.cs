@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Unity.Netcode;
 
 public class WeaponRifle : WeaponBase
 {
@@ -186,6 +187,8 @@ public class WeaponRifle : WeaponBase
     {
         // Instantiate the trail prefab at the muzzle point
         GameObject trail = Instantiate(bulletTrailPrefab, origin, Quaternion.identity);
+        var instanceNetworkObject = trail.GetComponent<NetworkObject>();
+        instanceNetworkObject.Spawn();
 
         // Get the TrailRenderer component
         TrailRenderer trailRenderer = trail.GetComponent<TrailRenderer>();

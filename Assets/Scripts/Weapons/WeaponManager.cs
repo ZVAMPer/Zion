@@ -17,6 +17,8 @@ public class WeaponManager : NetworkBehaviour
 
     public void Update()
     {
+        if (!IsOwner) return;
+        
         if (!Input.GetMouseButton(0)) {
             animator.SetBool("Fire", false);
         }
