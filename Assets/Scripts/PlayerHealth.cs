@@ -2,6 +2,7 @@ using UnityEngine;
 using Unity.Netcode;
 using System;
 using Unity.VisualScripting;
+using Unity.Services.Lobbies.Models;
 
 public class PlayerHealth : NetworkBehaviour
 {
@@ -12,9 +13,15 @@ public class PlayerHealth : NetworkBehaviour
     [SerializeField]
     public NetworkVariable<int> currentHealth = new NetworkVariable<int>(100); // Current health value
 
+    PlayerDeath playerDeath;
+
     [ServerRpc(RequireOwnership = false)]
     public void TakeDamageServerRpc(int damage)
     {
         currentHealth.Value -= damage;
+        if (currentHealth.Value <= 0)
+        {
+            playerDeath.DieServerRpc();
+        }
     }
 }
