@@ -1,6 +1,7 @@
 using UnityEngine;
 using Unity.Netcode;
 using System;
+using Unity.VisualScripting;
 
 public class PlayerHealth : NetworkBehaviour
 {
@@ -9,7 +10,7 @@ public class PlayerHealth : NetworkBehaviour
     private int maxHealth = 100; // Maximum health value
 
     [SerializeField]
-    private int currentHealth = 100; // Current health value
+    NetworkVariable<int> currentHealth = new NetworkVariable<int>(100); // Current health value
 
     [Header("Death Settings")]
     [SerializeField]
@@ -22,7 +23,6 @@ public class PlayerHealth : NetworkBehaviour
     public event Action OnDeath;
 
     // Property to access current health
-    public int CurrentHealth => currentHealth;
 
     /// <summary>
     /// Initialization
@@ -31,7 +31,7 @@ public class PlayerHealth : NetworkBehaviour
     {
         if (IsServer)
         {
-            currentHealth = maxHealth;
+            currentHealth.Value = maxHealth;
         }
 
         // Optionally, you can subscribe to events or initialize UI elements here
@@ -45,22 +45,22 @@ public class PlayerHealth : NetworkBehaviour
     public void  TakeDamage(int damageAmount)
     {
 
-        if (currentHealth <= 0)
+        if (currentHealth.Value <= 0)
         {
             // Player is already dead
             return;
         }
 
         // Reduce health
-        currentHealth -= damageAmount;
-        currentHealth = Mathf.Max(currentHealth, 0);
+        currentHealth.Value -= damageAmount;
+        currentHealth.Value = Mathf.Max(currentHealth.Value, 0);
 
         // Trigger the OnTakeDamage event
-        OnTakeDamage?.Invoke(currentHealth, maxHealth);
+        OnTakeDamage?.Invoke(currentHealth.Value, maxHealth);
 
         Debug.Log($"{gameObject.name} took {damageAmount} damage. Remaining Health: {currentHealth}");
 
-        if (currentHealth <= 0)
+        if (currentHealth.Value <= 0)
         {
             HandleDeath();
         }
@@ -93,23 +93,17 @@ public class PlayerHealth : NetworkBehaviour
     /// <param name="healAmount">Amount of health to restore.</param>
     public void Heal(int healAmount)
     {
-        if (!IsServer)
-        {
-            // Only the server should handle healing logic
-            return;
-        }
-
-        if (currentHealth <= 0)
+        if (currentHealth.Value <= 0)
         {
             // Cannot heal a dead player
             return;
         }
 
-        currentHealth += healAmount;
-        currentHealth = Mathf.Min(currentHealth, maxHealth);
+        currentHealth.Value += healAmount;
+        currentHealth.Value = Mathf.Min(currentHealth.Value, maxHealth);
 
         // Trigger the OnTakeDamage event to update UI or other systems
-        OnTakeDamage?.Invoke(currentHealth, maxHealth);
+        OnTakeDamage?.Invoke(currentHealth.Value, maxHealth);
 
         Debug.Log($"{gameObject.name} healed by {healAmount}. Current Health: {currentHealth}");
     }
@@ -142,11 +136,11 @@ public class PlayerHealth : NetworkBehaviour
 
         if (IsServer)
         {
-            currentHealth = maxHealth;
+            currentHealth.Value = maxHealth;
         }
 
         // Synchronize health with clients
-        UpdateHealthClientRpc(currentHealth, maxHealth);
+        UpdateHealthClientRpc(currentHealth.Value, maxHealth);
     }
 
     /// <summary>
@@ -157,7 +151,7 @@ public class PlayerHealth : NetworkBehaviour
     [ClientRpc]
     private void UpdateHealthClientRpc(int health, int maxHealthValue)
     {
-        currentHealth = health;
+        currentHealth.Value = health;
         // Update UI or other client-side elements here
         // For example, update a health bar
     }
