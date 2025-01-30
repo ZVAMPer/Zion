@@ -73,7 +73,7 @@ public class WeaponRifle : WeaponBase
     {
         // Check if the player is holding the fire input (e.g., left mouse button or a specific key)
         // Replace "Fire1" with your actual input axis or key
-        // isFiring = Input.GetButton("Fire1");
+        isFiring = Input.GetButton("Fire1");
 
         // Check for manual reload input (e.g., pressing 'R')
         if (Input.GetButtonDown("Reload"))
