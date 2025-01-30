@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using Unity.Netcode;
+using System.Collections.Generic;
+using System.Linq;
 
 public class WeaponRifle : WeaponBase  
 {
@@ -110,6 +112,11 @@ public class WeaponRifle : WeaponBase
                     Vector3 origin = playerCamera.transform.position;
                     Vector3 direction = playerCamera.transform.forward;
                     FireBurstServerRpc(origin, direction);
+
+                    // Play firing effects locally on the owner
+                    PlayFireEffectsLocal();
+                    DrawTrailLocal(origin, origin + direction * bulletRange);
+
                     lastFireTime = Time.time;
                 }
                 else
@@ -164,6 +171,38 @@ public class WeaponRifle : WeaponBase
             return;
 
         FireBurst(origin, direction);
+
+        // Prepare ClientRpcParams to exclude the owner
+        ulong senderClientId = rpcParams.Receive.SenderClientId;
+        List<ulong> targetClientIds = NetworkManager.Singleton.ConnectedClientsIds.ToList();
+        targetClientIds.Remove(senderClientId);
+
+        if (targetClientIds.Count > 0)
+        {
+            ClientRpcParams clientRpcParams = new ClientRpcParams
+            {
+                Send = new ClientRpcSendParams
+                {
+                    TargetClientIds = targetClientIds.ToArray()
+                }
+            };
+
+            // Notify other clients to play firing effects
+            PlayFireEffectsClientRpc(clientRpcParams);
+
+            // For each bullet fired, determine the end point and notify clients to draw the trail
+            for (int i = 0; i < Mathf.Min(burstCount, bulletCount.Value + burstCount); i++)
+            {
+                Vector3 currentDirection = direction; // Adjust for spread if any
+                RaycastHit hit;
+                bool hasHit = Physics.Raycast(origin, currentDirection, out hit, bulletRange, playerLayerMask);
+
+                Vector3 endPoint = hasHit ? hit.point : origin + currentDirection * bulletRange;
+
+                // Notify other clients to draw the bullet trail
+                DrawTrailClientRpc(origin, endPoint, clientRpcParams);
+            }
+        }
     }
 
     /// <summary>
@@ -177,8 +216,7 @@ public class WeaponRifle : WeaponBase
             FireSingleBullet(origin, direction);
         }
 
-        // Notify all clients to play firing effects
-        PlayFireEffectsClientRpc();
+        // Notify all clients to play firing effects (handled via ClientRpc)
     }
 
     /// <summary>
@@ -208,26 +246,37 @@ public class WeaponRifle : WeaponBase
         // Determine the end point of the trail
         Vector3 endPoint = hasHit ? hit.point : origin + direction * bulletRange;
 
-        // Notify clients to draw the bullet trail
-        DrawTrailClientRpc(origin, endPoint);
+        // Notify clients to draw the bullet trail (handled in FireBurstServerRpc)
     }
 
     /// <summary>
-    /// ClientRPC to draw the bullet trail on all clients.
+    /// ClientRPC to play firing effects on all clients except the owner.
     /// </summary>
     [ClientRpc]
-    private void DrawTrailClientRpc(Vector3 origin, Vector3 destination)
+    private void PlayFireEffectsClientRpc(ClientRpcParams clientRpcParams = default)
+    {
+        // Implement firing visual and audio effects
+        // Example:
+        // muzzleFlash.Play();
+        // audioSource.PlayOneShot(fireSound);
+    }
+
+    /// <summary>
+    /// ClientRPC to draw the bullet trail on all clients except the owner.
+    /// </summary>
+    [ClientRpc]
+    private void DrawTrailClientRpc(Vector3 origin, Vector3 destination, ClientRpcParams clientRpcParams = default)
     {
         if (bulletTrailPrefab != null && muzzlePoint != null)
         {
-            StartCoroutine(DrawTrail(origin, destination));
+            StartCoroutine(DrawTrailCoroutine(origin, destination));
         }
     }
 
     /// <summary>
     /// Coroutine to draw a bullet trail from origin to destination using TrailRenderer.
     /// </summary>
-    private IEnumerator DrawTrail(Vector3 origin, Vector3 destination)
+    private IEnumerator DrawTrailCoroutine(Vector3 origin, Vector3 destination)
     {
         // Instantiate the trail prefab at the muzzle point
         GameObject trail = Instantiate(bulletTrailPrefab, origin, Quaternion.identity);
@@ -270,6 +319,28 @@ public class WeaponRifle : WeaponBase
     }
 
     /// <summary>
+    /// Handles the local firing effects for the owner client.
+    /// </summary>
+    private void PlayFireEffectsLocal()
+    {
+        // Implement local firing visual and audio effects
+        // Example:
+        // muzzleFlash.Play();
+        // audioSource.PlayOneShot(fireSound);
+    }
+
+    /// <summary>
+    /// Handles the local bullet trail for the owner client.
+    /// </summary>
+    private void DrawTrailLocal(Vector3 origin, Vector3 destination)
+    {
+        if (bulletTrailPrefab != null && muzzlePoint != null)
+        {
+            StartCoroutine(DrawTrailCoroutine(origin, destination));
+        }
+    }
+
+    /// <summary>
     /// Coroutine to handle the reloading process.
     /// </summary>
     private IEnumerator Reload()
@@ -277,8 +348,25 @@ public class WeaponRifle : WeaponBase
         isReloading = true;
         Debug.Log("Reloading...");
 
-        // Notify all clients to play reload effects
-        PlayReloadEffectsClientRpc();
+        // Prepare ClientRpcParams to exclude the owner
+        List<ulong> targetClientIds = NetworkManager.Singleton.ConnectedClientsIds.Where(id => id != OwnerClientId).ToList();
+
+        if (targetClientIds.Count > 0)
+        {
+            ClientRpcParams clientRpcParams = new ClientRpcParams
+            {
+                Send = new ClientRpcSendParams
+                {
+                    TargetClientIds = targetClientIds.ToArray()
+                }
+            };
+
+            // Notify other clients to play reload effects
+            PlayReloadEffectsClientRpc(clientRpcParams);
+        }
+
+        // Play reload effects locally on the owner
+        PlayReloadEffectsLocal();
 
         // Wait for the reload time to simulate reloading
         yield return new WaitForSeconds(reloadTime);
@@ -301,6 +389,10 @@ public class WeaponRifle : WeaponBase
                 Vector3 origin = playerCamera.transform.position;
                 Vector3 direction = playerCamera.transform.forward;
                 FireBurstServerRpc(origin, direction);
+
+                // Play firing effects locally on the owner
+                PlayFireEffectsLocal();
+                DrawTrailLocal(origin, origin + direction * bulletRange);
             }
             else
             {
@@ -310,32 +402,30 @@ public class WeaponRifle : WeaponBase
     }
 
     /// <summary>
-    /// Overrides the aimationCode property from WeaponBase.
+    /// Overrides the animationCode property from WeaponBase.
     /// </summary>
     public override int aimationCode { get => 1; }
 
     /// <summary>
-    /// ClientRPC to play firing effects on all clients.
+    /// ClientRPC to play reloading effects on all clients except the owner.
     /// </summary>
     [ClientRpc]
-    private void PlayFireEffectsClientRpc()
-    {
-        // Implement firing visual and audio effects
-        // Example:
-        // muzzleFlash.Play();
-        // audioSource.PlayOneShot(fireSound);
-    }
-
-    /// <summary>
-    /// ClientRPC to play reloading effects on all clients.
-    /// </summary>
-    [ClientRpc]
-    private void PlayReloadEffectsClientRpc()
+    private void PlayReloadEffectsClientRpc(ClientRpcParams clientRpcParams = default)
     {
         // Implement reloading visual and audio effects
         // Example:
         // reloadAnimation.Play();
         // audioSource.PlayOneShot(reloadSound);
     }
-}
 
+    /// <summary>
+    /// Handles the local reloading effects for the owner client.
+    /// </summary>
+    private void PlayReloadEffectsLocal()
+    {
+        // Implement local reloading visual and audio effects
+        // Example:
+        // reloadAnimation.Play();
+        // audioSource.PlayOneShot(reloadSound);
+    }
+}
