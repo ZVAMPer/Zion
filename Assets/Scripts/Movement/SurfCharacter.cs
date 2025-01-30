@@ -14,7 +14,7 @@ namespace Fragsurf.Movement
     /// All movement logic runs locally on the owner client.
     /// The server no longer calculates movement or calls Teleport.
     /// </summary>
-    [AddComponentMenu("Fragsurf/Surf Character (Client-Auth)")]
+    [AddComponentMenu("SurfCharacter")]
     [RequireComponent(typeof(ClientNetworkTransform))]
     public class SurfCharacter : NetworkBehaviour, ISurfControllable
     {
@@ -125,7 +125,7 @@ namespace Fragsurf.Movement
             // If this is not your character, you may want to disable the local camera, etc.
             if (NetworkManager.Singleton.IsClient )
             {
-                // armature.gameObject.SetActive(!IsOwner);
+                armature.gameObject.SetActive(!IsOwner);
                 // Example: 
                 // var cam = viewTransform.GetComponent<Camera>();
                 // if (cam) cam.enabled = false;
