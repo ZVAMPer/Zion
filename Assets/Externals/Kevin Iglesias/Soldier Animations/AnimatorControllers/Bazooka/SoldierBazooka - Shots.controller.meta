@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 5f7c9c3bedbbaea4bb24bca6e6a8024e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 180600
+  packageName: Soldier Animations
+  packageVersion: 1.2
+  assetPath: Assets/Kevin Iglesias/Soldier Animations/AnimatorControllers/Bazooka/SoldierBazooka
+    - Shots.controller
+  uploadId: 719163

@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604093a680e6d5a488206647cc35be23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   bodyTransform: {fileID: 339834599337510078}
   sensitivityMultiplier: 1
   horizontalSensitivity: 1
@@ -350,8 +351,8 @@ MonoBehaviour:
     autoBhop: 1
     gravity: 20
     jumpForce: 10
-    friction: 6
-    maxSpeed: 6
+    friction: 10
+    maxSpeed: 10
     maxVelocity: 50
     slopeLimit: 45
     clampAirSpeed: 0
@@ -379,6 +380,8 @@ MonoBehaviour:
     underwaterFriction: 2
     underwaterGravity: 6
     underwaterVelocityDampening: 2
+  _animator: {fileID: 0}
+  armature: {fileID: 0}
 --- !u!114 &1164867184617588103
 MonoBehaviour:
   m_ObjectHideFlags: 0

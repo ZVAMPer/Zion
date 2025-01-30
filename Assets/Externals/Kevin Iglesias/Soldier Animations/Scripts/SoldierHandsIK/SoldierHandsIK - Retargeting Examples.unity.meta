@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6fbf26a01a5f66444b20bd362cacff09
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 180600
+  packageName: Soldier Animations
+  packageVersion: 1.2
+  assetPath: Assets/Kevin Iglesias/Soldier Animations/Scripts/SoldierHandsIK/SoldierHandsIK
+    - Retargeting Examples.unity
+  uploadId: 719163
