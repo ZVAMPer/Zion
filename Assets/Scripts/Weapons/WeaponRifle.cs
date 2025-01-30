@@ -69,6 +69,9 @@ public class WeaponRifle : WeaponBase
     /// </summary>
     private void HandleInput()
     {
+        if (!IsOwner) {
+            return;
+        }
         // Check if the player is holding the fire input (e.g., left mouse button or a specific key)
         // Replace "Fire1" with your actual input axis or key
         isFiring = Input.GetButton("Fire1");
