@@ -11,4 +11,10 @@ public class PlayerHealth : NetworkBehaviour
 
     [SerializeField]
     public NetworkVariable<int> currentHealth = new NetworkVariable<int>(100); // Current health value
+
+    [ServerRpc(RequireOwnership = false)]
+    public void TakeDamageServerRpc(int damage)
+    {
+        currentHealth.Value -= damage;
+    }
 }

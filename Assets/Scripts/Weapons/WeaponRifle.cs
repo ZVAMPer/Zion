@@ -176,7 +176,7 @@ public class WeaponRifle : WeaponBase
                 {
                     // Apply damage via ServerRpc
                     Debug.Log("Applying damage to player: " + playerHealth.gameObject.name);
-                    playerHealth.currentHealth.Value -= 40; // Example damage value
+                    playerHealth.TakeDamageServerRpc(40); // Example damage value
                 }
             }
         }
@@ -190,6 +190,7 @@ public class WeaponRifle : WeaponBase
             FireSingleBulletServerRpc(muzzlePoint.position, endPoint);
         } 
     }
+    
 
     [ServerRpc]
     private void FireSingleBulletServerRpc(Vector3 origin, Vector3 destination)
