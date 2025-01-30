@@ -128,7 +128,7 @@ namespace Fragsurf.Movement
             if (NetworkManager.Singleton.IsClient )
             {
                 armature.gameObject.SetActive(!IsOwner);
-                ui.gameObject.SetActive(!IsOwner);
+                ui.gameObject.SetActive(IsOwner);
                 // Example: 
                 // var cam = viewTransform.GetComponent<Camera>();
                 // if (cam) cam.enabled = false;
