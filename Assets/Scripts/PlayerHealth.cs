@@ -50,7 +50,7 @@ public class PlayerHealth : NetworkBehaviour
             // Player is already dead
             return;
         }
-
+        Debug.Log("TakeDamage");
         // Reduce health
         currentHealth.Value -= damageAmount;
         currentHealth.Value = Mathf.Max(currentHealth.Value, 0);
@@ -116,15 +116,9 @@ public class PlayerHealth : NetworkBehaviour
     [ServerRpc]
     public void ApplyDamageServerRpc(int damageAmount)
     {
-        if (IsServer)
-        {
-            TakeDamage(damageAmount);
-        }
-        else
-        {
-            // Forward the damage request to the server
-            ApplyDamageServerRpc(damageAmount);
-        }
+        Debug.Log($"Received damage request from client: {damageAmount}");
+        Debug.Log("Applying damage on server.");
+        TakeDamage(damageAmount);
     }
 
     /// <summary>
