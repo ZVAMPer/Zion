@@ -104,8 +104,18 @@ public class WeaponRifle : WeaponBase
         {
             if (Time.time - lastFireTime >= fireRate)
             {
-                FireBurstServerRpc();
-                lastFireTime = Time.time;
+                // Ensure playerCamera is not null
+                if (playerCamera != null)
+                {
+                    Vector3 origin = playerCamera.transform.position;
+                    Vector3 direction = playerCamera.transform.forward;
+                    FireBurstServerRpc(origin, direction);
+                    lastFireTime = Time.time;
+                }
+                else
+                {
+                    Debug.LogError("Player camera is null. Cannot fire.");
+                }
             }
         }
 
@@ -134,7 +144,7 @@ public class WeaponRifle : WeaponBase
     /// <summary>
     /// ServerRPC to attempt reloading.
     /// </summary>
-    [ServerRpc]
+    [ServerRpc(RequireOwnership = true)]
     private void AttemptReloadServerRpc(ServerRpcParams rpcParams = default)
     {
         if (!isReloading && bulletCount.Value < magazineSize)
@@ -147,24 +157,24 @@ public class WeaponRifle : WeaponBase
     /// <summary>
     /// ServerRPC to fire a burst.
     /// </summary>
-    [ServerRpc]
-    private void FireBurstServerRpc(ServerRpcParams rpcParams = default)
+    [ServerRpc(RequireOwnership = true)]
+    private void FireBurstServerRpc(Vector3 origin, Vector3 direction, ServerRpcParams rpcParams = default)
     {
         if (isReloading || bulletCount.Value <= 0)
             return;
 
-        FireBurst();
+        FireBurst(origin, direction);
     }
 
     /// <summary>
     /// Fires a burst of bullets.
     /// </summary>
-    private void FireBurst()
+    private void FireBurst(Vector3 origin, Vector3 direction)
     {
         int bulletsToFire = Mathf.Min(burstCount, bulletCount.Value);
         for (int i = 0; i < bulletsToFire; i++)
         {
-            FireSingleBullet();
+            FireSingleBullet(origin, direction);
         }
 
         // Notify all clients to play firing effects
@@ -174,24 +184,14 @@ public class WeaponRifle : WeaponBase
     /// <summary>
     /// Fires a single bullet using raycasting and renders a trail.
     /// </summary>
-    private void FireSingleBullet()
+    private void FireSingleBullet(Vector3 origin, Vector3 direction)
     {
         bulletCount.Value--;
         Debug.Log("Fired a bullet. Remaining: " + bulletCount.Value);
 
-        if (playerCamera == null)
-        {
-            Debug.LogError("Player camera not assigned. Cannot perform raycast.");
-            return;
-        }
-
-        // Define the origin and direction of the ray
-        Vector3 rayOrigin = playerCamera.transform.position;
-        Vector3 rayDirection = playerCamera.transform.forward;
-
-        // Perform the raycast on the server
+        // Perform the raycast on the server using the provided origin and direction
         RaycastHit hit;
-        bool hasHit = Physics.Raycast(rayOrigin, rayDirection, out hit, bulletRange, playerLayerMask);
+        bool hasHit = Physics.Raycast(origin, direction, out hit, bulletRange, playerLayerMask);
 
         if (hasHit)
         {
@@ -206,10 +206,10 @@ public class WeaponRifle : WeaponBase
         }
 
         // Determine the end point of the trail
-        Vector3 endPoint = hasHit ? hit.point : rayOrigin + rayDirection * bulletRange;
+        Vector3 endPoint = hasHit ? hit.point : origin + direction * bulletRange;
 
         // Notify clients to draw the bullet trail
-        DrawTrailClientRpc(muzzlePoint.position, endPoint);
+        DrawTrailClientRpc(origin, endPoint);
     }
 
     /// <summary>
@@ -295,7 +295,17 @@ public class WeaponRifle : WeaponBase
     {
         if (IsOwner && !isReloading && bulletCount.Value > 0)
         {
-            FireBurstServerRpc();
+            // Ensure playerCamera is not null
+            if (playerCamera != null)
+            {
+                Vector3 origin = playerCamera.transform.position;
+                Vector3 direction = playerCamera.transform.forward;
+                FireBurstServerRpc(origin, direction);
+            }
+            else
+            {
+                Debug.LogError("Player camera is null. Cannot use weapon.");
+            }
         }
     }
 
@@ -328,3 +338,4 @@ public class WeaponRifle : WeaponBase
         // audioSource.PlayOneShot(reloadSound);
     }
 }
+
