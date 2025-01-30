@@ -77,7 +77,7 @@ public class PlayerDeath : NetworkBehaviour
     [ServerRpc(RequireOwnership = false)]
     public void ReviveServerRpc()
     {
-        // playerHealth.ReviveServerRpc();
+        playerHealth.ReviveServerRpc();
         //  Enable every component that was disabled when the player died
         // networkObject.enabled = true;
         // networkTransform.enabled = true;
@@ -134,7 +134,7 @@ public class PlayerDeath : NetworkBehaviour
         // playerHealth.enabled = true;
         // playerAiming.enabled = true;
         animator.enabled = true;
-        armature.SetActive(false);
+        armature.SetActive(true);
         // weaponRifle.enabled = true;
         // capsuleCollider.enabled = true;
 
