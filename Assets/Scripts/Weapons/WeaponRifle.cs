@@ -1,212 +1,253 @@
 using UnityEngine;
 using System.Collections;
-using Unity.Netcode;
 
-public class WeaponRifle : WeaponBase  
+public class WeaponRifle : WeaponBase
 {
+    // Configuration Parameters
     [Header("Magazine Settings")]
-    public int magazineSize = 30;           
-    private int currentBullets;
+    public int magazineSize = 30;           // Total bullets in a magazine
+    public int bulletCount;                 // Current bullets in the magazine
 
     [Header("Firing Settings")]
-    public float fireRate = 0.1f;           
-    public int burstCount = 3;              
-    public float bulletRange = 100f;        
-    public float trailDuration = 0.5f;      
+    public float fireRate = 0.1f;           // Time between bursts
+    public int burstCount = 3;              // Number of bullets per burst
+    public float bulletRange = 100f;        // Maximum range of a bullet
+    public float trailDuration = 0.5f;      // Duration for the bullet trail to be visible
 
     [Header("Reload Settings")]
-    public float reloadCooldown = 2f;       
-    public float reloadTime = 1.5f;         
+    public float reloadCooldown = 2f;       // Cooldown time before reloading
+    public float reloadTime = 1.5f;         // Time it takes to reload
 
     [Header("Trail Settings")]
-    public GameObject bulletTrailPrefab;     
-    public Transform muzzlePoint;            
+    public GameObject bulletTrailPrefab;     // Prefab for the bullet trail
+    public Transform muzzlePoint;            // Point from where the bullet trail is drawn
 
-    [Header("Layer Settings")]
-    public LayerMask playerLayerMask;        
 
-    private bool isFiring = false;           
-    private bool isReloading = false;        
-    private float lastFireTime = 0f;         
-    private float lastReloadAttempt = -Mathf.Infinity;
+    // State Variables
+    private bool isFiring = false;           // Is the player holding the fire input
+    private bool isReloading = false;        // Is the weapon currently reloading
+    private float lastFireTime = 0f;         // Timestamp of the last burst
+    private float lastReloadAttempt = -Mathf.Infinity; // Timestamp of the last reload attempt
 
-    private Camera playerCamera;             
-    private NetworkObject parentNetworkObject;
-    private bool isLocalPlayer;
+    // References
+    private Camera playerCamera;             // Reference to the player's camera
 
+    // Initialization
     void Start()
     {
-        currentBullets = magazineSize;
-        
+        bulletCount = magazineSize; // Initialize the magazine
+
+        // Validate references
         if (muzzlePoint == null)
         {
-            muzzlePoint = transform;
+            muzzlePoint = this.transform; // Default to weapon's transform if not set
             Debug.LogWarning("Muzzle Point not set. Using weapon's transform as default.");
         }
 
-        parentNetworkObject = GetComponentInParent<NetworkObject>();
-        isLocalPlayer = parentNetworkObject != null && parentNetworkObject.IsOwner;
-
-        // Only set up camera for local player
-        if (isLocalPlayer)
+        if (bulletTrailPrefab == null)
         {
-            playerCamera = Camera.main;
-            if (playerCamera == null)
-            {
-                Debug.LogError("Main Camera not found!");
-            }
+            Debug.LogError("Bullet Trail Prefab is not assigned. Please assign it in the Inspector.");
+        }
+
+        // Get the main camera (assuming the player's camera is tagged as MainCamera)
+        playerCamera = Camera.main;
+        if (playerCamera == null)
+        {
+            Debug.LogError("Main Camera not found. Please ensure your player camera is tagged as 'MainCamera'.");
         }
     }
 
+    // Update is called once per frame
     void Update()
     {
-        if (isLocalPlayer)
-        {
-            HandleInput();
-            HandleAutomaticReload();
-        }
+        HandleInput();
+        HandleAutomaticReload();
     }
 
+    /// <summary>
+    /// Handles player input for firing and reloading.
+    /// </summary>
     private void HandleInput()
     {
+        // Check if the player is holding the fire input (e.g., left mouse button or a specific key)
+        // Replace "Fire1" with your actual input axis or key
         isFiring = Input.GetButton("Fire1");
 
-        if (isFiring && !isReloading && currentBullets > 0)
+        // Check for manual reload input (e.g., pressing 'R')
+        if (Input.GetButtonDown("Reload"))
+        {
+            AttemptReload();
+        }
+
+        // Handle firing logic
+        if (isFiring && !isReloading && bulletCount > 0)
         {
             if (Time.time - lastFireTime >= fireRate)
             {
-                if (playerCamera != null)
-                {
-                    Vector3 origin = playerCamera.transform.position;
-                    Vector3 direction = playerCamera.transform.forward;
-                    RequestFireServerRpc(origin, direction);
-                    lastFireTime = Time.time;
-                }
+                FireBurst();
+                lastFireTime = Time.time;
             }
-        }
-
-        if (Input.GetButtonDown("Reload"))
-        {
-            RequestReloadServerRpc();
         }
     }
 
+    /// <summary>
+    /// Handles automatic reload when the magazine is empty.
+    /// </summary>
     private void HandleAutomaticReload()
     {
-        if (currentBullets <= 0 && !isReloading)
+        if (bulletCount <= 0 && !isReloading)
         {
             if (Time.time - lastReloadAttempt >= reloadCooldown)
             {
-                RequestReloadServerRpc();
+                StartCoroutine(Reload());
                 lastReloadAttempt = Time.time;
             }
         }
     }
 
-    [ServerRpc(RequireOwnership = true)]
-    private void RequestFireServerRpc(Vector3 origin, Vector3 direction)
+    /// <summary>
+    /// Attempts to start reloading if cooldown has passed.
+    /// </summary>
+    private void AttemptReload()
     {
-        if (isReloading || currentBullets <= 0) return;
-
-        // Perform server-side validation if needed
-        currentBullets--;
-        
-        // Perform the raycast on the server
-        RaycastHit hit;
-        bool hasHit = Physics.Raycast(origin, direction, out hit, bulletRange, playerLayerMask);
-        Vector3 endPoint = hasHit ? hit.point : origin + direction * bulletRange;
-
-        // Tell all clients to show the effects
-        FireEffectsClientRpc(origin, endPoint, parentNetworkObject.OwnerClientId);
+        if (!isReloading && Time.time - lastReloadAttempt >= reloadCooldown && bulletCount < magazineSize)
+        {
+            StartCoroutine(Reload());
+            lastReloadAttempt = Time.time;
+        }
     }
 
-    [ClientRpc]
-    private void FireEffectsClientRpc(Vector3 origin, Vector3 endPoint, ulong shooterClientId)
+    /// <summary>
+    /// Fires a burst of bullets.
+    /// </summary>
+    private void FireBurst()
     {
-        // Don't show trail for the shooter's local view (they'll see it from their camera)
-        if (parentNetworkObject.OwnerClientId == shooterClientId && isLocalPlayer)
+        int bulletsToFire = Mathf.Min(burstCount, bulletCount);
+        for (int i = 0; i < bulletsToFire; i++)
+        {
+            FireSingleBullet();
+        }
+    }
+
+    /// <summary>
+    /// Fires a single bullet using raycasting and renders a trail.
+    /// </summary>
+    private void FireSingleBullet()
+    {
+        bulletCount--;
+        Debug.Log("Fired a bullet. Remaining: " + bulletCount);
+
+        if (playerCamera == null)
+        {
+            Debug.LogError("Player camera not assigned. Cannot perform raycast.");
             return;
+        }
 
-        StartCoroutine(DrawTrail(origin, endPoint));
+        // Define the origin and direction of the ray
+        Vector3 rayOrigin = playerCamera.transform.position;
+        Vector3 rayDirection = playerCamera.transform.forward;
+
+        // Perform the raycast
+        RaycastHit hit;
+        bool hasHit = Physics.Raycast(rayOrigin, rayDirection, out hit, bulletRange);
+
+        if (hasHit)
+        {
+            Debug.Log("Hit: " + hit.collider.name);
+
+            // Check if the hit object has a PlayerHealth component or adjust based on your player identification
+            // PlayerHealth player = hit.collider.GetComponent<PlayerHealth>();
+            // if (player != null)
+            // {
+            //     player.TakeDamage(10); // Example damage value
+            // }
+        }
+
+        // Determine the end point of the trail
+        Vector3 endPoint = hasHit ? hit.point : rayOrigin + rayDirection * bulletRange;
+
+        // Draw the bullet trail from muzzle point to hit point or max range
+        if (bulletTrailPrefab != null)
+        {
+            StartCoroutine(DrawTrail(muzzlePoint.position, endPoint));
+        } 
     }
 
+    /// <summary>
+    /// Coroutine to draw a bullet trail from origin to destination using TrailRenderer.
+    /// </summary>
+    /// <param name="origin">Start position of the trail (muzzle point).</param>
+    /// <param name="destination">End position of the trail (hit point or max range).</param>
+    /// <returns></returns>
     private IEnumerator DrawTrail(Vector3 origin, Vector3 destination)
     {
+        // Instantiate the trail prefab at the muzzle point
         GameObject trail = Instantiate(bulletTrailPrefab, origin, Quaternion.identity);
+
+        // Get the TrailRenderer component
         TrailRenderer trailRenderer = trail.GetComponent<TrailRenderer>();
-        
         if (trailRenderer != null)
         {
-            float distance = Vector3.Distance(origin, destination);
+            // Set the initial position
+            trail.transform.position = origin;
+
+            // Calculate the direction and distance to move the trail
             Vector3 direction = (destination - origin).normalized;
-            float moveSpeed = distance / 0.1f; // Complete trail in 0.1 seconds
+            float distance = Vector3.Distance(origin, destination);
 
-            float startTime = Time.time;
-            float journeyLength = Vector3.Distance(origin, destination);
-            float distanceCovered = 0f;
+            // Move the trail to the destination over a short duration
+            float moveDuration = trailDuration; // Adjust as needed
+            float elapsedTime = 0f;
 
-            while (distanceCovered < journeyLength)
+            while (elapsedTime < moveDuration)
             {
-                float currentDuration = (Time.time - startTime);
-                distanceCovered = currentDuration * moveSpeed;
-                float fractionOfJourney = distanceCovered / journeyLength;
-
-                trail.transform.position = Vector3.Lerp(origin, destination, fractionOfJourney);
+                trail.transform.position += direction * (distance / moveDuration) * Time.deltaTime;
+                elapsedTime += Time.deltaTime;
                 yield return null;
             }
 
-            yield return new WaitForSeconds(trailDuration);
-            Destroy(trail);
+            // Ensure the trail reaches the exact destination
+            trail.transform.position = destination;
         }
-    }
-
-    [ServerRpc(RequireOwnership = true)]
-    private void RequestReloadServerRpc()
-    {
-        if (!isReloading && currentBullets < magazineSize)
+        else
         {
-            StartCoroutine(ReloadRoutine());
+            Debug.LogError("Bullet Trail Prefab does not have a TrailRenderer component.");
         }
+
+        // Wait for the trail duration before destroying
+        yield return new WaitForSeconds(trailDuration);
+
+        // Destroy the trail after the duration
+        Destroy(trail);
     }
 
-    private IEnumerator ReloadRoutine()
+    /// <summary>
+    /// Coroutine to handle the reloading process.
+    /// </summary>
+    private IEnumerator Reload()
     {
         isReloading = true;
-        ReloadEffectsClientRpc();
-        
+        Debug.Log("Reloading...");
+
+        // Wait for the reload time to simulate reloading
         yield return new WaitForSeconds(reloadTime);
-        
-        currentBullets = magazineSize;
+
+        bulletCount = magazineSize;
         isReloading = false;
-        
-        ReloadCompleteClientRpc(currentBullets);
+        Debug.Log("Reloaded. Bullets available: " + bulletCount);
     }
 
-    [ClientRpc]
-    private void ReloadEffectsClientRpc()
-    {
-        // Play reload effects/animations
-    }
-
-    [ClientRpc]
-    private void ReloadCompleteClientRpc(int newBulletCount)
-    {
-        currentBullets = newBulletCount;
-        // Update UI or other elements
-    }
-
+    /// <summary>
+    /// Overrides the UseWeapon method from WeaponBase.
+    /// </summary>
     public override void UseWeapon()
     {
-        if (isLocalPlayer && !isReloading && currentBullets > 0)
-        {
-            if (playerCamera != null)
-            {
-                Vector3 origin = playerCamera.transform.position;
-                Vector3 direction = playerCamera.transform.forward;
-                RequestFireServerRpc(origin, direction);
-            }
-        }
+        // This method can be used to trigger firing from other scripts
+        // isFiring = true;
     }
 
-    public override int aimationCode => 1;
+    /// <summary>
+    /// Overrides the aimationCode property from WeaponBase.
+    /// </summary>
+    public override int aimationCode { get => 1; }
 }
