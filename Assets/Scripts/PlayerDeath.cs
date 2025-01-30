@@ -75,7 +75,7 @@ public class PlayerDeath : NetworkBehaviour
     }
 
 
-    public void DieClientRpc()
+    public void Die()
     {
         //  Disable every component that is not needed when the player is dead
         networkObject.enabled = false;
