@@ -22,6 +22,14 @@ public class PlayerHealth : NetworkBehaviour
         currentHealth.Value = maxHealth;
     }
 
+    void Update()
+    {
+       if (currentHealth.Value <= 0)
+       {
+           playerDeath.Die();
+       }
+    }
+
     [ServerRpc(RequireOwnership = false)]
     public void TakeDamageServerRpc(int damage)
     {
@@ -29,7 +37,6 @@ public class PlayerHealth : NetworkBehaviour
         if (currentHealth.Value <= 0)
         {
             playerDeath.DieServerRpc();
-            playerDeath.Die();
         }
     }
 }
