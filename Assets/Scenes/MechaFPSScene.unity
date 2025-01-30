@@ -3611,7 +3611,7 @@ PrefabInstance:
       objectReference: {fileID: 6070953435829712526, guid: dc2d87c36ef5a49ada553c11d19fdaa1, type: 3}
     - target: {fileID: 9065612863467142856, guid: 44fa1d822a76146a69d79b86219fcd0a, type: 3}
       propertyPath: NetworkConfig.NetworkTopology
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
