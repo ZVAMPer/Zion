@@ -419,7 +419,7 @@ public class WeaponRifle : WeaponBase
     }
 
     /// <summary>
-    /// Handles the local reloading effects for the owner client.
+    /// Handles the local reloading effects for the owner client. 
     /// </summary>
     private void PlayReloadEffectsLocal()
     {
