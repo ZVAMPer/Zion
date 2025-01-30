@@ -166,6 +166,12 @@ public class WeaponRifle : WeaponBase
             // {
             //     player.TakeDamage(10); // Example damage value
             // }
+            PlayerHealth playerHealth = hit.collider.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                // Apply damage via ServerRpc
+                playerHealth.ApplyDamageServerRpc(40); // Example damage value
+            }
         }
 
         // Determine the end point of the trail
