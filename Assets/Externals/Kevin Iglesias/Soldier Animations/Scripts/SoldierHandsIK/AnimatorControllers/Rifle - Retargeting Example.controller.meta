@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 75a0e18739246db40945b3fa4ebf3125
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 180600
+  packageName: Soldier Animations
+  packageVersion: 1.2
+  assetPath: Assets/Kevin Iglesias/Soldier Animations/Scripts/SoldierHandsIK/AnimatorControllers/Rifle
+    - Retargeting Example.controller
+  uploadId: 719163

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 8c4ea1d373e3b914ea0e92fc649b85d7
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 180600
+  packageName: Soldier Animations
+  packageVersion: 1.2
+  assetPath: Assets/Kevin Iglesias/Soldier Animations/AnimatorControllers/AssaultRifle/SoldierAssaultRifle
+    - Grenade02.controller
+  uploadId: 719163

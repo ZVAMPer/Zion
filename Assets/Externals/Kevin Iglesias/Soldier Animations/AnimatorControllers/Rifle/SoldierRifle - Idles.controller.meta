@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: afbb4ac7a269d9a49bdfd0888ba3815b
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 180600
+  packageName: Soldier Animations
+  packageVersion: 1.2
+  assetPath: Assets/Kevin Iglesias/Soldier Animations/AnimatorControllers/Rifle/SoldierRifle
+    - Idles.controller
+  uploadId: 719163
