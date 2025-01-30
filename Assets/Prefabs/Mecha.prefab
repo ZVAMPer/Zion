@@ -420,7 +420,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   weapons:
   - {fileID: 4839820027779557185}
-  animator: {fileID: 0}
+  animator: {fileID: 1239978841734347120}
   weaponNameText: {fileID: 0}
 --- !u!114 &4938709497709719172
 MonoBehaviour:
