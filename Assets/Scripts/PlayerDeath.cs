@@ -25,6 +25,8 @@ public class PlayerDeath : NetworkBehaviour
     Animator animator;
     WeaponRifle weaponRifle;
 
+    CapsuleCollider capsuleCollider;
+
     // Awake is called when the script instance is being loaded
     void Awake()
     {
@@ -40,6 +42,7 @@ public class PlayerDeath : NetworkBehaviour
         playerAiming = GetComponentInChildren<PlayerAiming>();
         animator = GetComponentInChildren<Animator>();
         weaponRifle = GetComponentInChildren<WeaponRifle>();
+        capsuleCollider = GetComponent<CapsuleCollider>();
     }
 
     [ServerRpc(RequireOwnership = false)]
@@ -56,8 +59,34 @@ public class PlayerDeath : NetworkBehaviour
         weaponManager.enabled = false;
         playerHealth.enabled = false;
         playerAiming.enabled = false;
+        animator.gameObject.SetActive(true);
         animator.enabled = false;
         weaponRifle.enabled = false;
+        capsuleCollider.enabled = false;
+        
+        DieClientRpc();
+        //  Revive the player after 5 seconds
+        // Invoke(nameof(Revive), 5f);
+    }
+
+    [ClientRpc]
+    public void DieClientRpc()
+    {
+        //  Disable every component that is not needed when the player is dead
+        networkObject.enabled = false;
+        networkTransform.enabled = false;
+        surfCharacter.enabled = false;
+        respawn.enabled = false;
+        rb.isKinematic = true;
+        networkRigidbody.enabled = false;
+        networkAnimator.enabled = false;
+        weaponManager.enabled = false;
+        playerHealth.enabled = false;
+        playerAiming.enabled = false;
+        animator.gameObject.SetActive(true);
+        animator.enabled = false;
+        weaponRifle.enabled = false;
+        capsuleCollider.enabled = false;
         
         //  Revive the player after 5 seconds
         // Invoke(nameof(Revive), 5f);
@@ -77,7 +106,10 @@ public class PlayerDeath : NetworkBehaviour
         playerHealth.enabled = true;
         playerAiming.enabled = true;
         animator.enabled = true;
+        animator.gameObject.SetActive(false);
         weaponRifle.enabled = true;
+        capsuleCollider.enabled = true;
+
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
