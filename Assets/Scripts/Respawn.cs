@@ -43,8 +43,6 @@ public class Respawn : NetworkBehaviour
                 transform.position = respawnPointB.transform.position;
                 transform.rotation = respawnPointB.transform.rotation;
             }
-
-            return;
         }
 
         if (_surfCharacter != null)
