@@ -33,7 +33,7 @@ public class Respawn : NetworkBehaviour
         
         if (respawnPointA != null && respawnPointB != null)
         {
-            if (IsHost)
+            if (IsHost && IsOwner)
             {
                 transform.position = respawnPointA.transform.position;
                 transform.rotation = respawnPointA.transform.rotation;
