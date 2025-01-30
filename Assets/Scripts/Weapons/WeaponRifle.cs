@@ -73,7 +73,7 @@ public class WeaponRifle : WeaponBase
     {
         // Check if the player is holding the fire input (e.g., left mouse button or a specific key)
         // Replace "Fire1" with your actual input axis or key
-        isFiring = Input.GetButton("Fire1");
+        // isFiring = Input.GetButton("Fire1");
 
         // Check for manual reload input (e.g., pressing 'R')
         if (Input.GetButtonDown("Reload"))
@@ -172,7 +172,7 @@ public class WeaponRifle : WeaponBase
         if (bulletTrailPrefab != null)
         {
             StartCoroutine(DrawTrail(muzzlePoint.position, endPoint));
-        }
+        } 
     }
 
     /// <summary>
@@ -245,7 +245,7 @@ public class WeaponRifle : WeaponBase
     public override void UseWeapon()
     {
         // This method can be used to trigger firing from other scripts
-        isFiring = true;
+        // isFiring = true;
     }
 
     /// <summary>

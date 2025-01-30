@@ -410,7 +410,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6070953435829712526}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e101248daec74334fad1246325237cd9, type: 3}
   m_Name: 
@@ -870,7 +870,6 @@ MonoBehaviour:
   burstCount: 3
   bulletRange: 100
   trailDuration: 0.5
-  trailSpeed: 500
   reloadCooldown: 2
   reloadTime: 1.5
   bulletTrailPrefab: {fileID: 276990566206039982, guid: 7b08dc272dcdf45d485cd34eb76cd32a, type: 3}
