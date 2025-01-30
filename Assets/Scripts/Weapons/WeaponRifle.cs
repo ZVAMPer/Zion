@@ -171,7 +171,7 @@ public class WeaponRifle : WeaponBase
             if (hitObjectName == "PlayerCollider")
             {
                 Debug.Log("Player hit!");
-                PlayerHealth playerHealth = hit.collider.GetComponentInParent<PlayerHealth>();
+                PlayerHealth playerHealth = hit.collider.gameObject.GetComponentInParent<PlayerHealth>();
                 if (playerHealth != null)
                 {
                     // Apply damage via ServerRpc
