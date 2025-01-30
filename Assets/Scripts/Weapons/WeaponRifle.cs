@@ -158,7 +158,8 @@ public class WeaponRifle : WeaponBase
 
         if (hasHit)
         {
-            Debug.Log("Hit: " + hit.collider.name);
+            string hitObjectName = hit.collider.name;
+            Debug.Log("Hit: " + hitObjectName);
 
             // Check if the hit object has a PlayerHealth component or adjust based on your player identification
             // PlayerHealth player = hit.collider.GetComponent<PlayerHealth>();
@@ -166,11 +167,15 @@ public class WeaponRifle : WeaponBase
             // {
             //     player.TakeDamage(10); // Example damage value
             // }
-            PlayerHealth playerHealth = hit.collider.GetComponent<PlayerHealth>();
-            if (playerHealth != null)
+
+            if (hitObjectName == "PlayerCollider")
             {
-                // Apply damage via ServerRpc
-                playerHealth.ApplyDamageServerRpc(40); // Example damage value
+                PlayerHealth playerHealth = hit.collider.GetComponentInParent<PlayerHealth>();
+                if (playerHealth != null)
+                {
+                    // Apply damage via ServerRpc
+                    playerHealth.ApplyDamageServerRpc(40); // Example damage value
+                }
             }
         }
 
