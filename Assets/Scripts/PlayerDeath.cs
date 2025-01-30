@@ -55,6 +55,7 @@ public class PlayerDeath : NetworkBehaviour
     {
         //  Disable every component that is not needed when the player is dead
         // networkObject.enabled = false;
+        playerHealth.ReviveServerRpc();
         networkTransform.enabled = false;
         surfCharacter.enabled = false;
         respawn.enabled = false;
