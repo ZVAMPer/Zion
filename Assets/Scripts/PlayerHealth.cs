@@ -42,13 +42,8 @@ public class PlayerHealth : NetworkBehaviour
     /// This should be called by other scripts (e.g., WeaponRifle) when the player is hit.
     /// </summary>
     /// <param name="damageAmount">Amount of damage to apply.</param>
-    public void TakeDamage(int damageAmount)
+    public void  TakeDamage(int damageAmount)
     {
-        if (!IsServer)
-        {
-            // Only the server should handle damage logic
-            return;
-        }
 
         if (currentHealth <= 0)
         {
