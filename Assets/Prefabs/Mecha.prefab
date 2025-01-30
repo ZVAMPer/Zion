@@ -451,6 +451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
+  armature: {fileID: 7187000460436671492}
 --- !u!1 &6851742621737104458
 GameObject:
   m_ObjectHideFlags: 0

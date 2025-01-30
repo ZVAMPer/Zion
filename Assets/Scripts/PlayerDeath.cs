@@ -23,9 +23,14 @@ public class PlayerDeath : NetworkBehaviour
     PlayerAiming playerAiming;
 
     Animator animator;
+
     WeaponRifle weaponRifle;
 
     CapsuleCollider capsuleCollider;
+
+    [SerializeField]
+
+    GameObject armature;
 
     // Awake is called when the script instance is being loaded
     void Awake()
@@ -59,7 +64,7 @@ public class PlayerDeath : NetworkBehaviour
         weaponManager.enabled = false;
         playerHealth.enabled = false;
         playerAiming.enabled = false;
-        animator.gameObject.SetActive(true);
+        armature.SetActive(true);
         animator.enabled = false;
         weaponRifle.enabled = false;
         capsuleCollider.enabled = false;
@@ -83,7 +88,7 @@ public class PlayerDeath : NetworkBehaviour
         weaponManager.enabled = false;
         playerHealth.enabled = false;
         playerAiming.enabled = false;
-        animator.gameObject.SetActive(true);
+        armature.SetActive(true);
         animator.enabled = false;
         weaponRifle.enabled = false;
         capsuleCollider.enabled = false;
@@ -106,7 +111,7 @@ public class PlayerDeath : NetworkBehaviour
         playerHealth.enabled = true;
         playerAiming.enabled = true;
         animator.enabled = true;
-        animator.gameObject.SetActive(false);
+        armature.SetActive(false);
         weaponRifle.enabled = true;
         capsuleCollider.enabled = true;
 
