@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections;
+using Unity.Netcode;
+using System;
 
 public class WeaponRifle : WeaponBase
 {
@@ -22,8 +24,6 @@ public class WeaponRifle : WeaponBase
     public GameObject bulletTrailPrefab;     // Prefab for the bullet trail
     public Transform muzzlePoint;            // Point from where the bullet trail is drawn
 
-    [Header("Layer Settings")]
-    public LayerMask playerLayerMask;        // Layer mask to detect players
 
     // State Variables
     private bool isFiring = false;           // Is the player holding the fire input
@@ -33,6 +33,8 @@ public class WeaponRifle : WeaponBase
 
     // References
     private Camera playerCamera;             // Reference to the player's camera
+    [SerializeField]
+    private TMPro.TMP_Text bulletCountText;  // Reference to the UI Text component
 
     // Initialization
     void Start()
@@ -64,6 +66,7 @@ public class WeaponRifle : WeaponBase
     {
         HandleInput();
         HandleAutomaticReload();
+        bulletCountText.text = bulletCount.ToString(); // Update the UI text
     }
 
     /// <summary>
@@ -71,6 +74,9 @@ public class WeaponRifle : WeaponBase
     /// </summary>
     private void HandleInput()
     {
+        if (!IsOwner) {
+            return;
+        }
         // Check if the player is holding the fire input (e.g., left mouse button or a specific key)
         // Replace "Fire1" with your actual input axis or key
         isFiring = Input.GetButton("Fire1");
@@ -151,11 +157,12 @@ public class WeaponRifle : WeaponBase
 
         // Perform the raycast
         RaycastHit hit;
-        bool hasHit = Physics.Raycast(rayOrigin, rayDirection, out hit, bulletRange, playerLayerMask);
+        bool hasHit = Physics.Raycast(rayOrigin, rayDirection, out hit, bulletRange);
 
         if (hasHit)
         {
-            Debug.Log("Hit: " + hit.collider.name);
+            string hitObjectName = hit.collider.name;
+            Debug.Log("Hit: " + hitObjectName);
 
             // Check if the hit object has a PlayerHealth component or adjust based on your player identification
             // PlayerHealth player = hit.collider.GetComponent<PlayerHealth>();
@@ -163,6 +170,18 @@ public class WeaponRifle : WeaponBase
             // {
             //     player.TakeDamage(10); // Example damage value
             // }
+
+            if (hitObjectName == "PlayerCollider")
+            {
+                Debug.Log("Player hit!");
+                PlayerHealth playerHealth = hit.collider.gameObject.GetComponentInParent<PlayerHealth>();
+                if (playerHealth != null)
+                {
+                    // Apply damage via ServerRpc
+                    Debug.Log("Applying damage to player: " + playerHealth.gameObject.name);
+                    playerHealth.TakeDamageServerRpc(10); // Example damage value
+                }
+            }
         }
 
         // Determine the end point of the trail
@@ -171,10 +190,16 @@ public class WeaponRifle : WeaponBase
         // Draw the bullet trail from muzzle point to hit point or max range
         if (bulletTrailPrefab != null)
         {
-            StartCoroutine(DrawTrail(muzzlePoint.position, endPoint));
-        }
+            FireSingleBulletServerRpc(muzzlePoint.position, endPoint);
+        } 
     }
+    
 
+    [ServerRpc]
+    private void FireSingleBulletServerRpc(Vector3 origin, Vector3 destination)
+    {
+        StartCoroutine(DrawTrail(origin, destination));
+    }
     /// <summary>
     /// Coroutine to draw a bullet trail from origin to destination using TrailRenderer.
     /// </summary>
@@ -185,6 +210,8 @@ public class WeaponRifle : WeaponBase
     {
         // Instantiate the trail prefab at the muzzle point
         GameObject trail = Instantiate(bulletTrailPrefab, origin, Quaternion.identity);
+        var instanceNetworkObject = trail.GetComponent<NetworkObject>();
+        instanceNetworkObject.Spawn(); // Only sever can spawn objects
 
         // Get the TrailRenderer component
         TrailRenderer trailRenderer = trail.GetComponent<TrailRenderer>();
@@ -245,7 +272,7 @@ public class WeaponRifle : WeaponBase
     public override void UseWeapon()
     {
         // This method can be used to trigger firing from other scripts
-        isFiring = true;
+        // isFiring = true;
     }
 
     /// <summary>

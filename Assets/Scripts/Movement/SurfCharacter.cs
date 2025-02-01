@@ -99,6 +99,8 @@ namespace Fragsurf.Movement
         private Animator _animator; // Animator Support
         [SerializeField]
         private GameObject armature;
+        [SerializeField]
+        private GameObject ui;
 
         // Debug: Draw bounding box
         private void OnDrawGizmos()
@@ -126,6 +128,7 @@ namespace Fragsurf.Movement
             if (NetworkManager.Singleton.IsClient )
             {
                 armature.gameObject.SetActive(!IsOwner);
+                ui.gameObject.SetActive(IsOwner);
                 // Example: 
                 // var cam = viewTransform.GetComponent<Camera>();
                 // if (cam) cam.enabled = false;
