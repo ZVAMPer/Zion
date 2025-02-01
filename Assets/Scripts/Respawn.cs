@@ -87,19 +87,12 @@ public class Respawn : NetworkBehaviour
         }
         else
         {
-            // Fallback for non-SurfCharacter objects
-            {
-                _surfCharacter.ResetClientRpc(_initialSpawnPosition, _initialSpawnRotation);
-            }
-            else
-            {
             transform.SetPositionAndRotation(_initialSpawnPosition, _initialSpawnRotation);
             GetComponent<NetworkTransform>().Teleport(
                 _initialSpawnPosition,
                 _initialSpawnRotation,
                 Vector3.one
             );
-            }
         }
     }
 
