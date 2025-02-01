@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2408741601128199842}
   - component: {fileID: 7089160219685292645}
   m_Layer: 0
-  m_Name: NetworkManager
+  m_Name: RunnerNetworkManager
   m_TagString: Untagged
   m_Icon: {fileID: 2800000, guid: 3fe892784421e47f5aa40c2784a6cb3e, type: 3}
   m_NavMeshLayer: 0
