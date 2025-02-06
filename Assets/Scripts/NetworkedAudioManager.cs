@@ -24,12 +24,12 @@ public class NetworkedAudioManager : NetworkBehaviour
         PlayGunSFXClientRpc(key, shooterPosition, shooterId);
     }
 
-    [ClientRpc]
+    [ClientRpc(RequireOwnership = false)]
     public void PlayGunSFXClientRpc(string key, Vector3 shooterPosition, ulong shooterId)
     {
         // Only play spatial sound on remote clients, not on the shooter
-        // if (NetworkManager.Singleton.LocalClientId == shooterId)
-        //     return;
+        if (NetworkManager.Singleton.LocalClientId == shooterId)
+            return;
 
         Vector3 localPlayerPosition = GetLocalPlayerPosition();
         Debug.Log($"Remote Gun SFX: Shooter client {shooterId} fired from {shooterPosition}. " +

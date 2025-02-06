@@ -152,11 +152,11 @@ public class WeaponRifle : WeaponBase
             return;
         }
 
-        // AudioManager.Instance.PlayGunSFXLocal("GunShot");
+        AudioManager.Instance.PlayGunSFXLocal("GunShot");
         Vector3 shooterPos = (transform.parent != null) ? transform.parent.position : transform.position;
 
         // Send networked SFX call without manually passing the client id.
-        NetworkedAudioManager.Instance.PlayGunSFXClientRpc("GunShot", shooterPos, NetworkManager.Singleton.LocalClientId);
+        NetworkedAudioManager.Instance.PlayGunSFXServerRpc("GunShot", shooterPos);
 
         // Define the origin and direction of the ray
         Vector3 rayOrigin = playerCamera.transform.position;
