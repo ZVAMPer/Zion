@@ -12982,6 +12982,8 @@ MonoBehaviour:
     underwaterFriction: 2
     underwaterGravity: 6
     underwaterVelocityDampening: 2
+  footstepKey: PlayerStep
+  landingKey: PlayerLand
   _animator: {fileID: 1239978841734347120}
   armature: {fileID: 7187000460436671492}
   ui: {fileID: 8595123617037360551}
@@ -19834,7 +19836,7 @@ MonoBehaviour:
   bulletRange: 100
   trailDuration: 0.5
   reloadCooldown: 2
-  reloadTime: 1.5
+  reloadTime: 1
   bulletTrailPrefab: {fileID: 276990566206039982, guid: 7b08dc272dcdf45d485cd34eb76cd32a, type: 3}
   muzzlePoint: {fileID: 4651794096210261949}
   bulletCountText: {fileID: 2740956341530133473}

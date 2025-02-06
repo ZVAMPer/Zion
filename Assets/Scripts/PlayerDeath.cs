@@ -16,6 +16,16 @@ public class PlayerDeath : NetworkBehaviour
     [ServerRpc(RequireOwnership = false)]
     public void DieServerRpc()
     {
+                // Trigger the player death sound:
+        // If this is the owner, play the local death SFX.
+        if (IsOwner)
+        {
+            AudioManager.Instance.PlayPlayerDieSFXLocal("PlayerDie");
+        }
+        // Send a networked RPC so remote clients play the death SFX as spatial audio.
+        NetworkedAudioManager.Instance.PlayPlayerDieSFXServerRpc("PlayerDie", transform.position);
+
+        
         ragdollPrefab = Instantiate(ragdollPrefab, transform.position, transform.rotation);
         ragdollPrefab.GetComponent<NetworkObject>().Spawn();
 

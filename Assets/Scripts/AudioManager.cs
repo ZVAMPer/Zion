@@ -5,10 +5,11 @@ using System.Collections.Generic;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance { get; private set; }
-    
+
     [Header("Audio Bank")]
     public AudioBank audioBank; // assign in Inspector
-    private Dictionary<string, AudioClip> clipDictionary = new Dictionary<string, AudioClip>();
+    // Store the SoundDefinition by key so we can retrieve multiple clip variations
+    private Dictionary<string, SoundDefinition> soundDictionary = new Dictionary<string, SoundDefinition>();
 
     [Header("Audio Mixer")]
     public AudioMixer audioMixer;
@@ -46,28 +47,45 @@ public class AudioManager : MonoBehaviour
         if (localGunSource) localGunSource.outputAudioMixerGroup = gunGroup;
         if (localPlayerStepsSource) localPlayerStepsSource.outputAudioMixerGroup = playerStepsGroup;
         if (ambientSource) ambientSource.outputAudioMixerGroup = ambientGroup;
-        
-        // Load the AudioBank clips into a dictionary for quick lookup
+
+        // Load the AudioBank sounds into a dictionary for quick lookup
         if (audioBank != null)
         {
-            foreach(SoundDefinition s in audioBank.sounds)
+            foreach (SoundDefinition s in audioBank.sounds)
             {
-                if(!clipDictionary.ContainsKey(s.key))
-                    clipDictionary.Add(s.key, s.clip);
+                if (!soundDictionary.ContainsKey(s.key))
+                    soundDictionary.Add(s.key, s);
             }
         }
-
-        
     }
-    
-    // Utility method for retrieving an AudioClip
+
+    void Start()
+    {
+        // Play background music
+        PlayMusic("FinalsMusic");
+    }
+
+    // Utility method for retrieving a default AudioClip (first clip) for a key
     public AudioClip GetClip(string key)
     {
-        if (clipDictionary.TryGetValue(key, out AudioClip clip))
-            return clip;
+        if (soundDictionary.TryGetValue(key, out SoundDefinition soundDef))
+        {
+            if (soundDef.clips != null && soundDef.clips.Length > 0)
+                return soundDef.clips[0];
+        }
         return null;
     }
-    
+
+    // Returns a random AudioClip variation from AudioBank for the specified key.
+    public AudioClip GetRandomClip(string key)
+    {
+        if (soundDictionary.TryGetValue(key, out SoundDefinition soundDef))
+        {
+            return soundDef.GetRandomClip();
+        }
+        return null;
+    }
+
     // Play a music track
     public void PlayMusic(string key)
     {
@@ -79,19 +97,16 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-
     // Local (non-spatial) gun sound for self
     public void PlayGunSFXLocal(string key)
     {
-        
-        
         AudioClip clip = GetClip(key);
         if (clip != null && localGunSource != null)
         {
             localGunSource.PlayOneShot(clip);
         }
     }
-    
+
     // Remote (spatial) gun sound for other players
     public void PlayGunSFXRemote(string key, Vector3 position)
     {
@@ -101,7 +116,43 @@ public class AudioManager : MonoBehaviour
             SpawnSpatialAudio(clip, gunGroup, position);
         }
     }
-    
+
+    public void PlayPlayerDieSFXLocal(string key)
+    {
+        AudioClip clip = GetClip(key);
+        if (clip != null)
+        {
+            // You can add pitch variation here if desired.
+            AudioSource localSource = localGunSource;
+            localSource.pitch = Random.Range(0.95f, 1.05f);
+            localSource.PlayOneShot(clip);
+        }
+    }
+
+    // Local (non-spatial) footstep sound for self
+    public void PlayPlayerStepsSFXLocal(string key)
+    {
+        // Get a random variant from the audio bank
+        AudioClip clip = GetRandomClip(key);
+        if (clip != null && localPlayerStepsSource != null)
+        {
+            // Apply slight random pitch variation for natural variety.
+            localPlayerStepsSource.pitch = Random.Range(0.95f, 1.05f);
+            localPlayerStepsSource.PlayOneShot(clip);
+        }
+    }
+
+    // Remote (spatial) footstep sound for other players
+    public void PlayPlayerStepsSFXRemote(string key, Vector3 position)
+    {
+        // Get a random variant from the audio bank
+        AudioClip clip = GetRandomClip(key);
+        if (clip != null)
+        {
+            SpawnSpatialAudio(clip, playerStepsGroup, position);
+        }
+    }
+
     // Instantiates a spatial audio source for remote playback
     private void SpawnSpatialAudio(AudioClip clip, AudioMixerGroup group, Vector3 position)
     {
@@ -112,6 +163,8 @@ public class AudioManager : MonoBehaviour
             Debug.Log("Spawning spatial audio at " + position);
             source.outputAudioMixerGroup = group;
             source.spatialBlend = 1.0f;
+            // Randomize pitch for variety.
+            source.pitch = Random.Range(0.95f, 1.05f);
             source.clip = clip;
             source.Play();
             Destroy(go, clip.length);
@@ -121,6 +174,4 @@ public class AudioManager : MonoBehaviour
             Destroy(go);
         }
     }
-    
-    
 }

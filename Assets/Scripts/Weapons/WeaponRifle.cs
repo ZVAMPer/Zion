@@ -123,6 +123,14 @@ public class WeaponRifle : WeaponBase
         {
             StartCoroutine(Reload());
             lastReloadAttempt = Time.time;
+            // Play local reload sound (ensure "GunReload" is defined in your AudioBank)
+            AudioManager.Instance.PlayGunSFXLocal("GunReload");
+
+            // Determine the shooter's position (using parent's position if available)
+            Vector3 shooterPos = (transform.parent != null) ? transform.parent.position : transform.position;
+
+            // Send networked RPC so remote clients play the reload sound as spatial audio
+            NetworkedAudioManager.Instance.PlayGunReloadSFXServerRpc("GunReload", shooterPos);
         }
     }
 
@@ -181,6 +189,9 @@ public class WeaponRifle : WeaponBase
             if (hitObjectName == "PlayerCollider")
             {
                 Debug.Log("Player hit!");
+
+                AudioManager.Instance.PlayGunSFXLocal("HitMarker");
+
                 PlayerHealth playerHealth = hit.collider.gameObject.GetComponentInParent<PlayerHealth>();
                 if (playerHealth != null)
                 {

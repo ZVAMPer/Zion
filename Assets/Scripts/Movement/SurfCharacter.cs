@@ -55,6 +55,15 @@ namespace Fragsurf.Movement
         [Header("Movement Config")]
         public MovementConfig movementConfig;
 
+        [Header("Footstep Settings")]
+        public string footstepKey = "PlayerStep";  // Key for regular footstep sounds
+        // New landing key; make sure your AudioBank has an entry for "PlayerLand"
+        public string landingKey = "PlayerLand";
+        private float stepDistance = 3f;            // Distance required to trigger a new footstep
+        private Vector3 lastFootstepPosition;
+        // Track previous grounded state for detecting landing events
+        private bool wasGrounded = true;
+
         // Local movement data (no longer a NetworkVariable).
         private MoveData _localMoveData = new MoveData();
 
@@ -125,7 +134,7 @@ namespace Fragsurf.Movement
             base.OnNetworkSpawn();
 
             // If this is not your character, you may want to disable the local camera, etc.
-            if (NetworkManager.Singleton.IsClient )
+            if (NetworkManager.Singleton.IsClient)
             {
                 armature.gameObject.SetActive(!IsOwner);
                 ui.gameObject.SetActive(IsOwner);
@@ -266,6 +275,9 @@ namespace Fragsurf.Movement
 
             // Remember our start position for later resets
             _startPosition = transform.position;
+
+            lastFootstepPosition = transform.position;
+            wasGrounded = _isGrounded.Value;
         }
 
         private void Update()
@@ -343,8 +355,43 @@ namespace Fragsurf.Movement
             // We do the actual movement in FixedUpdate. 
             // But we could also do it in Update if you prefer.
             HandleLocalRotation();
+
+            // Detect landing: if we were in the air last frame and now are grounded
+            if (!wasGrounded && _isGrounded.Value)
+            {
+                // Play landing sound locally
+                AudioManager.Instance.PlayPlayerStepsSFXLocal(landingKey);
+                // Send networked RPC so remote clients also play the landing sound
+                NetworkedAudioManager.Instance.PlayPlayerStepsSFXServerRpc(landingKey, transform.position);
+                // Optionally update lastFootstepPosition to avoid overlap with normal footstep trigger
+                lastFootstepPosition = transform.position;
+            }
+
+            // Update previous grounded state for next frame check
+            wasGrounded = _isGrounded.Value;
+
+            HandlePlayerStepSound();
         }
 
+        private void HandlePlayerStepSound()
+        {
+            // Only trigger footsteps if the character is grounded
+            if (!_isGrounded.Value)
+                return;
+
+            float distanceTravelled = Vector3.Distance(transform.position, lastFootstepPosition);
+            if (distanceTravelled >= stepDistance)
+            {
+                // Play local (non-spatial) footstep sound for self
+                AudioManager.Instance.PlayPlayerStepsSFXLocal(footstepKey);
+
+                // Send networked SFX call so remote clients play the spatial footstep sound
+                NetworkedAudioManager.Instance.PlayPlayerStepsSFXServerRpc(footstepKey, transform.position);
+
+                // Reset the last footstep position
+                lastFootstepPosition = transform.position;
+            }
+        }
         private void HandleLocalRotation()
         {
             if (IsOwner)
@@ -391,8 +438,8 @@ namespace Fragsurf.Movement
             //     float yaw = _localMoveData.viewAngles.y;
             //     transform.rotation = Quaternion.Euler(0f, yaw, 0f);
             // }
-            
-            
+
+
         }
 
         /// <summary>
