@@ -12834,7 +12834,7 @@ GameObject:
   - component: {fileID: 4938709497709719172}
   - component: {fileID: 6451259273541793999}
   m_Layer: 8
-  m_Name: Mecha
+  m_Name: NetRunner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12873,7 +12873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2923122167
+  GlobalObjectIdHash: 3715072018
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -12982,6 +12982,7 @@ MonoBehaviour:
     underwaterFriction: 2
     underwaterGravity: 6
     underwaterVelocityDampening: 2
+  apexGroundGraceTime: 0.2
   footstepKey: PlayerStep
   landingKey: PlayerLand
   _animator: {fileID: 1239978841734347120}
