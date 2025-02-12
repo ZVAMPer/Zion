@@ -473,6 +473,18 @@ namespace Fragsurf.Movement
 
         }
 
+        [ClientRpc]
+        public void ApplyKnockbackClientRpc(Vector3 knockbackVelocity, float gravityMultiplier, float duration, ClientRpcParams clientRpcParams = default)
+        {
+            // Only the owning client should update its own movement.
+            if (IsOwner)
+            {
+                // Use the same logic as ApexJumpPad to apply an "apex jump" effect.
+                // This method is assumed to modify the local moveData (and thus the character's movement) accordingly.
+                ApplyApexJump(knockbackVelocity, gravityMultiplier, duration);
+            }
+        }
+
         /// <summary>
         /// Applies an apex jump effect by setting a jump velocity and temporarily reducing gravity.
         /// </summary>
