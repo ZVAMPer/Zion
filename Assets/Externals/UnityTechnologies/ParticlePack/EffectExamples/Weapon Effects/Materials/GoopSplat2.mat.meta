@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: fb0f4297b291a034bb4f9a9eada50640
-timeCreated: 1474449245
-licenseType: Store
-NativeFormatImporter:
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/EffectExamples/Weapon Effects/Materials/GoopSplat2.mat
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:860ab77c931f8226ba9ff665b9c736669af60a3ba0f7de141828a284ce714774
+size 413

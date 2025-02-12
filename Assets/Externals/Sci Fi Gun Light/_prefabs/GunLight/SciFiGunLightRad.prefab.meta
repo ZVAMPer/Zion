@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 2c3055a11cb8f8540a181490a4c34b7c
-timeCreated: 1485013135
-licenseType: Store
-NativeFormatImporter:
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 87916
-  packageName: Sci-Fi Gun Light
-  packageVersion: 1.0
-  assetPath: Assets/Sci Fi Gun Light/_prefabs/GunLight/SciFiGunLightRad.prefab
-  uploadId: 173825
+version https://git-lfs.github.com/spec/v1
+oid sha256:6e2e8e2e71344c5270d93e82307520e8f88aec082ac51b646b528d01d8b4a162
+size 388

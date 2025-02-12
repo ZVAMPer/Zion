@@ -1,19 +1,3 @@
-fileFormatVersion: 2
-guid: 13a50703d36e976459baf23952272a6f
-labels:
-- tile
-- set
-- park
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 67475
-  packageName: Low Poly Street Pack
-  packageVersion: 1.0
-  assetPath: Assets/LowpolyStreetPack/Prefabs/Roads/Parks/Elements/Park_Corner_B.prefab
-  uploadId: 127808
+version https://git-lfs.github.com/spec/v1
+oid sha256:b2cbed43de92d49eef6c987d8a2dec98d5a8cec1467d6a46e2eb147ac70bdc31
+size 430

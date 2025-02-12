@@ -1,16 +1,3 @@
-fileFormatVersion: 2
-guid: 9bba9cf244c53c5439505dfc96fdd11c
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 100100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/EffectExamples/Fire & Explosion
-    Effects/Prefabs/EnergyExplosion.prefab
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:20905ef14edc818ff0055c39d7badf6eca895aafd1da725af80a41dbe952d330
+size 442

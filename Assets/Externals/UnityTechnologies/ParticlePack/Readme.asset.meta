@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 83c2ed844a8c74b779a4c823d16594b1
-timeCreated: 1484217493
-licenseType: Store
-NativeFormatImporter:
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/Readme.asset
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:e52cc5ca91386e726c12768eb459644f2ce934dc9662f66ed9fb0c5be94fc902
+size 371

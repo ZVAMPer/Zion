@@ -1,13 +1,3 @@
-﻿namespace QFSW.QC
-{
-    /// <summary>
-    /// Which states of the build will be supported.
-    /// </summary>
-    public enum SupportedState
-    {
-        Always = 0,
-        Development = 1,
-        Editor = 2,
-        Never = 3
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:d88d0561b8aa6fe5d62ffaf6ae5401d31b7347e323334b55a9d07d1bd638b5fb
+size 240

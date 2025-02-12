@@ -1,17 +1,3 @@
-fileFormatVersion: 2
-guid: 85fbd51db45c21840bc12ee6a54d5080
-labels:
-- sign
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 67475
-  packageName: Low Poly Street Pack
-  packageVersion: 1.0
-  assetPath: Assets/LowpolyStreetPack/Prefabs/StreetProps/Signs/StreetSigns/StreetSign_F.prefab
-  uploadId: 127808
+version https://git-lfs.github.com/spec/v1
+oid sha256:cb591ddfa575a45cf2dcc7d478b549f75f8152e25add10edaefb4fce142e2f7c
+size 425

@@ -1,14 +1,3 @@
-fileFormatVersion: 2
-guid: 6676c683222f8bc4bbbcf4edf44e5565
-DefaultImporter:
-  externalObjects: {}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 214264
-  packageName: Minimalist Scalable Grid Prototype Materials
-  packageVersion: 1.2
-  assetPath: Assets/Scalable Grid Prototype Materials/Demo Scene/Material Demo Scene.unity
-  uploadId: 640529
+version https://git-lfs.github.com/spec/v1
+oid sha256:67ee829b8d6391a38775a46505bc1dfb30315d347578826592136fa8512d0302
+size 403

@@ -1,16 +1,3 @@
-fileFormatVersion: 2
-guid: c97461f771f37474bb0b1da499c2cdd3
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 9100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 180600
-  packageName: Soldier Animations
-  packageVersion: 1.2
-  assetPath: Assets/Kevin Iglesias/Soldier Animations/AnimatorControllers/AssaultRifle/SoldierAssaultRifle
-    - Crawling01 - Movement.controller
-  uploadId: 719163
+version https://git-lfs.github.com/spec/v1
+oid sha256:452b8e61691dc15f7ed0b377440be1a943556e8c925a002f7edfd8ea3ed0037e
+size 465

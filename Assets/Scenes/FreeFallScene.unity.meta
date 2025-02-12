@@ -1,14 +1,3 @@
-fileFormatVersion: 2
-guid: fcde39c9d7f2d954b9c02d05b59a9a83
-DefaultImporter:
-  externalObjects: {}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 183591
-  packageName: PSX Shader Kit
-  packageVersion: 1.93
-  assetPath: Assets/PSXShaderKit/Demo/Demo Scene.unity
-  uploadId: 585336
+version https://git-lfs.github.com/spec/v1
+oid sha256:28d79c366e643e8a68d682674b034655e81a3beb2091184206ee8faaf139f44a
+size 338

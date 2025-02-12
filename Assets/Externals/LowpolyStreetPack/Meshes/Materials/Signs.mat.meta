@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 3d0ac4bb440627e48aaad2b0af727801
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 67475
-  packageName: Low Poly Street Pack
-  packageVersion: 1.0
-  assetPath: Assets/LowpolyStreetPack/Meshes/Materials/Signs.mat
-  uploadId: 127808
+version https://git-lfs.github.com/spec/v1
+oid sha256:0a3acbd06f4d2e5930ba26fb979621bf22558d10702aff5fb7e5d1170bc39cb0
+size 379

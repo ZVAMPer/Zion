@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 72ead2ca03f46af4d83514f47d77d871
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 183591
-  packageName: PSX Shader Kit
-  packageVersion: 1.93
-  assetPath: Assets/PSXShaderKit/Demo/Assets/materials/Cabet_Table.mat
-  uploadId: 585336
+version https://git-lfs.github.com/spec/v1
+oid sha256:cad93bd643c3b7487da7fb5b5966a70cee58ffba3b1aafcc4189eb8670a423db
+size 381

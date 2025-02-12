@@ -1,19 +1,3 @@
-fileFormatVersion: 2
-guid: 0bed13eadab93f14aaf58d070ad123d6
-labels:
-- road
-- tile
-- set
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 67475
-  packageName: Low Poly Street Pack
-  packageVersion: 1.0
-  assetPath: Assets/LowpolyStreetPack/Prefabs/Roads/Streets/Road_Turn_Double.prefab
-  uploadId: 127808
+version https://git-lfs.github.com/spec/v1
+oid sha256:9963d4c4e282b747702b823c467109f955ea2c8bf7694950dba76296891210fd
+size 426

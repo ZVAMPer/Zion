@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 3f5b5dff67a942289a9defa416b206f3
-timeCreated: 1436653997
-licenseType: Store
-NativeFormatImporter:
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/TextMesh Pro/Resources/TMP Settings.asset
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:75cbd1e2bbde0fd1e57500898d400a1f917d142e1c13375ff48efe1bda75291c
+size 369

@@ -1,16 +1,3 @@
-fileFormatVersion: 2
-guid: c8d12adcee749c344b8117cf7c7eb912
-ShaderImporter:
-  externalObjects: {}
-  defaultTextures: []
-  nonModifiableTextures: []
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:6ffd0a22156a8554fd55d20670848aaa4b0a086f4ffa3d80d457c5f0d3802d6f
+size 397

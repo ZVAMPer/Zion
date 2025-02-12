@@ -1,16 +1,3 @@
-fileFormatVersion: 2
-guid: 4eee3d818f271a841a6718b0da176134
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 9100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 180600
-  packageName: Soldier Animations
-  packageVersion: 1.2
-  assetPath: Assets/Kevin Iglesias/Soldier Animations/AnimatorControllers/Bazooka/SoldierBazooka
-    - CombatJump01.controller
-  uploadId: 719163
+version https://git-lfs.github.com/spec/v1
+oid sha256:9c5421861c90f53d3e914ae4fdad351fd04c7691056a6929c59b76dece0f6cca
+size 446

@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 5bc96642db3033d4e91e4c3404e73e1a
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 2100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/EffectExamples/Legacy Particles/Materials/WaterfallMain.mat
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:3d0789016ea5156213edca0d31011f0d028b5370d6467118d5755734b0fcb7cf
+size 425

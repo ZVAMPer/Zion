@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 8c6428b09286de544a2c7c19a95267cb
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 2100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 154271
-  packageName: Basic Motions FREE
-  packageVersion: 2.3.2
-  assetPath: Assets/Kevin Iglesias/Basic Motions/DemoScene/Materials/Scenario/BasicMotionsScenario.mat
-  uploadId: 726948
+version https://git-lfs.github.com/spec/v1
+oid sha256:333693086282cfe10942e83429fe3c915b9bbece01058c579e9a241c24e98271
+size 424

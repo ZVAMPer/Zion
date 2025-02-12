@@ -1,19 +1,3 @@
-fileFormatVersion: 2
-guid: b296d935b89065c40908341d9004426e
-labels:
-- road
-- tile
-- set
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 67475
-  packageName: Low Poly Street Pack
-  packageVersion: 1.0
-  assetPath: Assets/LowpolyStreetPack/Prefabs/Roads/Streets/Road_Intersection_D.prefab
-  uploadId: 127808
+version https://git-lfs.github.com/spec/v1
+oid sha256:c82ba4c803073e74fd0fe80b340c9453ff99d67cf8b57cc46c49cbb75e616517
+size 429

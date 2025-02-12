@@ -1,23 +1,3 @@
-﻿using UnityEngine;
-
-namespace QFSW.QC.UI
-{
-    [ExecuteInEditMode]
-    public class BlurShaderController : MonoBehaviour
-    {
-        [SerializeField] private Material _blurMaterial = null;
-        [SerializeField] private float _blurRadius = 1f;
-        [SerializeField] private Vector2 _referenceResolution = new Vector2(1920, 1080);
-
-        private void LateUpdate()
-        {
-            if (_blurMaterial)
-            {
-                Vector2 resolution = new Vector2(Screen.width, Screen.height);
-                float correction = resolution.y / _referenceResolution.y;
-                _blurMaterial.SetFloat("_Radius", _blurRadius);
-                _blurMaterial.SetFloat("_BlurMultiplier", correction);
-            }
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:0817a83231b18cb536be42690821e77fb5b70cd0f487dc169259772a7dcd3efb
+size 750

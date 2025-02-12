@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 967578261f8e13142b10ed604e91b64b
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 2100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/EffectExamples/Water Effects/Materials/Water.mat
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:1d93554d4bffcd1ea6987b9584113b6fa4de4ef7e8edc8f8b5b95a521d806c9b
+size 414

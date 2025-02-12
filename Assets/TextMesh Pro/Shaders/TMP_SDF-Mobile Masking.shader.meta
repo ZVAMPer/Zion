@@ -1,16 +1,3 @@
-fileFormatVersion: 2
-guid: bc1ede39bf3643ee8e493720e4259791
-ShaderImporter:
-  externalObjects: {}
-  defaultTextures: []
-  nonModifiableTextures: []
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:533314d826bdc3ef57f81bcf58dbf678247167a76fec6927e3f52fd1bcea3d15
+size 401

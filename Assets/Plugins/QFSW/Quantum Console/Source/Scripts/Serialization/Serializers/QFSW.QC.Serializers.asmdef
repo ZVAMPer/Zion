@@ -1,14 +1,3 @@
-{
-    "name": "QFSW.QC.Serializers",
-    "references": [
-        "QFSW.QC"
-    ],
-    "optionalUnityReferences": [],
-    "includePlatforms": [],
-    "excludePlatforms": [],
-    "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
-    "autoReferenced": true,
-    "defineConstraints": []
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:d9c872fb2bfdbcfd7e04573250296a731062dcc4099c5009db27fd99c58c9133
+size 326

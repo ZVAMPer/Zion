@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: d2d7805735dbb2846800df687bb0b616
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 2100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 154271
-  packageName: Basic Motions FREE
-  packageVersion: 2.3.2
-  assetPath: Assets/Kevin Iglesias/Basic Motions/DemoScene/Materials/Scenario/BasicMotionsScenarioCubeGreen.mat
-  uploadId: 726948
+version https://git-lfs.github.com/spec/v1
+oid sha256:72ee70e32c2d6b903d0b11aa489912d12458ed12dfa096b74e8fa5cad15c8b8c
+size 433

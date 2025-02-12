@@ -1,16 +1,3 @@
-fileFormatVersion: 2
-guid: fa604af7d0ef2b247be8d63409507faf
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 9100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 180600
-  packageName: Soldier Animations
-  packageVersion: 1.2
-  assetPath: Assets/Kevin Iglesias/Soldier Animations/AnimatorControllers/Bazooka/SoldierBazooka
-    - Grenade01.controller
-  uploadId: 719163
+version https://git-lfs.github.com/spec/v1
+oid sha256:425f514591f13403fd54f71b02658480d1619b9325b0207c83b0bbfeba554883
+size 443

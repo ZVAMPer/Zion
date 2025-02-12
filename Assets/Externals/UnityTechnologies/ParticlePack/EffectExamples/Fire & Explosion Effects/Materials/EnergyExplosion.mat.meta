@@ -1,16 +1,3 @@
-fileFormatVersion: 2
-guid: bf88af72084132746823869f28b070f8
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 2100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/EffectExamples/Fire & Explosion
-    Effects/Materials/EnergyExplosion.mat
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:d5e1bc430c39441c441a57f73571e98a2a0d82e632c7fb1d8807d4d23ccc0cdc
+size 439

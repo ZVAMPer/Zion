@@ -1,19 +1,3 @@
-fileFormatVersion: 2
-guid: c2f2ffdc594118d47b120d04e50ebd9a
-labels:
-- tile
-- set
-- pavement
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 67475
-  packageName: Low Poly Street Pack
-  packageVersion: 1.0
-  assetPath: Assets/LowpolyStreetPack/Prefabs/Roads/Pavement/B/Pavement_B_D.prefab
-  uploadId: 127808
+version https://git-lfs.github.com/spec/v1
+oid sha256:f89d88a3bf2df2291d5044f5773a537deb5bc2a9201d6e1fe8b7bbb6024ac70d
+size 429

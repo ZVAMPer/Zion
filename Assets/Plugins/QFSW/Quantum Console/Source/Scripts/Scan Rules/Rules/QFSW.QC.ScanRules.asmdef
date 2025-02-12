@@ -1,15 +1,3 @@
-{
-    "name": "QFSW.QC.ScanRules",
-    "references": [
-        "GUID:fb24642277b1db2449da7ac148ce939d"
-    ],
-    "includePlatforms": [],
-    "excludePlatforms": [],
-    "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
-    "autoReferenced": true,
-    "defineConstraints": [],
-    "versionDefines": [],
-    "noEngineReferences": false
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:b6c60b14d08cef5ebca821972b71cd066cb8cb028d201371c6ecb1bd08ccb3b4
+size 378

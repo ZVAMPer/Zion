@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 66b1abe22abb5794c8d330a05b0abf67
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 67475
-  packageName: Low Poly Street Pack
-  packageVersion: 1.0
-  assetPath: Assets/LowpolyStreetPack/Meshes/Materials/Fence.mat
-  uploadId: 127808
+version https://git-lfs.github.com/spec/v1
+oid sha256:37276c4a8b827a0489ab7e7b0cef388de9f1800603bc2fc5b7f910c8004db4ed
+size 379

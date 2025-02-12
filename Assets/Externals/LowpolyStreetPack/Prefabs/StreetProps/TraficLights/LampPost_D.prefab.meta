@@ -1,19 +1,3 @@
-fileFormatVersion: 2
-guid: 2ea1ccd72e26f874eac1724744be6ae7
-labels:
-- lamp
-- light
-- trafic
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 67475
-  packageName: Low Poly Street Pack
-  packageVersion: 1.0
-  assetPath: Assets/LowpolyStreetPack/Prefabs/StreetProps/TraficLights/LampPost_D.prefab
-  uploadId: 127808
+version https://git-lfs.github.com/spec/v1
+oid sha256:ae9501b1b8b9ceb9cb1fcd4f25c242f1c95eed79475fed79992ec3661686a27d
+size 435

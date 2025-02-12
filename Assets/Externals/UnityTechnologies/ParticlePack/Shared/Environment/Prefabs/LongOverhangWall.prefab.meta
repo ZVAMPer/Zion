@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: c5aa08609f3d9f547aca9af1d6c18070
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 100100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/Shared/Environment/Prefabs/LongOverhangWall.prefab
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:a9c45e8370efe2140b732f7c176b31f5f089faa9c45a1c8c49e01197150efcef
+size 418

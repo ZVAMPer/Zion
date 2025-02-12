@@ -1,16 +1,3 @@
-﻿namespace QFSW.QC
-{
-    /// <summary>
-    /// A filter that can remove suggestions produced by the QuantumSuggestor
-    /// </summary>
-    public interface IQcSuggestionFilter
-    {
-        /// <summary>
-        /// Determines if a suggestion should be permitted given the provided context.
-        /// </summary>
-        /// <param name="suggestion">The suggestion to query.</param>
-        /// <param name="context">The context for the suggestion.</param>
-        /// <returns>If the suggestion should be permitted.</returns>
-        bool IsSuggestionPermitted(IQcSuggestion suggestion, SuggestionContext context);
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:8957f0641aa8982525a5fbe1d0ee2c60457ce3080f6dc1a786bd3c719cca6698
+size 627

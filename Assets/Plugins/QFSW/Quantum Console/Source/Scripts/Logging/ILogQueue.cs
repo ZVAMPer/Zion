@@ -1,12 +1,3 @@
-﻿namespace QFSW.QC
-{
-    public interface ILogQueue
-    {
-        int MaxStoredLogs { get; set; }
-        bool IsEmpty { get; }
-
-        void QueueLog(ILog log);
-        bool TryDequeue(out ILog log);
-        void Clear();
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:2dc5635c5dbef16643e3f06862bb7b9141d7ae2c72cc46faa2d35d21a9a4038f
+size 232

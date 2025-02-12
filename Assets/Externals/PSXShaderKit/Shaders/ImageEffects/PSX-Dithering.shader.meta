@@ -1,16 +1,3 @@
-fileFormatVersion: 2
-guid: 364a79f75940cde409d6c07092dacd71
-ShaderImporter:
-  externalObjects: {}
-  defaultTextures: []
-  nonModifiableTextures: []
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 183591
-  packageName: PSX Shader Kit
-  packageVersion: 1.93
-  assetPath: Assets/PSXShaderKit/Shaders/ImageEffects/PSX-Dithering.shader
-  uploadId: 585336
+version https://git-lfs.github.com/spec/v1
+oid sha256:13815e5a44d4c043ce4ac7b449262686317897e14310b0e025fe2a429eec9dd1
+size 407

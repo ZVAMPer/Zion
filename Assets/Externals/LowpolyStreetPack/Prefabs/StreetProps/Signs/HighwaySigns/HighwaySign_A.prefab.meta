@@ -1,18 +1,3 @@
-fileFormatVersion: 2
-guid: cbb4718899d5da64aa2e1cf45bf3aee8
-labels:
-- highway
-- sign
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 67475
-  packageName: Low Poly Street Pack
-  packageVersion: 1.0
-  assetPath: Assets/LowpolyStreetPack/Prefabs/StreetProps/Signs/HighwaySigns/HighwaySign_A.prefab
-  uploadId: 127808
+version https://git-lfs.github.com/spec/v1
+oid sha256:523cccdfdfdd4779099fac60e5824973d59014684cbbd1353565a240a7c6819d
+size 437

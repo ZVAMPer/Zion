@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 020c53dc8ae609f4c9ddc4cbe9d3b4df
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 100100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/Shared/Environment/Prefabs/FloorShort.prefab
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:228c039be14b4752ef407aa434c6ff3d886c4c0102066f7284dfe7effe2aeef4
+size 412

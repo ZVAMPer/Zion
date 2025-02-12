@@ -1,18 +1,3 @@
-fileFormatVersion: 2
-guid: 5d73a146f3ca4b743a30731e7bfcc1e1
-MonoImporter:
-  externalObjects: {}
-  serializedVersion: 2
-  defaultReferences: []
-  executionOrder: 0
-  icon: {instanceID: 0}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 183591
-  packageName: PSX Shader Kit
-  packageVersion: 1.93
-  assetPath: Assets/PSXShaderKit/Demo/SpookyOrbFloat.cs
-  uploadId: 585336
+version https://git-lfs.github.com/spec/v1
+oid sha256:dd056991cdfcbdba9bdd56bf4aac33bba0b39818714e770d211d717716e460fc
+size 427

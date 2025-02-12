@@ -1,12 +1,3 @@
-﻿using UnityEngine;
-
-namespace QFSW.QC.Serializers
-{
-    public class Vector4Serializer : BasicQcSerializer<Vector4>
-    {
-        public override string SerializeFormatted(Vector4 value, QuantumTheme theme)
-        {
-            return $"({value.x}, {value.y}, {value.z}, {value.w})";
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:59583e402d9a13db04d440d3b8627c33767ec551ae366678dbd23cd98a2913ff
+size 305

@@ -1,17 +1,3 @@
-fileFormatVersion: 2
-guid: 3378127165a3ae5409823cb3df2acf01
-labels:
-- roundabout
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 67475
-  packageName: Low Poly Street Pack
-  packageVersion: 1.0
-  assetPath: Assets/LowpolyStreetPack/Prefabs/StreetProps/Roundabouts/Elements/Roundabout_A.prefab
-  uploadId: 127808
+version https://git-lfs.github.com/spec/v1
+oid sha256:7d2e9f016bf79b1110f3b9b2047b9e518f83476214dadbff2ff006202a6efe85
+size 434

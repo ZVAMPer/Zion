@@ -1,14 +1,3 @@
-fileFormatVersion: 2
-guid: d0467414c35f2b349a4bb1219e454466
-PrefabImporter:
-  externalObjects: {}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/EffectExamples/Legacy Particles/Prefabs/SparksEffect.prefab
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:dba27185a5db393931b2803015e8f16c091052e63c8d467a1b89ba00e4fabcbb
+size 391

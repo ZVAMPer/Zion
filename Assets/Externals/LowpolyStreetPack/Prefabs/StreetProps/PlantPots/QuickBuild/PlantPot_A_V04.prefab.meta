@@ -1,17 +1,3 @@
-fileFormatVersion: 2
-guid: c32ee39a32e7ce745be3e321898dc615
-labels:
-- foliage
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 67475
-  packageName: Low Poly Street Pack
-  packageVersion: 1.0
-  assetPath: Assets/LowpolyStreetPack/Prefabs/StreetProps/PlantPots/QuickBuild/PlantPot_A_V04.prefab
-  uploadId: 127808
+version https://git-lfs.github.com/spec/v1
+oid sha256:bee9c4944000e8fd9269dc118a93a175c2f77cdd9593e346f5bd61dcedf3e7dd
+size 433

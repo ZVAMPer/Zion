@@ -1,14 +1,3 @@
-fileFormatVersion: 2
-guid: e44ac47d1618cc24d9df8131be9ca57d
-PrefabImporter:
-  externalObjects: {}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/EffectExamples/Misc Effects/Prefabs/HeatDistortion.prefab
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:607da2eb2fac1c1bdba5926cdfc244dbcc613fcb8df1eea99777fdadbce14f19
+size 389

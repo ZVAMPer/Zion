@@ -1,10 +1,3 @@
-using UnityEngine;
-
-public class TODO
-{
-    /// <summary>
-    /// 1. add speed indicator
-    /// 2. have a nice level
-    /// 3. see why the player contoller is not smooth
-    /// </summary>
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:85147d0ac57ec3bb2dc462a791eba2f9bf654747bcbfd9b1cf8ac1b30c5dfab7
+size 193

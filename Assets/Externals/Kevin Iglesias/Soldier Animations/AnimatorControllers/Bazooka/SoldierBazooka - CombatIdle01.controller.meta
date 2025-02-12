@@ -1,16 +1,3 @@
-fileFormatVersion: 2
-guid: 30a5be35e14276e4d91360a950c82280
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 9100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 180600
-  packageName: Soldier Animations
-  packageVersion: 1.2
-  assetPath: Assets/Kevin Iglesias/Soldier Animations/AnimatorControllers/Bazooka/SoldierBazooka
-    - CombatIdle01.controller
-  uploadId: 719163
+version https://git-lfs.github.com/spec/v1
+oid sha256:4c288c29a8587e12a67454f1196bdb59d0b96bc7c5d8c8af49d8c6ad28bd6207
+size 446

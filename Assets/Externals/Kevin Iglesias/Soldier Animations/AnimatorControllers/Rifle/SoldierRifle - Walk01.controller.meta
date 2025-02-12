@@ -1,16 +1,3 @@
-fileFormatVersion: 2
-guid: 1b88d0783d19fca4f98ace8627d3423e
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 9100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 180600
-  packageName: Soldier Animations
-  packageVersion: 1.2
-  assetPath: Assets/Kevin Iglesias/Soldier Animations/AnimatorControllers/Rifle/SoldierRifle
-    - Walk01.controller
-  uploadId: 719163
+version https://git-lfs.github.com/spec/v1
+oid sha256:b5f09fb89d0acb9194c05a24536cfa2eb1862ab162d60a1993659b0d62a0bf10
+size 436

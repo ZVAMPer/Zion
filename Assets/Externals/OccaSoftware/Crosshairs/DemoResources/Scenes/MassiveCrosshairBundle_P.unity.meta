@@ -1,14 +1,3 @@
-fileFormatVersion: 2
-guid: 91aeefffaccd39d46916fcef045c0cc9
-DefaultImporter:
-  externalObjects: {}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 216732
-  packageName: Crosshairs | 25+ Free Crosshairs Pack
-  packageVersion: 1.1.1
-  assetPath: Assets/OccaSoftware/Crosshairs/DemoResources/Scenes/MassiveCrosshairBundle_P.unity
-  uploadId: 586051
+version https://git-lfs.github.com/spec/v1
+oid sha256:7a9906789408102c29ee1d58c4f602c15e870010605714eb67e82c1bbd22501c
+size 403

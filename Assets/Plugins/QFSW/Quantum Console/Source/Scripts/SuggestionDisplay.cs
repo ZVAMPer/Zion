@@ -1,25 +1,3 @@
-﻿using TMPro;
-using UnityEngine;
-using UnityEngine.EventSystems;
-
-namespace QFSW.QC
-{
-    public class SuggestionDisplay : MonoBehaviour, IPointerClickHandler
-    {
-        [SerializeField] private QuantumConsole _quantumConsole = null;
-        [SerializeField] private TextMeshProUGUI _textArea = null;
-
-        public void OnPointerClick(PointerEventData eventData)
-        {
-            int linkIndex = TMP_TextUtilities.FindIntersectingLink(_textArea, eventData.position, null);
-            if (linkIndex >= 0)
-            {
-                TMP_LinkInfo link = _textArea.textInfo.linkInfo[linkIndex];
-                if (int.TryParse(link.GetLinkID(), out int suggestionIndex))
-                {
-                    _quantumConsole.SetSuggestion(suggestionIndex);
-                }
-            }
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:510183d98c33a3244a47b3d99f23197ff97ebf464999ad942165be8e291714f9
+size 819

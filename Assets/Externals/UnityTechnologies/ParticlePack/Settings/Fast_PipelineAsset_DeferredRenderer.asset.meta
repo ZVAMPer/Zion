@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: b41a51a6bd48ac94892ef721c9944adc
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 11400000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/Settings/Fast_PipelineAsset_DeferredRenderer.asset
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:65cb331f920b61a8329e528d2f45251a3681f186e3d84ada538ed4b6bf11d75f
+size 417

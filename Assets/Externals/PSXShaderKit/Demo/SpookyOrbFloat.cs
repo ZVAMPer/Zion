@@ -1,24 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace PSXShaderKit
-{
-    public class SpookyOrbFloat : MonoBehaviour
-    {
-        [SerializeField]
-        private float MinHeight;
-        [SerializeField]
-        private float MaxHeight;
-        [SerializeField]
-        private float RotationSpeed;
-
-        // Update is called once per frame
-        void Update()
-        {
-            float yPos = Mathf.Lerp(MinHeight, MaxHeight, (Mathf.Sin(Time.time * 0.65f) + 1) * 0.5f);
-            transform.position = new Vector3(transform.position.x, yPos, transform.position.z);
-            transform.Rotate(new Vector3(0, RotationSpeed * Time.deltaTime, 0));
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:88c3449b18aad328937cacbcda263b9f8ffe977c0b58f48491d18bc8176fb37c
+size 734

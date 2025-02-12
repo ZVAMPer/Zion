@@ -1,24 +1,3 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace QFSW.QC.Suggestors
-{
-    public class MacroSuggestor : BasicCachedQcSuggestor<string>
-    {
-        protected override bool CanProvideSuggestions(SuggestionContext context, SuggestorOptions options)
-        {
-            return context.Prompt.StartsWith("#");
-        }
-
-        protected override IQcSuggestion ItemToSuggestion(string macro)
-        {
-            return new RawSuggestion($"#{macro}");
-        }
-
-        protected override IEnumerable<string> GetItems(SuggestionContext context, SuggestorOptions options)
-        {
-            return QuantumMacros.GetMacros()
-                .Select(x => x.Key);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:47fc831620049b63eb4991397c03beb6d71a2eb6f4a3281b6a0ae03f7ca550f8
+size 700

@@ -1,33 +1,3 @@
-﻿using System.Collections.Generic;
-
-namespace QFSW.QC
-{
-    /// <summary>
-    /// A managed set of suggestions for a given context.
-    /// </summary>
-    public class SuggestionSet
-    {
-        /// <summary>
-        /// The context this suggestion set was produced for.
-        /// </summary>
-        public SuggestionContext Context;
-
-        /// <summary>
-        /// The index of the current selection in the set.
-        /// </summary>
-        public int SelectionIndex;
-
-        /// <summary>
-        /// The suggestions contained within the set.
-        /// </summary>
-        public readonly List<IQcSuggestion> Suggestions = new List<IQcSuggestion>();
-
-        /// <summary>
-        /// The currently selected suggestion in the set, if any.
-        /// </summary>
-        public IQcSuggestion CurrentSelection =>
-            SelectionIndex >= 0 && SelectionIndex < Suggestions.Count
-                ? Suggestions[SelectionIndex]
-                : null;
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:ffe67e65984b6e1968e2c36b0b7832b96fbe6ef151b3ee09969006b0e4be11ba
+size 972

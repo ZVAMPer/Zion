@@ -1,36 +1,3 @@
-﻿using System.Collections.Concurrent;
-
-namespace QFSW.QC
-{
-    public class LogQueue : ILogQueue
-    {
-        private readonly ConcurrentQueue<ILog> _queuedLogs = new ConcurrentQueue<ILog>();
-        
-        public int MaxStoredLogs { get; set; }
-        public bool IsEmpty => _queuedLogs.IsEmpty;
-
-        public LogQueue(int maxStoredLogs = -1)
-        {
-            MaxStoredLogs = maxStoredLogs;
-        }
-
-        public void QueueLog(ILog log)
-        {
-            _queuedLogs.Enqueue(log);
-            if (MaxStoredLogs > 0 && _queuedLogs.Count > MaxStoredLogs)
-            {
-                _queuedLogs.TryDequeue(out _);
-            }
-        }
-
-        public bool TryDequeue(out ILog log)
-        {
-            return _queuedLogs.TryDequeue(out log);
-        }
-
-        public void Clear()
-        {
-            while (TryDequeue(out ILog _)) { }
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:558b2d7bb1c1c9da5ee05bedc88ced52852cb122140f560bd0be4eb5b1f3df76
+size 881

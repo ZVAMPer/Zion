@@ -1,16 +1,3 @@
-fileFormatVersion: 2
-guid: 0d1d4fba40bf5ac4ba4c0aca773ea1c5
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 9100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 180600
-  packageName: Soldier Animations
-  packageVersion: 1.2
-  assetPath: Assets/Kevin Iglesias/Soldier Animations/AnimatorControllers/Handgun/SoldierHandgun
-    - Crawling01 - DrawWeapon01.controller
-  uploadId: 719163
+version https://git-lfs.github.com/spec/v1
+oid sha256:dc4a399ac3507cf9bd631b58d7f0266afebb1064116e3f3b0c1d5734ba0a97c1
+size 459

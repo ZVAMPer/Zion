@@ -1,7 +1,3 @@
-This asset is governed by the Asset Store EULA; however, the following components are governed by the licenses indicated below:
-
-A. Office Code Pro
--  OFL: see Fonts/LICENSE.txt
-
-B. CSharpCompiler
--  MIT: see Extras/exec/CSharpCompiler/LICENSE.txt
+version https://git-lfs.github.com/spec/v1
+oid sha256:90fb85693b3f4814eae6c8d24ef6d65cae165b93afb6ca03611a0a1390875890
+size 248

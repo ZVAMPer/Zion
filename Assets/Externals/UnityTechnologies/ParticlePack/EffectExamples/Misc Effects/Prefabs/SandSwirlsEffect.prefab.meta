@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 14d81e2c407975245973a11cdfbeb902
-timeCreated: 1474461727
-licenseType: Store
-NativeFormatImporter:
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/EffectExamples/Misc Effects/Prefabs/SandSwirlsEffect.prefab
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:584665fe6f425676d935d7e35471ec7733c83dafdb8962b69027c94705385306
+size 418

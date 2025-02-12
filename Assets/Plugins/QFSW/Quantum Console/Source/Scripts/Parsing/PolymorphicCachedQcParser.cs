@@ -1,28 +1,3 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace QFSW.QC
-{
-    /// <summary>
-    /// Parser for all types inheriting from a single type.
-    /// Caches results and reuses them if the incoming string has already been parsed.
-    /// </summary>
-    /// <typeparam name="T">Base type of the types to parse.</typeparam>
-    public abstract class PolymorphicCachedQcParser<T> : PolymorphicQcParser<T> where T : class
-    {
-        private readonly Dictionary<(string, Type), T> _cacheLookup = new Dictionary<(string, Type), T>();
-
-        public override object Parse(string value, Type type, Func<string, Type, object> recursiveParser)
-        {
-            (string value, Type type) key = (value, type);
-            if (_cacheLookup.ContainsKey(key))
-            {
-                return _cacheLookup[key];
-            }
-
-            T result = (T)base.Parse(value, type, recursiveParser);
-            _cacheLookup[key] = result;
-            return result;
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:c9923542b46583d13df749377b84f243bcd3319303586b5a6625d674ba6336b7
+size 985

@@ -1,13 +1,3 @@
-﻿using System;
-
-namespace QFSW.QC
-{
-    /// <summary>
-    /// Exception to be thrown by an IQcParser.
-    /// </summary>
-    public class ParserException : Exception
-    {
-        public ParserException(string message) : base(message) { }
-        public ParserException(string message, Exception innerException) : base(message, innerException) { }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:720ab4b0b48f3fb361df383494bfc4bca8f2883cb4d59e3e457ecc4bc390f4be
+size 358

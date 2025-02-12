@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 1d11412570f90ba4caf1b0b6dea27152
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 2100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/EffectExamples/Misc Effects/Materials/FireFlyTrail.mat
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:03cc25ac5ce796a52adc8806870a8e872faf283a22efcae016e34012cd1c6714
+size 420

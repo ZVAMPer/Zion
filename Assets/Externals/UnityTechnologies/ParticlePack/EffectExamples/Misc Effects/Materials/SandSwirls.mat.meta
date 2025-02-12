@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 795ab1f41a8fd4142859110cee203fd7
-timeCreated: 1474460943
-licenseType: Store
-NativeFormatImporter:
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/EffectExamples/Misc Effects/Materials/SandSwirls.mat
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:f4cfd3a3b8adffd7f668e602d010c8def7703e65a945dd3695676b1a78d1c12b
+size 411

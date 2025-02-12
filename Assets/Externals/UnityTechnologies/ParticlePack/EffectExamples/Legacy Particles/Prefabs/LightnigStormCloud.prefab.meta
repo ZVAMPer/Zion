@@ -1,14 +1,3 @@
-fileFormatVersion: 2
-guid: 3ac741c58ee37a941b5408ec58f21743
-PrefabImporter:
-  externalObjects: {}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/EffectExamples/Legacy Particles/Prefabs/LightnigStormCloud.prefab
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:cc42d99b13a1789989119319c2a02e064748cd33222343fe19924de05108ca84
+size 397

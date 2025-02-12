@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: c90b327075ede4a4fbe2bcf0af71ce64
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 2100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 183591
-  packageName: PSX Shader Kit
-  packageVersion: 1.93
-  assetPath: Assets/PSXShaderKit/Demo/Assets/materials/LivingRoom.TableStuff.mat
-  uploadId: 585336
+version https://git-lfs.github.com/spec/v1
+oid sha256:ed934cd365b0b894ba556fd0c38a7b7ff69fb1e4e5d7dd7e895f52790f775171
+size 397

@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: b5d0477bee677d641a4debe11c87d428
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 9100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 154271
-  packageName: Basic Motions FREE
-  packageVersion: 2.3.2
-  assetPath: Assets/Kevin Iglesias/Basic Motions/DemoScene/AnimatorControllers/PlayableCharacterDummy01.controller
-  uploadId: 726948
+version https://git-lfs.github.com/spec/v1
+oid sha256:687d1456ab5ad26d4a236c7c7b8ae3dd8a790e03e65673e9620b075cd13ba8ae
+size 436

@@ -1,14 +1,3 @@
-fileFormatVersion: 2
-guid: 24e64a0839d18bf42996dfac0da808ce
-DefaultImporter:
-  externalObjects: {}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 214264
-  packageName: Minimalist Scalable Grid Prototype Materials
-  packageVersion: 1.2
-  assetPath: Assets/Scalable Grid Prototype Materials/Template Scenes/Blue_SampleScene.unity
-  uploadId: 640529
+version https://git-lfs.github.com/spec/v1
+oid sha256:5f26cccae76fddb7ee434b91e913090eaf2fefedb04081d723b55300fdb4734c
+size 405

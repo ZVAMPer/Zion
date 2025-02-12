@@ -1,18 +1,3 @@
-fileFormatVersion: 2
-guid: 91f1e76099c83554f834694bd8cacdca
-labels:
-- sewer
-- cap
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 67475
-  packageName: Low Poly Street Pack
-  packageVersion: 1.0
-  assetPath: Assets/LowpolyStreetPack/Prefabs/StreetProps/SewerCaps/SewerCap_B.prefab
-  uploadId: 127808
+version https://git-lfs.github.com/spec/v1
+oid sha256:7b9156af631805cdac636f59a5db65b6957b8a4a74a663acc7c027cec744802f
+size 422

@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 7f74562c360a75d468cce8ccff3d595f
-timeCreated: 1475571583
-licenseType: Store
-NativeFormatImporter:
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/EffectExamples/Magic Effects/Materials/RockDust.mat
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:7251095e5f9c95115aac22d63faddb2cc7fd2768e1f0adcdd30233d63f40c5d5
+size 410

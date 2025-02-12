@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 6fd4dd4504c214841b7de01fad6e7022
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 11400000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 214264
-  packageName: Minimalist Scalable Grid Prototype Materials
-  packageVersion: 1.2
-  assetPath: Assets/Scalable Grid Prototype Materials/Template Scenes/VolumeProfiles/Dark_SampleSceneProfile.asset
-  uploadId: 640529
+version https://git-lfs.github.com/spec/v1
+oid sha256:1952c94f210834ef242d075a84aceefd9107549e81db7cd2d14bf1fcf14a6f7d
+size 461

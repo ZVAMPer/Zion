@@ -1,16 +1,3 @@
-fileFormatVersion: 2
-guid: 3fb29f9b001297848bbf38f89e7ab761
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 9100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 180600
-  packageName: Soldier Animations
-  packageVersion: 1.2
-  assetPath: Assets/Kevin Iglesias/Soldier Animations/AnimatorControllers/Soldier
-    - Death01.controller
-  uploadId: 719163
+version https://git-lfs.github.com/spec/v1
+oid sha256:feea046484dad0ae2e54a9e1ec6235f40cb584770bf9836e5ed8018fcbc0e8af
+size 426

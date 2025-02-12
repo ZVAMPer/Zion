@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: aa60dc0f504f8eb41974f50e1528f594
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 2100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 214264
-  packageName: Minimalist Scalable Grid Prototype Materials
-  packageVersion: 1.2
-  assetPath: Assets/Scalable Grid Prototype Materials/Materials/Blue_Sapphire_Prototype.mat
-  uploadId: 640529
+version https://git-lfs.github.com/spec/v1
+oid sha256:46493ed8944f05f3873f8d65de3f0f995dd69178738e7710baca42ce86d59675
+size 437

@@ -1,15 +1,3 @@
-{
-    "name": "QFSW.QC.UI",
-    "references": [
-        "QFSW.QC",
-        "Unity.TextMeshPro"
-    ],
-    "optionalUnityReferences": [],
-    "includePlatforms": [],
-    "excludePlatforms": [],
-    "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
-    "autoReferenced": true,
-    "defineConstraints": []
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:10a93aaf4e54acf398944a43a7266bf9fcc120bfdd1ea28f5a24b9599b5e80e8
+size 346

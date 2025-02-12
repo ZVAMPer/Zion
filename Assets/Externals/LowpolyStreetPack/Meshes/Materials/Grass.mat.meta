@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 700158700e4398340be1a92aa014ec3a
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 67475
-  packageName: Low Poly Street Pack
-  packageVersion: 1.0
-  assetPath: Assets/LowpolyStreetPack/Meshes/Materials/Grass.mat
-  uploadId: 127808
+version https://git-lfs.github.com/spec/v1
+oid sha256:7e27bbed7fe3478c9e114aa9db7a0a0303959aee0846cf9ea32f4c9acc1be3d9
+size 379

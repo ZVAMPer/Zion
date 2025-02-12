@@ -1,23 +1,3 @@
-﻿using UnityEditor;
-using UnityEngine;
-
-namespace QFSW.QC.Editor.Tools
-{
-    public static class PrefabUtil
-    {
-        public static void RecordPrefabInstancePropertyModificationsFullyRecursive(GameObject objRoot)
-        {
-            PrefabUtility.RecordPrefabInstancePropertyModifications(objRoot);
-            foreach (Component comp in objRoot.GetComponents<Component>())
-            {
-                PrefabUtility.RecordPrefabInstancePropertyModifications(comp);
-            }
-
-            for (int i = 0; i < objRoot.transform.childCount; i++)
-            {
-                Transform child = objRoot.transform.GetChild(i);
-                RecordPrefabInstancePropertyModificationsFullyRecursive(child.gameObject);
-            }
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:f2323647b417842c075b5aba4c7bc0ebf9d2adb5c1629af5d4dfbc204044b539
+size 759

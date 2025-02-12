@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: a74b8e4e831053c46943378279c70e96
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 2100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/EffectExamples/Magic Effects/Materials/Fireball.mat
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:bf0c5a19d0fda208b9bbc43e3b626d3adbceccf8a7ad9df3b7bcaa37785345b6
+size 417

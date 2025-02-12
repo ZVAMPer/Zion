@@ -1,18 +1,3 @@
-fileFormatVersion: 2
-guid: 99960c948166672438060e183037bf25
-labels:
-- bridge
-- set
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 67475
-  packageName: Low Poly Street Pack
-  packageVersion: 1.0
-  assetPath: Assets/LowpolyStreetPack/Prefabs/Roads/Bridges/QuickBuilds/Bridge_ToStreet_Double_Enter.prefab
-  uploadId: 127808
+version https://git-lfs.github.com/spec/v1
+oid sha256:3705d5c6a9dfeda3e257bea02902d14c9ea805273c5121096a05f5d4faae5368
+size 445

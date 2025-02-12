@@ -1,18 +1,3 @@
-﻿namespace QFSW.QC.Actions
-{
-    /// <summary>
-    /// Removes the most recent log from the console.
-    /// </summary>
-    public class RemoveLog : ICommandAction
-    {
-        public bool IsFinished => true;
-        public bool StartsIdle => false;
-
-        public void Start(ActionContext context) { }
-
-        public void Finalize(ActionContext context)
-        {
-            context.Console.RemoveLogTrace();
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:173d6228be94d86abd4f097e0afbc0d356f3f8e6d9200736e570d2f52ae69a05
+size 433

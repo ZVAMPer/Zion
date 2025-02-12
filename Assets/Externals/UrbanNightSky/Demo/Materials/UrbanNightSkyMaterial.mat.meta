@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 3876d0e183013044aab5adba683217d7
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 2100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 134468
-  packageName: Urban Night Sky
-  packageVersion: 1.0
-  assetPath: Assets/UrbanNightSky/Demo/Materials/UrbanNightSkyMaterial.mat
-  uploadId: 281547
+version https://git-lfs.github.com/spec/v1
+oid sha256:369aa4b94ee41ed397ca63ac885d3fc9ca5f39320a127e594b36371b9ed91675
+size 391

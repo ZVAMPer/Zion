@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 43d3e21dd15c3b847957abee25d004d9
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 2100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/EffectExamples/Smoke & Steam Effects/Materials/Smoke02.mat
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:79b300b53f1b1cb97fdf32fa93ee8e39861e0abad2028d791d53800d9c4eeb8a
+size 424

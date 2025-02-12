@@ -1,17 +1,3 @@
-fileFormatVersion: 2
-guid: 28d375a433cc78c4fa3db00df795f14d
-labels:
-- hidrant
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 67475
-  packageName: Low Poly Street Pack
-  packageVersion: 1.0
-  assetPath: Assets/LowpolyStreetPack/Prefabs/StreetProps/Hidrant/Hidrant.prefab
-  uploadId: 127808
+version https://git-lfs.github.com/spec/v1
+oid sha256:643b0378a0f50d66b4292ebe3ae71476e2c91d893dcf7585e977d23a26e922a5
+size 413

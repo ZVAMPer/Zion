@@ -1,18 +1,3 @@
-﻿using System.Collections.Generic;
-
-namespace QFSW.QC
-{
-    /// <summary>
-    /// A suggestor that is loaded by the QuantumSuggestor to suggest IQcSuggestions
-    /// </summary>
-    public interface IQcSuggestor
-    {
-        /// <summary>
-        /// Gets the suggestions for a given context.
-        /// </summary>
-        /// <param name="context">The context to provide suggestions for.</param>
-        /// <param name="options">Options used by the suggestor.</param>
-        /// <returns>The suggestions produced for the context.</returns>
-        IEnumerable<IQcSuggestion> GetSuggestions(SuggestionContext context, SuggestorOptions options);
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:fd7ee3a93b5c6b964d6586ec83c8085bc3a79fff2b0c84e9e680d0476572f1f2
+size 658

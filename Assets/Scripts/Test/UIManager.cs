@@ -1,19 +1,3 @@
-using UnityEngine;
-
-public class UIManager : MonoBehaviour
-{
-    public GameObject successUI;
-    public GameObject loseUI;
-
-    public void ShowSuccessUI()
-    {
-        successUI.SetActive(true);
-        loseUI.SetActive(false);
-    }
-
-    public void ShowLoseUI()
-    {
-        successUI.SetActive(false);
-        loseUI.SetActive(true);
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:3f067fc6fff028830e19abff155150cbddc388cea872d84303b25a4f5dbd4529
+size 348

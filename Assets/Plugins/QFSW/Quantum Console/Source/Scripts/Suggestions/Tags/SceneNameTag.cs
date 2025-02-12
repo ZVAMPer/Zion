@@ -1,29 +1,3 @@
-﻿namespace QFSW.QC.Suggestors.Tags
-{
-    public struct SceneNameTag : IQcSuggestorTag
-    {
-        public bool LoadedOnly;
-    }
-
-    /// <summary>
-    /// Specifies that scene name values should be suggested for the parameter.
-    /// </summary>
-    public sealed class SceneNameAttribute : SuggestorTagAttribute
-    {
-        /// <summary>
-        /// If true, only loaded scenes will be suggested.
-        /// </summary>
-        public bool LoadedOnly
-        {
-            get => _tag.LoadedOnly;
-            set => _tag.LoadedOnly = value;
-        }
-
-        private SceneNameTag _tag;
-
-        public override IQcSuggestorTag[] GetSuggestorTags()
-        {
-            return new IQcSuggestorTag[] { _tag };
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:1398b36a271bb8b52622dbedb16f40e977a5c53cfdfeb096f9c568aa8bf09d06
+size 734

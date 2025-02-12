@@ -1,16 +1,3 @@
-fileFormatVersion: 2
-guid: f6a1776d52b856744ba06793c78b26fa
-ShaderImporter:
-  externalObjects: {}
-  defaultTextures: []
-  nonModifiableTextures: []
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/EffectExamples/Magic Effects/Shaders/Ice.shader
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:eb941fcc42dfd1bd093802e4696c5384073368d1d8ac44ea422c4aaa3851742a
+size 429

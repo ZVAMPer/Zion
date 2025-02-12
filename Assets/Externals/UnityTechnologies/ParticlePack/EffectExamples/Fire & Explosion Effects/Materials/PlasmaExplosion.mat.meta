@@ -1,16 +1,3 @@
-fileFormatVersion: 2
-guid: 7ff1ab0b724442843965e2dd0f02e969
-timeCreated: 1472829232
-licenseType: Store
-NativeFormatImporter:
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/EffectExamples/Fire & Explosion
-    Effects/Materials/PlasmaExplosion.mat
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:bb722d1962184cd04f0a3798248ca741c77f42640232557c494467a4dc602b65
+size 432

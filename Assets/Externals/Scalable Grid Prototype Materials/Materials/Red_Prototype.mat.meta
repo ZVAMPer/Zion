@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 6af20d21fdb3e9846be9fcc5368045e6
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 2100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 214264
-  packageName: Minimalist Scalable Grid Prototype Materials
-  packageVersion: 1.2
-  assetPath: Assets/Scalable Grid Prototype Materials/Materials/Red_Prototype.mat
-  uploadId: 640529
+version https://git-lfs.github.com/spec/v1
+oid sha256:2e098284a6a4169b481d47ff55f9a3c8907601297ff77684cf9825d3181c8f70
+size 427

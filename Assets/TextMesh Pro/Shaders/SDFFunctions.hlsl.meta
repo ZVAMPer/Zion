@@ -1,17 +1,3 @@
-fileFormatVersion: 2
-guid: 96de908384869cd409c75efa351d5edf
-ShaderImporter:
-  externalObjects: {}
-  defaultTextures: []
-  nonModifiableTextures: []
-  preprocessorOverride: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/TextMesh Pro/Shaders/SDFFunctions.hlsl
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:7da09926c1abd96ff839cc4b59c6640f61dcc4cccb1a8f4a6a6b123098437208
+size 415

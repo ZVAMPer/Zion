@@ -1,19 +1,3 @@
-fileFormatVersion: 2
-guid: 46aceb8c4fbd8a3478e3bb41629a9afd
-labels:
-- road
-- tile
-- set
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 67475
-  packageName: Low Poly Street Pack
-  packageVersion: 1.0
-  assetPath: Assets/LowpolyStreetPack/Prefabs/Roads/Streets/Road_End_A.prefab
-  uploadId: 127808
+version https://git-lfs.github.com/spec/v1
+oid sha256:6e01f9349396149a8eed4ae78f30b2f22cee30c3023bbb3f0ff06fddac03245e
+size 420

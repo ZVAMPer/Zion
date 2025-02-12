@@ -1,14 +1,3 @@
-fileFormatVersion: 2
-guid: fe9c783a8fda35d4ca3a7339bd3830f6
-DefaultImporter:
-  externalObjects: {}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 285953
-  packageName: Game Input Controller Icons Free
-  packageVersion: 1.0
-  assetPath: Assets/GameInputControllerIconsFree/game-input-controller-icons-free-scene.unity
-  uploadId: 666605
+version https://git-lfs.github.com/spec/v1
+oid sha256:a74dfd3895bf0876616f5275797f26c005ccbf07dcf568a86242adad042b57f7
+size 394

@@ -1,16 +1,3 @@
-fileFormatVersion: 2
-guid: 56f0ef4bda713f642a2e4fda7927bd6e
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 9100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 180600
-  packageName: Soldier Animations
-  packageVersion: 1.2
-  assetPath: Assets/Kevin Iglesias/Soldier Animations/AnimatorControllers/Rifle/SoldierRifle
-    - Grenade01.controller
-  uploadId: 719163
+version https://git-lfs.github.com/spec/v1
+oid sha256:18282e0d5b1cc6f3789e1418d236623dbc19226f92670c79c3e1e282a6d7021c
+size 439

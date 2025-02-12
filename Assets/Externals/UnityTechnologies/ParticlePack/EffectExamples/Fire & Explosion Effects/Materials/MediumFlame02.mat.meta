@@ -1,16 +1,3 @@
-fileFormatVersion: 2
-guid: aa233f4c021449540865a6be1af7b157
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 2100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/EffectExamples/Fire & Explosion
-    Effects/Materials/MediumFlame02.mat
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:13ec588d8015be578229e0cf9147c467e35e4762676592918892b415191f6498
+size 437

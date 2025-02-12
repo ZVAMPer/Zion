@@ -1,16 +1,3 @@
-fileFormatVersion: 2
-guid: 27747b70ace5a36499e7f8a188e1e924
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 9100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 180600
-  packageName: Soldier Animations
-  packageVersion: 1.2
-  assetPath: Assets/Kevin Iglesias/Soldier Animations/AnimatorControllers/AssaultRifle/SoldierAssaultRifle
-    - Crawling01 - TakeDamage01.controller
-  uploadId: 719163
+version https://git-lfs.github.com/spec/v1
+oid sha256:2e5b629058f3d59fec66abf6c305b5d1741e41b582f9de8e404e802a7b7b6db7
+size 469

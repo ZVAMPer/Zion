@@ -1,14 +1,3 @@
-fileFormatVersion: 2
-guid: bd2fe1eb2e3ba454088c57397144535f
-PrefabImporter:
-  externalObjects: {}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/EffectExamples/Misc Effects/Prefabs/Respawn.prefab
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:87b24880242af87381edd0de355b5d23ea11507a405f341ddcd99cb33a4ec9b2
+size 382

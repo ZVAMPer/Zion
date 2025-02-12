@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: ef03674ad19dc4f4985cb53df430ba91
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 67475
-  packageName: Low Poly Street Pack
-  packageVersion: 1.0
-  assetPath: Assets/LowpolyStreetPack/Meshes/Materials/Leaves_02.mat
-  uploadId: 127808
+version https://git-lfs.github.com/spec/v1
+oid sha256:c1870384d37228d0c2e3d450481922ab4be002a660dae4b4dbacc20651096097
+size 383

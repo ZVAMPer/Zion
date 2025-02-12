@@ -1,16 +1,3 @@
-fileFormatVersion: 2
-guid: 5f7c9c3bedbbaea4bb24bca6e6a8024e
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 9100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 180600
-  packageName: Soldier Animations
-  packageVersion: 1.2
-  assetPath: Assets/Kevin Iglesias/Soldier Animations/AnimatorControllers/Bazooka/SoldierBazooka
-    - Shots.controller
-  uploadId: 719163
+version https://git-lfs.github.com/spec/v1
+oid sha256:de60504a1d7145f93406a9628e577a2f4677e15b49ebaefa594be4dd2cecc6a5
+size 439

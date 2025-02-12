@@ -1,18 +1,3 @@
-fileFormatVersion: 2
-guid: 3bae5663dad8ffb4892ddb61b5de9e65
-labels:
-- bridge
-- set
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 67475
-  packageName: Low Poly Street Pack
-  packageVersion: 1.0
-  assetPath: Assets/LowpolyStreetPack/Prefabs/Roads/Bridges/QuickBuilds/BridgeSlope_Double.prefab
-  uploadId: 127808
+version https://git-lfs.github.com/spec/v1
+oid sha256:2ea981f5bb3766e188255a16e3b8ad5c7afc7db814da9aa6ee0f28ddfc3ea6e5
+size 435

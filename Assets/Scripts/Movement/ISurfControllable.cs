@@ -1,17 +1,3 @@
-﻿using UnityEngine;
-
-namespace Fragsurf.Movement {
-
-    public interface ISurfControllable {
-
-        MoveType moveType { get; }
-        MoveData moveData { get; }
-        Collider collider { get; }
-        GameObject groundObject { get; set; }
-        Vector3 forward { get; }
-        Vector3 right { get; }
-        Vector3 up { get; }
-        Vector3 baseVelocity { get; }
-
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:a67557c42e08d0e7293f1dad72c066b53cab1e50474173d1046a121fb42fcde8
+size 386
