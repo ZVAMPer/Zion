@@ -1,18 +1,3 @@
-fileFormatVersion: 2
-guid: 0ee78a4d576343145b941b9999014e56
-labels:
-- bridge
-- set
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 67475
-  packageName: Low Poly Street Pack
-  packageVersion: 1.0
-  assetPath: Assets/LowpolyStreetPack/Prefabs/Roads/Bridges/QuickBuilds/Bridge_Simple_Straight_A.prefab
-  uploadId: 127808
+version https://git-lfs.github.com/spec/v1
+oid sha256:43006d642023cf9a75fbc32be457a9cc4d08276ced6f8b4967dd037de4c4c0ff
+size 441

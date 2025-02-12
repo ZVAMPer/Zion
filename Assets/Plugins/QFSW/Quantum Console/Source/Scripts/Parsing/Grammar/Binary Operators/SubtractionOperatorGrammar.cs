@@ -1,15 +1,3 @@
-﻿using System;
-using System.Linq.Expressions;
-
-namespace QFSW.QC.Grammar
-{
-    public class SubtractionOperatorGrammar : BinaryAndUnaryOperatorGrammar
-    {
-        public override int Precedence => 1;
-
-        protected override char OperatorToken => '-';
-        protected override string OperatorMethodName => "op_Subtraction";
-
-        protected override Func<Expression, Expression, BinaryExpression> PrimitiveExpressionGenerator => Expression.Subtract;
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:17149c434a4d2b65724342ba794a0ae86ce5dff7cf429e4e5f2a56d7bb791a5c
+size 469

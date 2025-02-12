@@ -1,35 +1,3 @@
-using Fragsurf.Movement;
-using Unity.Netcode;
-using Unity.Netcode.Components;
-using Unity.Services.Lobbies.Models;
-using UnityEngine;
-
-public class PlayerDeath : NetworkBehaviour
-{
-    [SerializeField]
-    public GameObject ragdollPrefab;
-    void Awake()
-    {
-        
-    }
-
-    [ServerRpc(RequireOwnership = false)]
-    public void DieServerRpc()
-    {
-                // Trigger the player death sound:
-        // If this is the owner, play the local death SFX.
-        if (IsOwner)
-        {
-            AudioManager.Instance.PlayPlayerDieSFXLocal("PlayerDie");
-        }
-        // Send a networked RPC so remote clients play the death SFX as spatial audio.
-        NetworkedAudioManager.Instance.PlayPlayerDieSFXServerRpc("PlayerDie", transform.position);
-
-        
-        ragdollPrefab = Instantiate(ragdollPrefab, transform.position, transform.rotation);
-        ragdollPrefab.GetComponent<NetworkObject>().Spawn();
-
-        GetComponent<PlayerHealth>().ReviveServerRpc();
-        GetComponent<Respawn>().RespawnServerRpc();
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:f90f2e7c23ec459a7bde15662dc97e01d4c006dba3ec89735a1355b1050c49a8
+size 1044

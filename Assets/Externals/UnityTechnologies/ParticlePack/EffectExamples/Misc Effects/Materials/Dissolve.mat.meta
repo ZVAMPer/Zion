@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 6fdc8d1bc1da3464c8f7364c4dc893a6
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 2100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/EffectExamples/Misc Effects/Materials/Dissolve.mat
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:f54287d2730c5bf896e82c53f6d68bde2603f9e1fc6157311a557daa02032d64
+size 416

@@ -1,16 +1,3 @@
-fileFormatVersion: 2
-guid: a2b133fd92e997f4fa475e018373629e
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 9100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 180600
-  packageName: Soldier Animations
-  packageVersion: 1.2
-  assetPath: Assets/Kevin Iglesias/Soldier Animations/AnimatorControllers/AssaultRifle/SoldierAssaultRifle
-    - Crawling01 - Grenade01.controller
-  uploadId: 719163
+version https://git-lfs.github.com/spec/v1
+oid sha256:9b8d03a17b7270b1b6ef7f17375653d144498afe94f61a37cf7edb8495b84659
+size 466

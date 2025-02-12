@@ -1,19 +1,3 @@
-fileFormatVersion: 2
-guid: 6afa5a77086624546baa3e2ce7e68547
-labels:
-- road
-- tile
-- set
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 67475
-  packageName: Low Poly Street Pack
-  packageVersion: 1.0
-  assetPath: Assets/LowpolyStreetPack/Prefabs/Roads/Streets/Road_Widening.prefab
-  uploadId: 127808
+version https://git-lfs.github.com/spec/v1
+oid sha256:6cf2dd69e25884d1fdca88d9f9c7dc5fd492412740ff146a9b3a7a921fe6c5ca
+size 423

@@ -1,14 +1,3 @@
-fileFormatVersion: 2
-guid: e8323ebd76285924883eeb3a4333133d
-TextScriptImporter:
-  externalObjects: {}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 134468
-  packageName: Urban Night Sky
-  packageVersion: 1.0
-  assetPath: Assets/UrbanNightSky/Readme.txt
-  uploadId: 281547
+version https://git-lfs.github.com/spec/v1
+oid sha256:7d2dd65a3f73833ba8d218447c73b8d1e17cd2ea568906b53542f57ce801ba13
+size 331

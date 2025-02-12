@@ -1,16 +1,3 @@
-fileFormatVersion: 2
-guid: fa35d75604d172d48b7a6b62a07c7dbf
-timeCreated: 1472572134
-licenseType: Store
-NativeFormatImporter:
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/EffectExamples/Fire & Explosion
-    Effects/Prefabs/ParticlesLight.prefab
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:d642e637ad61bf6d180d45644a14478e8ff996ec5caa1e9953889de380d8e271
+size 432

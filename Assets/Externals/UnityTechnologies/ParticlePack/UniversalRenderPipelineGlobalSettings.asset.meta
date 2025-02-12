@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 25eaace5f0e0d5e4889e96cee45b256d
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 11400000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/UniversalRenderPipelineGlobalSettings.asset
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:bb4997665913a98bc067b96dce1cfdbcbbf3dfc9dacf6fd6839580dc570af905
+size 410

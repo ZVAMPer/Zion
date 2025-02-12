@@ -1,17 +1,3 @@
-fileFormatVersion: 2
-guid: 68ee3d17a75022e4ebc3881d12645841
-labels:
-- phone
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 67475
-  packageName: Low Poly Street Pack
-  packageVersion: 1.0
-  assetPath: Assets/LowpolyStreetPack/Prefabs/StreetProps/Phone/Phone.prefab
-  uploadId: 127808
+version https://git-lfs.github.com/spec/v1
+oid sha256:8023065f0360b772c812ad1bb101d36e6a837703fb827846d9ab8eaeb2911c2e
+size 407

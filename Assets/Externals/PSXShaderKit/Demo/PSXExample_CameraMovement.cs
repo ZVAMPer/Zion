@@ -1,23 +1,3 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace PSXShaderKit
-{
-    public class PSXExample_CameraMovement : MonoBehaviour
-    {
-        public float speed = 0.5f;
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-            transform.position += new Vector3(transform.forward.x, 0, transform.forward.z) * Input.GetAxis("Vertical") * speed * Time.deltaTime;
-            transform.position += new Vector3(transform.right.x, 0, transform.right.z) * Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:0e969aea7bed31c20a9cfb0bd0c8790f7dc1e269c3e121d49f89e9f1e31300bb
+size 712

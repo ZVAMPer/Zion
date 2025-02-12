@@ -1,32 +1,3 @@
-﻿using QFSW.QC.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
-using Object = UnityEngine.Object;
-
-namespace QFSW.QC.Suggestors
-{
-    public class ComponentSuggestor : BasicCachedQcSuggestor<string>
-    {
-        protected override bool CanProvideSuggestions(SuggestionContext context, SuggestorOptions options)
-        {
-            Type targetType = context.TargetType;
-            return targetType != null
-                && targetType.IsDerivedTypeOf(typeof(Component))
-                && !targetType.IsGenericParameter;
-        }
-
-        protected override IQcSuggestion ItemToSuggestion(string name)
-        {
-            return new RawSuggestion(name, true);
-        }
-
-        protected override IEnumerable<string> GetItems(SuggestionContext context, SuggestorOptions options)
-        {
-            return Object.FindObjectsOfType(context.TargetType)
-                .Select(cmp => (Component) cmp)
-                .Select(cmp => cmp.gameObject.name);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:35412a4adf7731925210a26439b2004318b7e58fbbe01092c03cc4e6662e0c29
+size 1031

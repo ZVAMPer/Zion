@@ -1,23 +1,3 @@
-﻿using System;
-using System.Text.RegularExpressions;
-
-namespace QFSW.QC.Grammar
-{
-    public class BooleanNegationGrammar : IQcGrammarConstruct
-    {
-        private readonly Regex _negationRegex = new Regex(@"^!\S+$");
-
-        public int Precedence => 0;
-
-        public bool Match(string value, Type type)
-        {
-            return type == typeof(bool) && _negationRegex.IsMatch(value);
-        }
-
-        public object Parse(string value, Type type, Func<string, Type, object> recursiveParser)
-        {
-            value = value.Substring(1);
-            return !(bool)recursiveParser(value, type);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:15269b850d64235883eef46c0d9c9da573c4c86324c8ae7b7ffd5570e0100c35
+size 627

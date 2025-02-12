@@ -1,17 +1,3 @@
-fileFormatVersion: 2
-guid: 769fed31229f8c846ba3c8c8bcc584e2
-labels:
-- bridge
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 67475
-  packageName: Low Poly Street Pack
-  packageVersion: 1.0
-  assetPath: Assets/LowpolyStreetPack/Prefabs/Roads/Bridges/Elements/Bridge_Double_Curved.prefab
-  uploadId: 127808
+version https://git-lfs.github.com/spec/v1
+oid sha256:0c8939ba4bc6ce18edf4fe184ed3c42f551f62bdb7a6e946ed4cdabceddea128
+size 428

@@ -1,13 +1,3 @@
-﻿using UnityEngine;
-
-namespace QFSW.QC.Parsers
-{
-    public class QuaternionParser : BasicCachedQcParser<Quaternion>
-    {
-        public override Quaternion Parse(string value)
-        {
-            Vector4 vector = ParseRecursive<Vector4>(value);
-            return new Quaternion(vector.x, vector.y, vector.z, vector.w);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:81c5b987b5832939e09d5fb8e5fe6c895b4a6162d2b924dcdbfc4054f3006993
+size 344

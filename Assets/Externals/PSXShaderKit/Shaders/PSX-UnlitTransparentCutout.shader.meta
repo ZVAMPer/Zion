@@ -1,16 +1,3 @@
-fileFormatVersion: 2
-guid: 12779ca7a374ca24da44accca8f439a0
-ShaderImporter:
-  externalObjects: {}
-  defaultTextures: []
-  nonModifiableTextures: []
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 183591
-  packageName: PSX Shader Kit
-  packageVersion: 1.93
-  assetPath: Assets/PSXShaderKit/Shaders/PSX-UnlitTransparentCutout.shader
-  uploadId: 585336
+version https://git-lfs.github.com/spec/v1
+oid sha256:3e8fad309e830d72b394004db36134a396ae8159764d528d4dd39a5508dac748
+size 407

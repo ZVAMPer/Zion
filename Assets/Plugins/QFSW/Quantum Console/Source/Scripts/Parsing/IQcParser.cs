@@ -1,31 +1,3 @@
-﻿using System;
-
-namespace QFSW.QC
-{
-    /// <summary>
-    /// Creates a Parser that is loaded and used by the QuantumParser.
-    /// </summary>
-    public interface IQcParser
-    {
-        /// <summary>
-        /// The priority of this parser to resolve multiple parsers covering the same type.
-        /// </summary>
-        int Priority { get; }
-
-        /// <summary>
-        /// If this parser can parse to the incoming type.
-        /// </summary>
-        /// <param name="type">The type to test.</param>
-        /// <returns>If it can be parsed.</returns>
-        bool CanParse(Type type);
-
-        /// <summary>
-        /// Parses the incoming string to the specified type.
-        /// </summary>
-        /// <param name="value">The incoming string data.</param>
-        /// <param name="type">The type to parse the incoming string to.</param>
-        /// <param name="recursiveParser">Delegate back to the main parser to allow for recursive parsing of sub elements.</param>
-        /// <returns>The parsed object.</returns>
-        object Parse(string value, Type type, Func<string, Type, object> recursiveParser);
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:d3f92c4646199ff55be197cee3810d2efcce01424631fd94bf0fdb512808ac37
+size 1133

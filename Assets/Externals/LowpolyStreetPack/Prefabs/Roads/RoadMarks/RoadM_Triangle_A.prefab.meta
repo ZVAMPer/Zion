@@ -1,19 +1,3 @@
-fileFormatVersion: 2
-guid: f78b471585ccef0469c3aca86eefdfce
-labels:
-- set
-- marking
-- road
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 67475
-  packageName: Low Poly Street Pack
-  packageVersion: 1.0
-  assetPath: Assets/LowpolyStreetPack/Prefabs/Roads/RoadMarks/RoadM_Triangle_A.prefab
-  uploadId: 127808
+version https://git-lfs.github.com/spec/v1
+oid sha256:b2c3f8d5c79236317b0e6f6148b9e1f68e87b93246b533b9f29d38c660a36a71
+size 431

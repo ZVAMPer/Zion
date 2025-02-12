@@ -1,36 +1,3 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class CameraWaterCheck : MonoBehaviour {
-    
-    private List<Collider> triggers = new List<Collider> ();
-
-    // private void OnTriggerEnter (Collider other) {
-        
-    //     if (!triggers.Contains (other))
-    //         triggers.Add (other);
-
-    // }
-
-    // private void OnTriggerExit (Collider other) {
-        
-    //     if (triggers.Contains (other))
-    //         triggers.Remove (other);
-
-    // }
-
-    public bool IsUnderwater () {
-        
-        // foreach (Collider trigger in triggers) {
-
-        //     if (trigger.GetComponentInParent<Water> ())
-        //         return true;
-
-        // }
-
-        return false;
-
-    }
-
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:e65d75612aca45a060d75c216d1a05d95c9fa09aa2ee306b5b97994f12c11c62
+size 777

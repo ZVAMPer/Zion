@@ -1,16 +1,3 @@
-fileFormatVersion: 2
-guid: 2fc8ba47f8fcc894ca3d1270479b50d2
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 9100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 180600
-  packageName: Soldier Animations
-  packageVersion: 1.2
-  assetPath: Assets/Kevin Iglesias/Soldier Animations/AnimatorControllers/Bazooka/SoldierBazooka
-    - Crawling01 - DrawWeapon01.controller
-  uploadId: 719163
+version https://git-lfs.github.com/spec/v1
+oid sha256:9ba0be4e13a4681814f3fd07ab5482ea3ad1c340dae5375a36346a57a88e528e
+size 459

@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 66b1313491b494d4398251c31b99d540
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 67475
-  packageName: Low Poly Street Pack
-  packageVersion: 1.0
-  assetPath: Assets/LowpolyStreetPack/Meshes/Materials/tree_DIF.mat
-  uploadId: 127808
+version https://git-lfs.github.com/spec/v1
+oid sha256:6b8a3ad1eda95ecd2a36374ac692c537e2b0445bed1517c980a5c84218e6d026
+size 382

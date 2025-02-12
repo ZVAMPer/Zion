@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 9cadc8c5021163743861056c6e0fb83a
-timeCreated: 1485011052
-licenseType: Store
-NativeFormatImporter:
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 87916
-  packageName: Sci-Fi Gun Light
-  packageVersion: 1.0
-  assetPath: Assets/Sci Fi Gun Light/_materials/GunTwo/GunTwoRad.mat
-  uploadId: 173825
+version https://git-lfs.github.com/spec/v1
+oid sha256:6909879168e22cd91231875e7743f9d51fabbf805b43896689432cf7c8a18d7d
+size 378

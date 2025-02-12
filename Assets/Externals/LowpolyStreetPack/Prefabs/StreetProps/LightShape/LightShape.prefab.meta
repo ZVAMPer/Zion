@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 29a3662e1f6b9874f8b00773a2e193f7
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 67475
-  packageName: Low Poly Street Pack
-  packageVersion: 1.0
-  assetPath: Assets/LowpolyStreetPack/Prefabs/StreetProps/LightShape/LightShape.prefab
-  uploadId: 127808
+version https://git-lfs.github.com/spec/v1
+oid sha256:f11da2cb43fd00f528006b3387a5cd44adfa2b331e8d4e21ceb77509257a51d3
+size 401

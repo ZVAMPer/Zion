@@ -1,16 +1,3 @@
-{
-    "name": "OccaSoftware.Crosshairs.Editor",
-    "rootNamespace": "",
-    "references": [],
-    "includePlatforms": [
-        "Editor"
-    ],
-    "excludePlatforms": [],
-    "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
-    "autoReferenced": true,
-    "defineConstraints": [],
-    "versionDefines": [],
-    "noEngineReferences": false
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:60c936af163d57d3c1325e1ebf887c526ed04f006245be0afc0cbd9c03d438fc
+size 385

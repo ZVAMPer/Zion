@@ -1,18 +1,3 @@
-﻿using System;
-
-namespace QFSW.QC
-{
-    /// <summary>Provides a command paremeter with a description.</summary>
-    [AttributeUsage(AttributeTargets.Parameter, AllowMultiple = false, Inherited = false)]
-    public sealed class CommandParameterDescriptionAttribute : Attribute
-    {
-        public readonly string Description;
-        public readonly bool Valid;
-
-        public CommandParameterDescriptionAttribute(string description)
-        {
-            Description = description;
-            Valid = !string.IsNullOrWhiteSpace(description);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:236e9643237ac02eccf8e2ebccd3ebf29d7b57db0b604885632fc0c76d5c5aef
+size 564

@@ -1,16 +1,3 @@
-// Assets/Scripts/Weapons/WeaponBase.cs
-using Unity.Netcode;
-using UnityEngine;
-
-public abstract class WeaponBase : NetworkBehaviour
-{
-    public string weaponName;
-    public float knockMeterIncrement;
-    public float knockbackForce;
-    public float range;
-    
-    public virtual int aimationCode { get; } = 0;
-
-
-    public abstract void UseWeapon();
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:adbbeea39306781cde30ded586294c840bfe0ed7615080251478ac43abdaeab1
+size 357

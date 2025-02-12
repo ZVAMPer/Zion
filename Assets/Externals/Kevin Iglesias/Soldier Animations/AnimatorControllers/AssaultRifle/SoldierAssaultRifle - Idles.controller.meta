@@ -1,16 +1,3 @@
-fileFormatVersion: 2
-guid: ce9702fdf0a555340bad94cc20aaebc8
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 9100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 180600
-  packageName: Soldier Animations
-  packageVersion: 1.2
-  assetPath: Assets/Kevin Iglesias/Soldier Animations/AnimatorControllers/AssaultRifle/SoldierAssaultRifle
-    - Idles.controller
-  uploadId: 719163
+version https://git-lfs.github.com/spec/v1
+oid sha256:aad1d72110d0f15d5d791ca6c4169cabb5a4ae5b99f1c3c867cf681afedaa5df
+size 449

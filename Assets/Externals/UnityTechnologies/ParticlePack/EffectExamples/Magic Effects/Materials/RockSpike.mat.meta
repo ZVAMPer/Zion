@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 2c420724f5bf46241bc8d1d616c65653
-timeCreated: 1475250537
-licenseType: Store
-NativeFormatImporter:
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/EffectExamples/Magic Effects/Materials/RockSpike.mat
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:d5e7ccea0e8018dac11ba0db78b48972e323189e45be239cd2cf62154d2c31ee
+size 411

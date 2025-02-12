@@ -1,16 +1,3 @@
-﻿using System;
-
-namespace QFSW.QC
-{
-    /// <summary>Determines which platforms the command is available on. Supersedes platform availability determined in the [Command].</summary>
-    [AttributeUsage(AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = false, Inherited = false)]
-    public sealed class CommandPlatformAttribute : Attribute
-    {
-        public readonly Platform SupportedPlatforms;
-
-        public CommandPlatformAttribute(Platform supportedPlatforms)
-        {
-            SupportedPlatforms = supportedPlatforms;
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:8a2fdb729c016c62fe1afbd0816e1a3da822d5ab5d2d0ee10f0ea3c1fd99346e
+size 594

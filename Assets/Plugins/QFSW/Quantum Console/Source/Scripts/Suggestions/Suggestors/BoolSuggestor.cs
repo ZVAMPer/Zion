@@ -1,28 +1,3 @@
-﻿using System.Collections.Generic;
-
-namespace QFSW.QC.Suggestors
-{
-    public class BoolSuggestor : BasicCachedQcSuggestor<string>
-    {
-        private readonly string[] _values =
-        {
-            "true",
-            "false"
-        };
-
-        protected override bool CanProvideSuggestions(SuggestionContext context, SuggestorOptions options)
-        {
-            return context.TargetType == typeof(bool);
-        }
-
-        protected override IQcSuggestion ItemToSuggestion(string value)
-        {
-            return new RawSuggestion(value);
-        }
-
-        protected override IEnumerable<string> GetItems(SuggestionContext context, SuggestorOptions options)
-        {
-            return _values;
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:6c9640a155778a3aa7415286a35856429cf31d51e643f2012f95bf577d7d1214
+size 730

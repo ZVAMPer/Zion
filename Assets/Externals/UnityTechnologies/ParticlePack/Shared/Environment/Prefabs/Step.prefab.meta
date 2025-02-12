@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 21f4ee7b875c5614bae545ccd6c7652e
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 100100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/Shared/Environment/Prefabs/Step.prefab
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:486fc6a841b6285aaaf5b1d207fc9ae1537fd35eda6703428d41980844f43d49
+size 406

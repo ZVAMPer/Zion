@@ -1,16 +1,3 @@
-fileFormatVersion: 2
-guid: 407bc68d299748449bbf7f48ee690f8d
-ShaderImporter:
-  externalObjects: {}
-  defaultTextures: []
-  nonModifiableTextures: []
-  userData: Version 2.0
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/TextMesh Pro/Shaders/TMPro.cginc
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:dd1571dc1a9714924d421fbba3f1b5c43b324b26996051f903bc560e4876ba92
+size 394

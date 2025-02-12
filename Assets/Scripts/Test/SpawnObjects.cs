@@ -1,36 +1,3 @@
-using UnityEngine;
-using Unity.Netcode;
-
-public class SpawnObjects : NetworkBehaviour
-{
-    public GameObject objectToSpawn; // Assign the prefab in the Inspector
-
-    
-    void Start()
-    {
-        // if (IsServer)
-        // {
-        //     Debug.Log("Server is starting, calling SpawnObjectServerRpc");
-        //     SpawnObjectServerRpc();
-        // }
-    }
-
-    public override void OnNetworkSpawn()
-    {
-        base.OnNetworkSpawn();
-        if (IsServer)
-        {
-            Debug.Log("Server is spawning, calling SpawnObjectServerRpc");
-            SpawnObjectServerRpc();
-        }
-    }
-
-    [ServerRpc]
-    private void SpawnObjectServerRpc()
-    {
-        Debug.Log("SpawnObjectServerRpc called");
-        GameObject spawnedObject = Instantiate(objectToSpawn, this.transform.position, Quaternion.identity);
-        spawnedObject.GetComponent<NetworkObject>().Spawn();
-        Debug.Log("Object spawned and NetworkObject.Spawn called");
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:2dc2d37eb09919c3b21705bd4d26639f07cf38699593c12290d4568a3bcd4e10
+size 963

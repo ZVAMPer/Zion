@@ -1,18 +1,3 @@
-fileFormatVersion: 2
-guid: 1b101b242ded8fe40b2544ce18bea6ba
-MonoImporter:
-  externalObjects: {}
-  serializedVersion: 2
-  defaultReferences: []
-  executionOrder: 0
-  icon: {instanceID: 0}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 216732
-  packageName: Crosshairs | 25+ Free Crosshairs Pack
-  packageVersion: 1.1.1
-  assetPath: Assets/OccaSoftware/Crosshairs/Editor/StartMenu.cs
-  uploadId: 586051
+version https://git-lfs.github.com/spec/v1
+oid sha256:29a22c19293e7ac20b6636bccfe4822bca2d4b5aac9446357610b919e71bf66b
+size 459

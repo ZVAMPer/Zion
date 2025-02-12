@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 38e0f6c0765a5374f9a428840748d450
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 67475
-  packageName: Low Poly Street Pack
-  packageVersion: 1.0
-  assetPath: Assets/LowpolyStreetPack/Meshes/Materials/Atlas.mat
-  uploadId: 127808
+version https://git-lfs.github.com/spec/v1
+oid sha256:69fdc34cdff002082672b2a64ebae6267cecc39048a95e63693050764e8726a3
+size 379

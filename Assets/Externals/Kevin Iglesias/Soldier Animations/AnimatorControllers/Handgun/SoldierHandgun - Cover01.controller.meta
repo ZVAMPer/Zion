@@ -1,16 +1,3 @@
-fileFormatVersion: 2
-guid: 1612bea5f8ff164459815df1ab346305
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 9100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 180600
-  packageName: Soldier Animations
-  packageVersion: 1.2
-  assetPath: Assets/Kevin Iglesias/Soldier Animations/AnimatorControllers/Handgun/SoldierHandgun
-    - Cover01.controller
-  uploadId: 719163
+version https://git-lfs.github.com/spec/v1
+oid sha256:44725739664702921879c4b3305d4f72bcf18cac995519f4487ed3c2f8fb7fc9
+size 441

@@ -1,17 +1,3 @@
-﻿using UnityEngine;
-
-public static class VectorExtensions {
-
-    public static Vector3 VectorMa (Vector3 start, float scale, Vector3 direction) {
-
-        var dest = new Vector3 (
-            start.x + direction.x * scale,
-            start.y + direction.y * scale,
-            start.z + direction.z * scale
-        );
-
-        return dest;
-
-    }
-
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:22f49aa38627108ca913443ebab381151f545493d443b5a909894ea6e8227e1b
+size 352

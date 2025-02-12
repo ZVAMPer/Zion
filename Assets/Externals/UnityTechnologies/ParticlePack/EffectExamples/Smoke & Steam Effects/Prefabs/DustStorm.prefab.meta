@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 9e03786a9517b604d8e930182607a128
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 100100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/EffectExamples/Smoke & Steam Effects/Prefabs/DustStorm.prefab
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:459dcadea3fcc605a6e36d54a5186b6d4a59049bff496f5bd2d6554f974e68b8
+size 429

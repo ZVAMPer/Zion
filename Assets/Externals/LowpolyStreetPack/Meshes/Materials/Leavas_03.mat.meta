@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: bc03ba30a4c457d47883b5eb0920749c
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 67475
-  packageName: Low Poly Street Pack
-  packageVersion: 1.0
-  assetPath: Assets/LowpolyStreetPack/Meshes/Materials/Leavas_03.mat
-  uploadId: 127808
+version https://git-lfs.github.com/spec/v1
+oid sha256:9e41749a26f195a5e2ed06084bc75301d6b41804f5aae73fde1a14f56c6505c3
+size 383

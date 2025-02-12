@@ -1,16 +1,3 @@
-﻿using UnityEngine;
-
-namespace Fragsurf.TraceUtil {
-    public struct Trace {
-
-        public Vector3 startPos;
-        public Vector3 endPos;
-        public float fraction;
-        public bool startSolid;
-        public Collider hitCollider;
-        public Vector3 hitPoint;
-        public Vector3 planeNormal;
-        public float distance;
-
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:66f07e3882e8c16aa6412ff5d1751ed8eb362aeb100e4e87a0bf2f26c92be362
+size 354

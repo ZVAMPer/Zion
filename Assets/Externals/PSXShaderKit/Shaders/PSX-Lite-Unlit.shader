@@ -1,32 +1,3 @@
-﻿Shader "PSX/Lite/Unlit"
-{
-    Properties
-    {
-        _Color("Color (RGBA)", Color) = (1, 1, 1, 1)
-        _MainTex("Texture", 2D) = "white" {}
-        _ObjectDithering("Per-Object Dithering Enable", Range(0,1)) = 1
-    }
-        SubShader
-    {
-        Tags {"RenderType" = "Opaque" }
-        ZWrite On
-        LOD 100
-
-        Pass
-        {
-            CGPROGRAM
-            #pragma vertex vert
-            #pragma fragment frag
-            #pragma multi_compile_fog
-
-            #define PSX_TRIANGLE_SORT_OFF
-            #include "UnityCG.cginc"
-            #include "PSX-Utils.cginc"
-
-            #include "PSX-ShaderSrc-Lite.cginc"
-
-        ENDCG
-        }
-    }
-        Fallback "Unlit/Color"
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:425ac214403ff5b213cd1ccef3fb87076c58b8e549353a6e7d16490fe3b8a94c
+size 736

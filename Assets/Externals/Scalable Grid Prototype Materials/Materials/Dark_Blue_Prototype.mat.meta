@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 88b3961b9a9bd064ebcc2f4cbf42faf0
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 2100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 214264
-  packageName: Minimalist Scalable Grid Prototype Materials
-  packageVersion: 1.2
-  assetPath: Assets/Scalable Grid Prototype Materials/Materials/Dark_Blue_Prototype.mat
-  uploadId: 640529
+version https://git-lfs.github.com/spec/v1
+oid sha256:bcd9285c868706d3501cf3907ff4abb3062e1c3b68eb1a692be417b7a64bfde2
+size 433

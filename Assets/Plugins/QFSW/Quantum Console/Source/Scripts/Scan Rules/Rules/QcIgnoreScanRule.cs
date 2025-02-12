@@ -1,25 +1,3 @@
-﻿using System.Reflection;
-using System.Runtime.CompilerServices;
-using QFSW.QC.Utilities;
-
-namespace QFSW.QC.ScanRules
-{
-    public class QcIgnoreScanRule : IQcScanRule
-    {
-        public ScanRuleResult ShouldScan<T>(T entity) where T : ICustomAttributeProvider
-        {
-            if (entity.HasAttribute<QcIgnoreAttribute>(false))
-            {
-                return ScanRuleResult.Reject;
-            }
-
-            // Allow compiler generated members as this includes backing fields which may be used by the user
-            if (!(entity is MemberInfo) && entity.HasAttribute<CompilerGeneratedAttribute>(true))
-            {
-                return ScanRuleResult.Reject;
-            }
-
-            return ScanRuleResult.Accept;
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:a9f8f2f6d8b5a647e51886ea7248d2cae745ea77e3bf52e2dcc17d49afdf3676
+size 756

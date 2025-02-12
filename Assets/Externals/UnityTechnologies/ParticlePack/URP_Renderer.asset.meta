@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 83345bc7ff5bb744589f2d8c2da58e95
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 11400000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/URP_Renderer.asset
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:1c50c4ef9539b3af261b0cdcd1d2f333031bf04a61c126e64b37ddc5e392edff
+size 385

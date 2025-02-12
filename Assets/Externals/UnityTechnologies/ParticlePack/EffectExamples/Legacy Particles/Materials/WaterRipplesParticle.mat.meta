@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: c185392cb22aeb741a03d966a7012837
-timeCreated: 1472631987
-licenseType: Store
-NativeFormatImporter:
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/EffectExamples/Legacy Particles/Materials/WaterRipplesParticle.mat
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:a530b622d3db4112b00e399742d53846034f67693c20fac61f985efc9a93cba2
+size 425

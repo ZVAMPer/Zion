@@ -1,13 +1,3 @@
-﻿using System;
-
-namespace QFSW.QC
-{
-    /// <summary>
-    /// Exception to be thrown by an IQcParser to indicate the input was invalid.
-    /// </summary>
-    public class ParserInputException : ParserException
-    {
-        public ParserInputException(string message) : base(message) { }
-        public ParserInputException(string message, Exception innerException) : base(message, innerException) { }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:240b518a2a8782a43d64b617abb2ba6762e44293a59a01dfd8256d2458f68edb
+size 413

@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 7703a50c21887c04b8bfc78b4f5378c3
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 183591
-  packageName: PSX Shader Kit
-  packageVersion: 1.93
-  assetPath: Assets/PSXShaderKit/Demo/Assets/materials/Black.mat
-  uploadId: 585336
+version https://git-lfs.github.com/spec/v1
+oid sha256:78e7e61db8f278aedbc536ce72567ca5259b5c93fa8895c35f6df07089a93541
+size 375

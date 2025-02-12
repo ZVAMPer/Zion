@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 4a71a58a3a7116c4a8aabbf8699066aa
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 100100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/Shared/Environment/Prefabs/FloorMiddle.prefab
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:fdc84c52012b22aeea9a095caf0b2080c801deb6896a5d173a57b358480ca084
+size 413

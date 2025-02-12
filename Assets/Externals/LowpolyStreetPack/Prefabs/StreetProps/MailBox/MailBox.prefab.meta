@@ -1,18 +1,3 @@
-fileFormatVersion: 2
-guid: 832783ac41f2d70468c4995bebfabfb7
-labels:
-- box
-- mail
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 67475
-  packageName: Low Poly Street Pack
-  packageVersion: 1.0
-  assetPath: Assets/LowpolyStreetPack/Prefabs/StreetProps/MailBox/MailBox.prefab
-  uploadId: 127808
+version https://git-lfs.github.com/spec/v1
+oid sha256:3f3f1994b6210241ff55b200b66d9a966e83912ff32b980e264cbec4fe529295
+size 416

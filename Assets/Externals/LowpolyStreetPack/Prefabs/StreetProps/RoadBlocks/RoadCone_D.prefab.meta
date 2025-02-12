@@ -1,18 +1,3 @@
-fileFormatVersion: 2
-guid: 80f76393a8f65094d914dbd03577aec2
-labels:
-- streetcone
-- roadblock
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 67475
-  packageName: Low Poly Street Pack
-  packageVersion: 1.0
-  assetPath: Assets/LowpolyStreetPack/Prefabs/StreetProps/RoadBlocks/RoadCone_D.prefab
-  uploadId: 127808
+version https://git-lfs.github.com/spec/v1
+oid sha256:1393e02d0752b27c059fc59fe573bf024cc35ff0499573443d28aec2d6ed42a5
+size 434

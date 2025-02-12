@@ -1,30 +1,3 @@
-﻿using UnityEngine;
-
-namespace QFSW.QC.Actions
-{
-    /// <summary>
-    /// Waits for the given amount of seconds using scaled time.
-    /// </summary>
-    public class Wait : ICommandAction
-    {
-        private float _startTime;
-        private readonly float _duration;
-
-        public bool IsFinished => Time.time >= _startTime + _duration;
-        public bool StartsIdle => true;
-
-        /// <param name="seconds">The duration to wait in seconds.</param>
-        public Wait(float seconds)
-        {
-            _duration = seconds;
-        }
-
-        public void Start(ActionContext ctx)
-        {
-            _startTime = Time.time;
-        }
-
-        public void Finalize(ActionContext ctx) { }
-
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:7b3b48757efaaeeefca9ccfffef26d4f1342e579a93eb2b38f038f269f76f7cf
+size 713

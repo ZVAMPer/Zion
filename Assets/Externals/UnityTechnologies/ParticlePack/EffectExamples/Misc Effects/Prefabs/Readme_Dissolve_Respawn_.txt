@@ -1,6 +1,3 @@
-Please note that when exporting the following two Effects;
-
-- Dissolve
-- Respawn
-
-both automatically include several unnecessary dependencies when exporting as a package. Please ensure that only files within the "EffectExamples" folder are ticked. As long as the "Materials", "Prefabs", "Scripts", "Shaders" and "Textures" folders are ticked, the effect will work correctly once imported in a new project.
+version https://git-lfs.github.com/spec/v1
+oid sha256:2acee88b9a49b774242413430779999d30c62be7c3cbcb38f1059a4fd0ec30e5
+size 410

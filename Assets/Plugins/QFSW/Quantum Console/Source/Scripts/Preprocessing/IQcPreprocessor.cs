@@ -1,20 +1,3 @@
-﻿namespace QFSW.QC
-{
-    /// <summary>
-    /// Creates a Preprocessor that is loaded and used by the QuantumConsoleProcessor.
-    /// </summary>
-    public interface IQcPreprocessor
-    {
-        /// <summary>
-        /// The priority of this preprocessor to resolve processing order.
-        /// </summary>
-        int Priority { get; }
-
-        /// <summary>
-        /// Processes the provided text.
-        /// </summary>
-        /// <param name="text">The text to process.</param>
-        /// <returns>The processed text.</returns>
-        string Process(string text);
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:6d28126526938fed9190ffa36d0f817e69e2f31bcdd3562c653922912715cd62
+size 582

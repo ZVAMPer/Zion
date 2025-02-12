@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 5471faebdbcc34e47baecfecda463063
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 2100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/EffectExamples/Misc Effects/Materials/FireFly.mat
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:f09ddf59168e4de4c1aa1879dcb83b5df028fd3cb58a48c0009724b768eee549
+size 415

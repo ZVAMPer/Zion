@@ -1,16 +1,3 @@
-fileFormatVersion: 2
-guid: 0b1b6a2d22d96564f9037ae143ea84cf
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 2100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/EffectExamples/Fire & Explosion
-    Effects/Materials/Lightning.mat
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:ed2021d0d51c5481f74aa0f6a7cd1ee106ab691430c4c5aa14d91b4608d6223f
+size 433

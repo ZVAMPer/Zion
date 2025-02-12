@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 1821e5d6b0dd856428da7fa42f77ed24
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 22100000
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 154271
-  packageName: Basic Motions FREE
-  packageVersion: 2.3.2
-  assetPath: Assets/Kevin Iglesias/Basic Motions/DemoScene/AnimatorControllers/PlayableCharacterDummy02.overrideController
-  uploadId: 726948
+version https://git-lfs.github.com/spec/v1
+oid sha256:d20127daf31200f09b8052c6117f3b807a8db6d2f62ca2bf0c27d7b18a5b0c2b
+size 445

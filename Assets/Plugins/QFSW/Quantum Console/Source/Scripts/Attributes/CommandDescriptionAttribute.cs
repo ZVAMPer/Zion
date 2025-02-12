@@ -1,18 +1,3 @@
-﻿using System;
-
-namespace QFSW.QC
-{
-    /// <summary>Provides a command with a description. If the [Command] attribute already provides a description, that will supersede this one. Useful for when you have several [Command]s on a single method.</summary>
-    [AttributeUsage(AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = false, Inherited = false)]
-    public sealed class CommandDescriptionAttribute : Attribute
-    {
-        public readonly string Description;
-        public readonly bool Valid;
-
-        public CommandDescriptionAttribute(string description)
-        {
-            Description = description;
-            Valid = !string.IsNullOrWhiteSpace(description);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:ff964784520c3253ea3aac25943f8497a3e46fabfa3087c6185147fbb7b10a60
+size 740

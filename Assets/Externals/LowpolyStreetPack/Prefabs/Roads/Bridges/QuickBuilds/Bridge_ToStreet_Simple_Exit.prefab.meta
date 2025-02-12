@@ -1,18 +1,3 @@
-fileFormatVersion: 2
-guid: cdf53a606bb6b9e41ae628dccce7632f
-labels:
-- bridge
-- set
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 67475
-  packageName: Low Poly Street Pack
-  packageVersion: 1.0
-  assetPath: Assets/LowpolyStreetPack/Prefabs/Roads/Bridges/QuickBuilds/Bridge_ToStreet_Simple_Exit.prefab
-  uploadId: 127808
+version https://git-lfs.github.com/spec/v1
+oid sha256:36f39ff3e30eebd061f4cf44ecfb7deae7dd223b2d70444ba0a09659ee971e35
+size 444

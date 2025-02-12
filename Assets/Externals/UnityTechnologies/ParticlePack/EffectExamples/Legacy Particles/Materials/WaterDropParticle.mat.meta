@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 760cb38a22b22154790d1a62e76c087e
-timeCreated: 1472652419
-licenseType: Store
-NativeFormatImporter:
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/EffectExamples/Legacy Particles/Materials/WaterDropParticle.mat
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:d61cc0dfbbe72316e5ef14f2652e805c8d97077e3e3dce6300b0cb1513c7aa54
+size 422

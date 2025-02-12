@@ -1,18 +1,3 @@
-fileFormatVersion: 2
-guid: 86948bb7ab2a8274aa6a73f0ed8b64d5
-labels:
-- fuse
-- box
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 67475
-  packageName: Low Poly Street Pack
-  packageVersion: 1.0
-  assetPath: Assets/LowpolyStreetPack/Prefabs/StreetProps/FuseBox/FuseBox.prefab
-  uploadId: 127808
+version https://git-lfs.github.com/spec/v1
+oid sha256:0f2ca9cfec6bb2a0f15833a9e3a37d803c86b6f1ddbf4646f87822ab1cb227d7
+size 416

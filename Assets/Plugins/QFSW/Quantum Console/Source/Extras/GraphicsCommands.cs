@@ -1,30 +1,3 @@
-﻿#if !QC_DISABLED && !QC_DISABLE_BUILTIN_ALL && !QC_DISABLE_BUILTIN_EXTRA
-using UnityEngine;
-
-namespace QFSW.QC.Extras
-{
-    public static class GraphicsCommands
-    {
-        [Command("max-fps", "the maximum FPS imposed on the application. Set to -1 for unlimited.")]
-        private static int MaxFPS
-        {
-            get => Application.targetFrameRate;
-            set => Application.targetFrameRate = value;
-        }
-
-        [Command("vsync", "enables or disables vsync for the application.")]
-        private static bool VSync
-        {
-            get => QualitySettings.vSyncCount > 0;
-            set => QualitySettings.vSyncCount = value ? 1 : 0;
-        }
-
-        [Command("msaa", "Gets or sets the number of msaa samples in use. Valid values are 0, 2, 4 and 8.")]
-        private static int MSAA
-        {
-            get => QualitySettings.antiAliasing;
-            set => QualitySettings.antiAliasing = value;
-        }
-    }
-}
-#endif
+version https://git-lfs.github.com/spec/v1
+oid sha256:c2226888c417329030c470c92605c726ec273e11f33cecbf3fe7971047ebe95b
+size 958

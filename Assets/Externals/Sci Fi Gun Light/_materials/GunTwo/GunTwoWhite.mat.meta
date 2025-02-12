@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: f59d38d7fdabd3048a6eec44cfa5365f
-timeCreated: 1485011051
-licenseType: Store
-NativeFormatImporter:
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 87916
-  packageName: Sci-Fi Gun Light
-  packageVersion: 1.0
-  assetPath: Assets/Sci Fi Gun Light/_materials/GunTwo/GunTwoWhite.mat
-  uploadId: 173825
+version https://git-lfs.github.com/spec/v1
+oid sha256:39da29a65d5561e567d66b9c6074e7ecb9483e20465bba10adc4bd38c7ea5a3e
+size 380

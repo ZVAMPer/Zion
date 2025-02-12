@@ -1,14 +1,3 @@
-fileFormatVersion: 2
-guid: 7d848c71239ddd742bc187ad72f3a319
-PrefabImporter:
-  externalObjects: {}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 127325
-  packageName: Particle Pack
-  packageVersion: 3.1
-  assetPath: Assets/UnityTechnologies/ParticlePack/EffectExamples/Misc Effects/Prefabs/EllenDissolve.prefab
-  uploadId: 691001
+version https://git-lfs.github.com/spec/v1
+oid sha256:a174e4f5c26aac6dcca8b09f163a9ab6558876a9cbb5cc6093e1816afb2e1ed9
+size 388

@@ -1,36 +1,3 @@
-﻿using System.Text;
-
-namespace QFSW.QC.Pooling
-{
-    public class ConcurrentStringBuilderPool : StringBuilderPool<ConcurrentPool<StringBuilder>>
-    {
-
-    }
-
-    public class StringBuilderPool : StringBuilderPool<Pool<StringBuilder>>
-    {
-
-    }
-
-    public class StringBuilderPool<TPool> where TPool : IPool<StringBuilder>, new()
-    {
-        private readonly TPool _pool = new TPool();
-
-        public StringBuilder GetStringBuilder(int minCapacity = 0)
-        {
-            StringBuilder stringBuilder = _pool.GetObject();
-            stringBuilder.Clear();
-            stringBuilder.EnsureCapacity(minCapacity);
-
-            return stringBuilder;
-        }
-
-        public string ReleaseAndToString(StringBuilder stringBuilder)
-        {
-            string result = stringBuilder.ToString();
-            _pool.Release(stringBuilder);
-
-            return result;
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:9bec5e78448769f14314fb0c8cb93158797087d1bb19eb44ee2ca2abcbab797c
+size 889

@@ -1,20 +1,3 @@
-﻿using QFSW.QC.Utilities;
-using System;
-
-namespace QFSW.QC.Parsers
-{
-    public class EnumParser : PolymorphicCachedQcParser<Enum>
-    {
-        public override Enum Parse(string value, Type type)
-        {
-            try
-            {
-                return (Enum)Enum.Parse(type, value);
-            }
-            catch (Exception e)
-            {
-                throw new ParserInputException($"Cannot parse '{value}' to the type '{type.GetDisplayName()}'. To see the supported values, use the command `enum-info {type}`", e);
-            }
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:4b5c6d37746263232e4f218196e7143f0fc3269519f284c9e8307d558cc0d3a4
+size 565

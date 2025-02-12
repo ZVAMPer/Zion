@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 5c7176cef124e1a4793b448ed91b74e1
-timeCreated: 1485011053
-licenseType: Store
-NativeFormatImporter:
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 87916
-  packageName: Sci-Fi Gun Light
-  packageVersion: 1.0
-  assetPath: Assets/Sci Fi Gun Light/_materials/GunTwo/GunTwoBlue.mat
-  uploadId: 173825
+version https://git-lfs.github.com/spec/v1
+oid sha256:49ec11cd94664601daefd4bbce74e3357463f0003776df46a50674fa3ec91a39
+size 379

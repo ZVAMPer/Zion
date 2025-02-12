@@ -1,28 +1,3 @@
-﻿using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-
-namespace QFSW.QC.Parsers
-{
-    public class CollectionParser : MassGenericQcParser
-    {
-        protected override HashSet<Type> GenericTypes { get; } = new HashSet<Type>
-        {
-            typeof(List<>),
-            typeof(Stack<>),
-            typeof(Queue<>),
-            typeof(HashSet<>),
-            typeof(LinkedList<>),
-            typeof(ConcurrentStack<>),
-            typeof(ConcurrentQueue<>),
-            typeof(ConcurrentBag<>)
-        };
-
-        public override object Parse(string value, Type type)
-        {
-            Type arrayType = type.GetGenericArguments()[0].MakeArrayType();
-            object array = ParseRecursive(value, arrayType);
-            return Activator.CreateInstance(type, array);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:835978aefea6c27eb540e82f8ea7c6f8a232d955c7548e01ce1b3c9f5103dd4e
+size 834

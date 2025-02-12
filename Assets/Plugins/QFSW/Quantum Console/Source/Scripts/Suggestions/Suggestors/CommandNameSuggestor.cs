@@ -1,30 +1,3 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace QFSW.QC.Suggestors
-{
-    public class CommandNameSuggestor : BasicCachedQcSuggestor<string>
-    {
-        protected override bool CanProvideSuggestions(SuggestionContext context, SuggestorOptions options)
-        {
-            return context.HasTag<Tags.CommandNameTag>()
-                && !string.IsNullOrWhiteSpace(context.Prompt);
-        }
-
-        protected override IQcSuggestion ItemToSuggestion(string commandName)
-        {
-            return new RawSuggestion(commandName);
-        }
-
-        protected override IEnumerable<string> GetItems(SuggestionContext context, SuggestorOptions options)
-        {
-            string incompleteCommandName =
-                context.Prompt
-                    .SplitScopedFirst(' ')
-                    .SplitFirst('<');
-
-            return QuantumConsoleProcessor.GetUniqueCommands()
-                .Select(command => command.CommandName);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:f51576dcf0a37f645e5a2b9b9871b2b95b841e1a30c499d4d8deb06aa14451ce
+size 975

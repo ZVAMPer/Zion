@@ -1,22 +1,3 @@
-using UnityEngine;
-using Unity.Netcode;
-
-[RequireComponent(typeof(Camera))] // Ensures a Camera component is present
-public class OwnerCameraDisable : NetworkBehaviour
-{
-    [SerializeField] private AudioListener _audioListener;
-
-    public override void OnNetworkSpawn()
-    {
-        base.OnNetworkSpawn();
-        
-        if (!IsOwner)
-        {
-            // Disable Camera and AudioListener
-            if (TryGetComponent(out Camera cam))
-                cam.enabled = false;
-            if (_audioListener != null)
-                _audioListener.enabled = false;
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:f8e75d342ee5af5f82a9c1b62507c0545808b6bd6b235ac6980c3b55c3f5b57a
+size 590

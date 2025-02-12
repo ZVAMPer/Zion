@@ -1,11 +1,3 @@
-<linker>
-  <assembly fullname="QFSW.QC" preserve="all"/>
-  <assembly fullname="QFSW.QC.Parsers" preserve="all"/>
-  <assembly fullname="QFSW.QC.Grammar" preserve="all"/>
-  <assembly fullname="QFSW.QC.Serializers" preserve="all"/>
-  <assembly fullname="QFSW.QC.Suggestors" preserve="all"/>
-  <assembly fullname="QFSW.QC.Extras" preserve="all"/>
-  <assembly fullname="System.Core">
-    <type fullname="System.Linq.Expressions.Interpreter.LightLambda" preserve="all" />
-  </assembly>
-</linker>
+version https://git-lfs.github.com/spec/v1
+oid sha256:abed721c2fd209ea60e954b811c5cdb7bcb73577ea1fa024db2930118738e0cf
+size 489

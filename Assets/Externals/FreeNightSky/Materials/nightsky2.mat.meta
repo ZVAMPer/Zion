@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 2869c66e822baa941bb52b0e6ec3dfdf
-timeCreated: 1482677795
-licenseType: Store
-NativeFormatImporter:
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 79066
-  packageName: Free Night Sky
-  packageVersion: 1.0
-  assetPath: Assets/FreeNightSky/Materials/nightsky2.mat
-  uploadId: 153041
+version https://git-lfs.github.com/spec/v1
+oid sha256:4c13f987d1c7278073482c58c44a818886cac22ac1bae6ce539560b9a85892c1
+size 364

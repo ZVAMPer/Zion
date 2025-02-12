@@ -1,14 +1,3 @@
-fileFormatVersion: 2
-guid: 0e789f544dcc6f44b938524326765974
-DefaultImporter:
-  externalObjects: {}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 134468
-  packageName: Urban Night Sky
-  packageVersion: 1.0
-  assetPath: Assets/UrbanNightSky/Demo/UrbanNightSky Demo.unity
-  uploadId: 281547
+version https://git-lfs.github.com/spec/v1
+oid sha256:09ede11668d26fbeda35c50cf632fde2c37f22d4f093ee5d485581f868d3af12
+size 347

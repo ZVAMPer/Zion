@@ -1,19 +1,3 @@
-fileFormatVersion: 2
-guid: 13a42c241463e034082f2fbcda640817
-labels:
-- bush
-- foliage
-- nature
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 67475
-  packageName: Low Poly Street Pack
-  packageVersion: 1.0
-  assetPath: Assets/LowpolyStreetPack/Prefabs/Foliage/Bushes/Bush_D.prefab
-  uploadId: 127808
+version https://git-lfs.github.com/spec/v1
+oid sha256:8149497e42db4b0a651e89d2e545371f9a3fd25555bee4bbcb29f0280b56d2b4
+size 423

@@ -1,20 +1,3 @@
-namespace QFSW.QC
-{
-    /// <summary>
-    /// Configuration for requesting a response in the console.
-    /// </summary>
-    public struct ResponseConfig
-    {
-        // The prompt to display in the input field
-        public string InputPrompt;
-
-        // If the input should be logged back to the console
-        public bool LogInput;
-
-        public static readonly ResponseConfig Default = new ResponseConfig
-        {
-            InputPrompt = "Enter input...",
-            LogInput = true
-        };
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:408360c7ea0bad7e4c6f1d097e8a046b1b3104559024684071126389447d96ab
+size 515
