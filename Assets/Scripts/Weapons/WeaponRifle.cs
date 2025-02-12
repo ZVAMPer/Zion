@@ -74,7 +74,8 @@ public class WeaponRifle : WeaponBase
     /// </summary>
     private void HandleInput()
     {
-        if (!IsOwner) {
+        if (!IsOwner)
+        {
             return;
         }
         // Check if the player is holding the fire input (e.g., left mouse button or a specific key)
@@ -122,6 +123,14 @@ public class WeaponRifle : WeaponBase
         {
             StartCoroutine(Reload());
             lastReloadAttempt = Time.time;
+            // Play local reload sound (ensure "GunReload" is defined in your AudioBank)
+            AudioManager.Instance.PlayGunSFXLocal("GunReload");
+
+            // Determine the shooter's position (using parent's position if available)
+            Vector3 shooterPos = (transform.parent != null) ? transform.parent.position : transform.position;
+
+            // Send networked RPC so remote clients play the reload sound as spatial audio
+            NetworkedAudioManager.Instance.PlayGunReloadSFXServerRpc("GunReload", shooterPos);
         }
     }
 
@@ -143,13 +152,19 @@ public class WeaponRifle : WeaponBase
     private void FireSingleBullet()
     {
         bulletCount--;
-        Debug.Log("Fired a bullet. Remaining: " + bulletCount);
+        //        Debug.Log("Fired a bullet. Remaining: " + bulletCount);
 
         if (playerCamera == null)
         {
             Debug.LogError("Player camera not assigned. Cannot perform raycast.");
             return;
         }
+
+        AudioManager.Instance.PlayGunSFXLocal("GunShot");
+        Vector3 shooterPos = (transform.parent != null) ? transform.parent.position : transform.position;
+
+        // Send networked SFX call without manually passing the client id.
+        NetworkedAudioManager.Instance.PlayGunSFXServerRpc("GunShot", shooterPos);
 
         // Define the origin and direction of the ray
         Vector3 rayOrigin = playerCamera.transform.position;
@@ -174,6 +189,9 @@ public class WeaponRifle : WeaponBase
             if (hitObjectName == "PlayerCollider")
             {
                 Debug.Log("Player hit!");
+
+                AudioManager.Instance.PlayGunSFXLocal("HitMarker");
+
                 PlayerHealth playerHealth = hit.collider.gameObject.GetComponentInParent<PlayerHealth>();
                 if (playerHealth != null)
                 {
@@ -191,14 +209,23 @@ public class WeaponRifle : WeaponBase
         if (bulletTrailPrefab != null)
         {
             FireSingleBulletServerRpc(muzzlePoint.position, endPoint);
-        } 
+        }
     }
-    
+
 
     [ServerRpc]
     private void FireSingleBulletServerRpc(Vector3 origin, Vector3 destination)
     {
         StartCoroutine(DrawTrail(origin, destination));
+
+        // Play local gun sound
+
+
+
+        // Determine the shooter's position (using parent position if available)
+
+
+        // ... other logic ...  
     }
     /// <summary>
     /// Coroutine to draw a bullet trail from origin to destination using TrailRenderer.

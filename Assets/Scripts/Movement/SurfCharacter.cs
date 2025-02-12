@@ -55,6 +55,19 @@ namespace Fragsurf.Movement
         [Header("Movement Config")]
         public MovementConfig movementConfig;
 
+        [Header("Apex Jump Settings")]
+        public float apexGroundGraceTime = 0.1f; // tweak as needed
+
+
+        [Header("Footstep Settings")]
+        public string footstepKey = "PlayerStep";  // Key for regular footstep sounds
+        // New landing key; make sure your AudioBank has an entry for "PlayerLand"
+        public string landingKey = "PlayerLand";
+        private float stepDistance = 3f;            // Distance required to trigger a new footstep
+        private Vector3 lastFootstepPosition;
+        // Track previous grounded state for detecting landing events
+        private bool wasGrounded = true;
+
         // Local movement data (no longer a NetworkVariable).
         private MoveData _localMoveData = new MoveData();
 
@@ -77,6 +90,10 @@ namespace Fragsurf.Movement
         // This was in your old code but not used much.
         private Vector3 _angles;
         private Vector3 _prevPosition;
+
+        // NEW: Fields to track apex jump effect.
+        private float _apexJumpEndTime = 0f;
+        private float _apexGravityMultiplier = 1f;
 
         ///// ISurfControllable Implementation /////
         public MoveType moveType { get { return MoveType.Walk; } }
@@ -125,7 +142,7 @@ namespace Fragsurf.Movement
             base.OnNetworkSpawn();
 
             // If this is not your character, you may want to disable the local camera, etc.
-            if (NetworkManager.Singleton.IsClient )
+            if (NetworkManager.Singleton.IsClient)
             {
                 armature.gameObject.SetActive(!IsOwner);
                 ui.gameObject.SetActive(IsOwner);
@@ -266,6 +283,9 @@ namespace Fragsurf.Movement
 
             // Remember our start position for later resets
             _startPosition = transform.position;
+
+            lastFootstepPosition = transform.position;
+            wasGrounded = _isGrounded.Value;
         }
 
         private void Update()
@@ -343,8 +363,43 @@ namespace Fragsurf.Movement
             // We do the actual movement in FixedUpdate. 
             // But we could also do it in Update if you prefer.
             HandleLocalRotation();
+
+            // Detect landing: if we were in the air last frame and now are grounded
+            if (!wasGrounded && _isGrounded.Value)
+            {
+                // Play landing sound locally
+                AudioManager.Instance.PlayPlayerStepsSFXLocal(landingKey);
+                // Send networked RPC so remote clients also play the landing sound
+                NetworkedAudioManager.Instance.PlayPlayerStepsSFXServerRpc(landingKey, transform.position);
+                // Optionally update lastFootstepPosition to avoid overlap with normal footstep trigger
+                lastFootstepPosition = transform.position;
+            }
+
+            // Update previous grounded state for next frame check
+            wasGrounded = _isGrounded.Value;
+
+            HandlePlayerStepSound();
         }
 
+        private void HandlePlayerStepSound()
+        {
+            // Only trigger footsteps if the character is grounded
+            if (!_isGrounded.Value)
+                return;
+
+            float distanceTravelled = Vector3.Distance(transform.position, lastFootstepPosition);
+            if (distanceTravelled >= stepDistance)
+            {
+                // Play local (non-spatial) footstep sound for self
+                AudioManager.Instance.PlayPlayerStepsSFXLocal(footstepKey);
+
+                // Send networked SFX call so remote clients play the spatial footstep sound
+                NetworkedAudioManager.Instance.PlayPlayerStepsSFXServerRpc(footstepKey, transform.position);
+
+                // Reset the last footstep position
+                lastFootstepPosition = transform.position;
+            }
+        }
         private void HandleLocalRotation()
         {
             if (IsOwner)
@@ -378,10 +433,33 @@ namespace Fragsurf.Movement
             }
 
             // 3) Process movement (client side).
-            _controller.ProcessMovement(this, movementConfig, Time.fixedDeltaTime);
+            // Use a local copy of movementConfig so we don't affect the original.
+            var effectiveMovementConfig = movementConfig.Clone();
+            if (Time.time < _apexJumpEndTime)
+            {
+                effectiveMovementConfig.gravity *= _apexGravityMultiplier;
+            }
+            _controller.ProcessMovement(this, effectiveMovementConfig, Time.fixedDeltaTime);
+            // Debug.Log("Gavity: " + effectiveMovementConfig.gravity);
+            // Debug.Log("Config Gravity: " + movementConfig.gravity);
 
             // 4) Update the real transform from localMoveData
             transform.position = _localMoveData.origin;
+
+            // Reset apex jump state once its duration is over or when grounded.
+            if (Time.time >= _apexJumpEndTime)
+            {
+                // Time is up: fully reset
+                _apexJumpEndTime = 0f;
+                _apexGravityMultiplier = 1f;
+            }
+            else if (_isGrounded.Value)
+            {
+                // We landed but still have time left, 
+                // so clamp the apex jump end to a short grace window:
+                _apexJumpEndTime = Mathf.Min(_apexJumpEndTime, Time.time + apexGroundGraceTime);
+            }
+
 
             // If you want to update transform.rotation based on `viewAngles.y`,
             // you can do it here. Example:
@@ -391,9 +469,41 @@ namespace Fragsurf.Movement
             //     float yaw = _localMoveData.viewAngles.y;
             //     transform.rotation = Quaternion.Euler(0f, yaw, 0f);
             // }
-            
-            
+
+
         }
+
+        /// <summary>
+        /// Applies an apex jump effect by setting a jump velocity and temporarily reducing gravity.
+        /// </summary>
+        /// <param name="jumpVelocity">The new velocity to apply (combining forward and upward forces).</param>
+        /// <param name="gravityMultiplier">A multiplier to apply to gravity (should be less than 1 for less gravity).</param>
+        /// <param name="duration">Duration for which the gravity reduction lasts.</param>
+        public void ApplyApexJump(Vector3 jumpVelocity, float gravityMultiplier, float duration)
+        {
+            // if (!_isGrounded.Value)
+            // {
+            //     Debug.Log("Apex jump not applied because player is in air.");
+            //     return;
+            // }
+
+            _localMoveData.velocity = jumpVelocity;
+            Debug.Log("Applying apex jump: " + jumpVelocity + ", gravityMultiplier: " + gravityMultiplier + ", duration: " + duration);
+            _apexJumpEndTime = Time.time + duration;
+            _apexGravityMultiplier = gravityMultiplier;
+
+            // Make sure the controller knows we’re “jumping” if we have an upward boost
+            //if (jumpVelocity.y > 0f)
+            {
+                _controller.jumping = true;
+                Debug.Log("Jumping set to true.");
+            }
+        }
+
+        /// <summary>
+        /// Returns true if an apex jump is active.
+        /// </summary>
+        public bool IsApexJumpActive => Time.time < _apexJumpEndTime;
 
         /// <summary>
         /// Checks triggers like water, updates _underwater if needed.

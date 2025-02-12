@@ -49,7 +49,31 @@ namespace Fragsurf.Movement {
         public float underwaterFriction = 2f;
         public float underwaterGravity = 6f;
         public float underwaterVelocityDampening = 2f;
-        
+
+        /// <summary>
+        /// Returns a new MovementConfig with the same values.
+        /// </summary>
+        public MovementConfig Clone()
+        {
+            return new MovementConfig {
+                autoBhop = this.autoBhop,
+                gravity = this.gravity,
+                jumpForce = this.jumpForce,
+                friction = this.friction,
+                maxSpeed = this.maxSpeed,
+                maxVelocity = this.maxVelocity,
+                slopeLimit = this.slopeLimit,
+                clampAirSpeed = this.clampAirSpeed,
+                airCap = this.airCap,
+                airAcceleration = this.airAcceleration,
+                airFriction = this.airFriction,
+                walkSpeed = this.walkSpeed,
+                sprintSpeed = this.sprintSpeed,
+                acceleration = this.acceleration,
+                deceleration = this.deceleration,
+                // Clone additional fields as necessary...
+            };
+        }
     }
 
 }
