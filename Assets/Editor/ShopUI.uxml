@@ -1,0 +1,9 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Editor/ShopUI.uss?fileID=7433441132597879392&amp;guid=5ba38167b8f2a450586e340a35f56b91&amp;type=3#ShopUI" />
+    <engine:GroupBox style="flex-basis: 100%; margin-right: 0;">
+        <engine:GroupBox name="Card" style="opacity: 1; align-items: flex-start; justify-content: flex-start; align-self: center; background-color: rgb(183, 102, 25); padding-top: 3px; margin-top: 4px; padding-left: 4px; height: 337px; width: 267px; -unity-text-align: upper-left; padding-right: 4px;">
+            <engine:Label text="DASH_DEVICE" name="Name" style="margin-top: 0; margin-right: 0; margin-bottom: -1px; margin-left: 0; font-size: 38px;" />
+            <engine:Label text="Label" style="-unity-text-align: upper-center; padding-top: 0; padding-left: 0; padding-right: 0; padding-bottom: 0; margin-bottom: 0; margin-left: 0; margin-top: 0;" />
+        </engine:GroupBox>
+    </engine:GroupBox>
+</engine:UXML>
