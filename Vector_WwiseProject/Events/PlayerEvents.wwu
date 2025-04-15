@@ -82,6 +82,17 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{FEC9D5D5-AA59-4849-B724-9E4D17D7A89D}" ShortID="27584362">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SlideMove" ID="{8281CFB0-CF87-444B-BB64-D381CB7062F5}" WorkUnitID="{09A30750-830F-45E5-8707-9F19C7548873}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="Stop_SlideStop" ID="{14365740-F01D-45F5-BDCB-417534AE69AC}">
