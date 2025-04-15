@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{61D9E346-1D3A-4C53-B396-CA586C298D79}" SchemaVersion="123">
+	<GameParameters>
+		<WorkUnit Name="UtilityRTPCs" ID="{61D9E346-1D3A-4C53-B396-CA586C298D79}" PersistMode="Standalone">
+			<ChildrenList>
+				<GameParameter Name="AmbienceVolume" ID="{FF8471AC-53FA-4841-9A92-AA573AEC84B6}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="70"/>
+						<Property Name="RTPCRamping" Type="int16" Value="1"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="MusicVolume" ID="{006E2A01-FD7F-4282-BA66-54057E31BD6B}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="70"/>
+						<Property Name="RTPCRamping" Type="int16" Value="1"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="SFXVolume" ID="{51684B88-F1C0-47B5-839C-E879D1624D65}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="70"/>
+						<Property Name="RTPCRamping" Type="int16" Value="1"/>
+					</PropertyList>
+				</GameParameter>
+			</ChildrenList>
+		</WorkUnit>
+	</GameParameters>
+</WwiseDocument>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{2AFF4BC2-A1A9-40B1-BB3C-270325962333}" SchemaVersion="123">
+	<AudioObjects>
+		<WorkUnit Name="Ambiences" ID="{2AFF4BC2-A1A9-40B1-BB3C-270325962333}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="4"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<ActorMixer Name="AmbienceMixer" ID="{D033987D-1EBB-4A27-945C-BF11BF5AD0BC}" ShortID="577756800">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-8</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Ambiences" ID="{1B6CFEB2-BFFC-4BF4-8AAF-534F0669C707}" WorkUnitID="{1AFF3748-F24E-4DDB-83DB-ACF142A51E26}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Waves" ID="{36CFCB27-E133-446F-B573-15DD7C8170FB}" ShortID="692662333">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="IsStreamingEnabled" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-7</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{27C4C6F1-2FD8-4ACA-8D46-EE8F25CB73E3}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1AFF3748-F24E-4DDB-83DB-ACF142A51E26}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Waves" ID="{A6D7C819-1075-4CF1-BC81-7830E5DA130B}">
+									<PropertyList>
+										<Property Name="CrossfadeDuration" Type="Real64" Value="2248"/>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.6"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.3"/>
+										<Property Name="LoopBegin" Type="Real64" Value="1.8340623115345"/>
+										<Property Name="LoopEnd" Type="Real64" Value="51.8886798995237"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>AMBSea_Beach Ambience Ocean Waves Surf 02_PSE_GEN2_VqDgo.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="108925725"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Waves" ID="{A6D7C819-1075-4CF1-BC81-7830E5DA130B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="MainAmbience" ID="{0B54E45F-792C-4452-825B-3CCEB2A0ADCF}" ShortID="632764311">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="IsStreamingEnabled" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{27C4C6F1-2FD8-4ACA-8D46-EE8F25CB73E3}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1AFF3748-F24E-4DDB-83DB-ACF142A51E26}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="SFX_Ambiance" ID="{6D5CA061-5696-4371-A3CB-73696397D2F4}">
+									<Language>SFX</Language>
+									<AudioFile>SFX_Ambiance.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="715220551"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="SFX_Ambiance" ID="{6D5CA061-5696-4371-A3CB-73696397D2F4}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

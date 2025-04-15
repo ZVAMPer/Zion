@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{5FB68878-701B-4641-AA74-9B1105ABC64E}" SchemaVersion="123">
+	<Events>
+		<WorkUnit Name="LevelEvents" ID="{5FB68878-701B-4641-AA74-9B1105ABC64E}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="6"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<Event Name="Play_Jumppad" ID="{892EC985-EF0B-47E7-93CF-DEE36D877024}">
+					<ChildrenList>
+						<Action Name="" ID="{298FB19D-EB6A-4924-BB5A-E67205769D8E}" ShortID="125340539">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Jumppad" ID="{9E74E8E4-C6D8-4137-8852-32B010990B8E}" WorkUnitID="{AE9B51F6-D410-452D-AAD5-3E6207ABE273}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{514BC323-8ADC-40EE-8F89-C83A46E1A7DC}" SchemaVersion="123">
+	<Events>
+		<WorkUnit Name="UIEvents" ID="{514BC323-8ADC-40EE-8F89-C83A46E1A7DC}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="11"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<Event Name="Play_UI_Click" ID="{337FB267-38D4-42F9-A48E-E51600DA04C6}">
+					<ChildrenList>
+						<Action Name="" ID="{B58DDC91-DB3C-4767-A4B0-E1077CD2C67B}" ShortID="941934549">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_Click" ID="{1FAABC54-239D-44A6-8D53-DD46A0CE59D5}" WorkUnitID="{B15C617F-69BD-404E-9603-DB82EAEF4840}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_UI_Back" ID="{B0776BA6-B2D6-4105-81B4-396AD6C1B625}">
+					<ChildrenList>
+						<Action Name="" ID="{6337C424-8E57-4E16-AB29-CDD4C21CD318}" ShortID="777074838">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_Back" ID="{16B7A06A-372B-4EF4-9F20-8F6F2B5F9642}" WorkUnitID="{B15C617F-69BD-404E-9603-DB82EAEF4840}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

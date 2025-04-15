@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{AE9B51F6-D410-452D-AAD5-3E6207ABE273}" SchemaVersion="123">
+	<AudioObjects>
+		<WorkUnit Name="LevelSFX" ID="{AE9B51F6-D410-452D-AAD5-3E6207ABE273}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="6"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<Sound Name="Jumppad" ID="{9E74E8E4-C6D8-4137-8852-32B010990B8E}" ShortID="967123301">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="UserAuxSendVolume0" Type="Real64">
+							<ValueList>
+								<Value>-37</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Generic" ID="{174B3308-DE0D-4BEB-B7E0-E883C15787F5}" WorkUnitID="{E9D5D73C-F1BC-4663-A32D-9FE569D404D2}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="ADPCM Auto Detect Medium" ID="{1ADE8C79-CF88-45CD-8D8B-13FFA25639DF}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{4D49DF85-7923-407D-AF7F-D5EF8BC3A2C9}" WorkUnitID="{1AFF3748-F24E-4DDB-83DB-ACF142A51E26}"/>
+						</Reference>
+						<Reference Name="UserAuxSend0">
+							<ObjectRef Name="Reverb" ID="{2F1F6335-8DB3-40D0-AFE9-E30D2BC6101C}" WorkUnitID="{1AFF3748-F24E-4DDB-83DB-ACF142A51E26}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Jumppad" ID="{7D028F96-E2F2-4B0E-92C8-B4FA56A092AD}">
+							<Language>SFX</Language>
+							<AudioFile>SFX_Jumppad.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="21146001"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Jumppad" ID="{7D028F96-E2F2-4B0E-92C8-B4FA56A092AD}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

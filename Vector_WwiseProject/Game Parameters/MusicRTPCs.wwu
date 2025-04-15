@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{1C65299E-BC40-4DAF-BABE-FAF24BD670DA}" SchemaVersion="123">
+	<GameParameters>
+		<WorkUnit Name="MusicRTPCs" ID="{1C65299E-BC40-4DAF-BABE-FAF24BD670DA}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="1"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<GameParameter Name="SFXLevel" ID="{0C4D0672-88EA-4EC9-9ABC-62A0AFB65ABA}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="-48"/>
+						<Property Name="Max" Type="Real64" Value="0"/>
+						<Property Name="Min" Type="Real64" Value="-48"/>
+						<Property Name="RTPCRamping" Type="int16" Value="1"/>
+						<Property Name="SlewRateDown" Type="Real64" Value="38"/>
+						<Property Name="SlewRateUp" Type="Real64" Value="76"/>
+					</PropertyList>
+				</GameParameter>
+			</ChildrenList>
+		</WorkUnit>
+	</GameParameters>
+</WwiseDocument>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{B15C617F-69BD-404E-9603-DB82EAEF4840}" SchemaVersion="123">
+	<AudioObjects>
+		<WorkUnit Name="UISFX" ID="{B15C617F-69BD-404E-9603-DB82EAEF4840}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="11"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<ActorMixer Name="UISFXActorMixer" ID="{8777568C-5FD3-47D5-9C33-744CD71D82AD}" ShortID="288455243">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="ADPCM Auto Detect Medium" ID="{1ADE8C79-CF88-45CD-8D8B-13FFA25639DF}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{4D49DF85-7923-407D-AF7F-D5EF8BC3A2C9}" WorkUnitID="{1AFF3748-F24E-4DDB-83DB-ACF142A51E26}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="UI_Back" ID="{16B7A06A-372B-4EF4-9F20-8F6F2B5F9642}" ShortID="169930852">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-8</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{27C4C6F1-2FD8-4ACA-8D46-EE8F25CB73E3}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1AFF3748-F24E-4DDB-83DB-ACF142A51E26}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="UI_Back" ID="{E9F4387B-BDCF-444D-9328-4319F4AC70B2}">
+									<Language>SFX</Language>
+									<AudioFile>UI_Back.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1072390415"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="UI_Back" ID="{E9F4387B-BDCF-444D-9328-4319F4AC70B2}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="UI_Click" ID="{1FAABC54-239D-44A6-8D53-DD46A0CE59D5}" ShortID="248575067">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{27C4C6F1-2FD8-4ACA-8D46-EE8F25CB73E3}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1AFF3748-F24E-4DDB-83DB-ACF142A51E26}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="UI_Click" ID="{1C99627D-B7D9-4289-93DE-D648700A83DD}">
+									<Language>SFX</Language>
+									<AudioFile>UI_Click.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="318118567"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="UI_Click" ID="{1C99627D-B7D9-4289-93DE-D648700A83DD}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

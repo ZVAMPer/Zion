@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{19137AA1-2C86-4192-A2D3-56B8215691B7}" SchemaVersion="123">
+	<SoundcasterSessions>
+		<WorkUnit Name="Default Work Unit" ID="{19137AA1-2C86-4192-A2D3-56B8215691B7}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="AudioTesting" ID="{6FE8395A-CFF1-4E52-BE20-2DEAC5DBD9AB}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="StartGame" ID="{8D13B9FD-F2F5-4149-A84E-66D52B61C2C0}" WorkUnitID="{45B578F5-A390-40F3-87B4-431C72D6DFE1}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Menus" ID="{284E0505-29BE-46BA-8AF5-90F081810E84}" WorkUnitID="{4674D043-DAE0-465F-A3D3-D4A42E001F9A}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_UI_Back" ID="{B0776BA6-B2D6-4105-81B4-396AD6C1B625}" WorkUnitID="{514BC323-8ADC-40EE-8F89-C83A46E1A7DC}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_SlideStart" ID="{C39F6AF1-0ED7-4E4A-A89E-941DD139ED0F}" WorkUnitID="{E21FEAF4-DBE3-4826-A3AF-8FAC7B5B821C}"/>
+							<Position X="0" Y="4"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_GenericGunFire" ID="{F296B9DD-1B86-4D02-B3AA-8A540CAB3436}" WorkUnitID="{018DFC39-1D04-44B4-9488-FC72BE4806B9}"/>
+							<Position X="0" Y="5"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="StopAll" ID="{EB427AE1-A13C-4437-9C98-80CA77BBE38C}" WorkUnitID="{45B578F5-A390-40F3-87B4-431C72D6DFE1}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="StartLevel" ID="{C5B56CB3-76AB-4B0A-893C-AA1973CA5966}" WorkUnitID="{4674D043-DAE0-465F-A3D3-D4A42E001F9A}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_UI_Click" ID="{337FB267-38D4-42F9-A48E-E51600DA04C6}" WorkUnitID="{514BC323-8ADC-40EE-8F89-C83A46E1A7DC}"/>
+							<Position X="1" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_JumpShort" ID="{79516B09-817E-4FD7-A1C7-0D15114F8C21}" WorkUnitID="{E21FEAF4-DBE3-4826-A3AF-8FAC7B5B821C}"/>
+							<Position X="1" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_SlideStop" ID="{775CCCB0-627E-41C7-B2DF-7A3C481CED2F}" WorkUnitID="{E21FEAF4-DBE3-4826-A3AF-8FAC7B5B821C}"/>
+							<Position X="1" Y="4"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_GenericGunHit" ID="{C5364F4A-9A6D-473E-8157-7B981FD1882C}" WorkUnitID="{018DFC39-1D04-44B4-9488-FC72BE4806B9}"/>
+							<Position X="1" Y="5"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="SetFightState" ID="{CE4BAFC8-6515-4BC5-B76C-F5430611212E}" WorkUnitID="{4674D043-DAE0-465F-A3D3-D4A42E001F9A}"/>
+							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Landing" ID="{AE38BBBE-E857-4051-B55C-87C7A1E005AD}" WorkUnitID="{E21FEAF4-DBE3-4826-A3AF-8FAC7B5B821C}"/>
+							<Position X="2" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_JumpLong" ID="{B50B9CDA-289D-4A0D-8A69-40B28463D023}" WorkUnitID="{E21FEAF4-DBE3-4826-A3AF-8FAC7B5B821C}"/>
+							<Position X="2" Y="4"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_GenericGunReload" ID="{92D6EE26-1ACA-4377-8AA0-915E3268BFE6}" WorkUnitID="{018DFC39-1D04-44B4-9488-FC72BE4806B9}"/>
+							<Position X="2" Y="5"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="SetRaceState" ID="{B947F898-159F-48B4-9D8A-C23A33AE57F2}" WorkUnitID="{4674D043-DAE0-465F-A3D3-D4A42E001F9A}"/>
+							<Position X="3" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_PlayerFootsteps" ID="{238892F7-9F3F-4ECD-B42F-02ACF8213947}" WorkUnitID="{E21FEAF4-DBE3-4826-A3AF-8FAC7B5B821C}"/>
+							<Position X="3" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Stop_JumpLong" ID="{0C509007-1A02-46C0-B231-6CE0386ECDF2}" WorkUnitID="{E21FEAF4-DBE3-4826-A3AF-8FAC7B5B821C}"/>
+							<Position X="3" Y="4"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_GenericGunSwitch" ID="{70CB7E68-C58E-489F-A411-7726F2107F20}" WorkUnitID="{018DFC39-1D04-44B4-9488-FC72BE4806B9}"/>
+							<Position X="3" Y="5"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_SlideMove" ID="{9F57BA55-12E9-4C31-AC84-15001900BE61}" WorkUnitID="{E21FEAF4-DBE3-4826-A3AF-8FAC7B5B821C}"/>
+							<Position X="4" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Jumppad" ID="{892EC985-EF0B-47E7-93CF-DEE36D877024}" WorkUnitID="{5FB68878-701B-4641-AA74-9B1105ABC64E}"/>
+							<Position X="4" Y="4"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="MusicVolume" ID="{006E2A01-FD7F-4282-BA66-54057E31BD6B}"/>
+							<Value>70</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="Playerspeed" ID="{3D5831B3-6D4B-455B-A588-8C00A485E7D5}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="SFXVolume" ID="{51684B88-F1C0-47B5-839C-E879D1624D65}"/>
+							<Value>70</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="AmbienceVolume" ID="{FF8471AC-53FA-4841-9A92-AA573AEC84B6}"/>
+							<Value>70</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="SFXLevel" ID="{0C4D0672-88EA-4EC9-9ABC-62A0AFB65ABA}"/>
+							<Value>1.05321819553231E-315</Value>
+						</RTPCValue>
+					</RTPCValueList>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="Race" ID="{4A39D284-97FD-4EA5-A928-02AC90C0EC89}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundcasterSessions>
+</WwiseDocument>

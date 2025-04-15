@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{018DFC39-1D04-44B4-9488-FC72BE4806B9}" SchemaVersion="123">
+	<Events>
+		<WorkUnit Name="GunEvents" ID="{018DFC39-1D04-44B4-9488-FC72BE4806B9}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<Event Name="Play_GenericGunSwitch" ID="{70CB7E68-C58E-489F-A411-7726F2107F20}">
+					<ChildrenList>
+						<Action Name="" ID="{431BFDCE-CE65-4DB7-866B-8D3A07CE0970}" ShortID="9902983">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="GenericGunSwitch" ID="{1E6BA4DE-2E79-40B6-B353-CE2368054201}" WorkUnitID="{506B1D80-F258-468D-B014-604CDFDD491D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_GenericGunReload" ID="{92D6EE26-1ACA-4377-8AA0-915E3268BFE6}">
+					<ChildrenList>
+						<Action Name="" ID="{BB9AD306-AFA1-490E-ADA4-EA99AF511638}" ShortID="893824965">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="GenericGunReload" ID="{B1EF789C-30B1-4E0F-9829-37510E88FB77}" WorkUnitID="{506B1D80-F258-468D-B014-604CDFDD491D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_GenericGunFire" ID="{F296B9DD-1B86-4D02-B3AA-8A540CAB3436}">
+					<ChildrenList>
+						<Action Name="" ID="{BAA3C637-65F5-4BEE-9E60-4D846EA396B6}" ShortID="685294777">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="GenericGunFire" ID="{51A5D0D3-F73B-42AD-ADA9-126B327BB394}" WorkUnitID="{506B1D80-F258-468D-B014-604CDFDD491D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_GenericGunHit" ID="{C5364F4A-9A6D-473E-8157-7B981FD1882C}">
+					<ChildrenList>
+						<Action Name="" ID="{85151D80-9BB3-4000-BCF9-A83457BA7A36}" ShortID="58997168">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="GenericGunHit" ID="{FBF64E16-7DC2-427D-B7EB-D9F164CF0E7D}" WorkUnitID="{506B1D80-F258-468D-B014-604CDFDD491D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

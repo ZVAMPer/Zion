@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{506B1D80-F258-468D-B014-604CDFDD491D}" SchemaVersion="123">
+	<AudioObjects>
+		<WorkUnit Name="GenericGunSFX" ID="{506B1D80-F258-468D-B014-604CDFDD491D}" PersistMode="Standalone">
+			<ChildrenList>
+				<ActorMixer Name="GunSFXActorMixer" ID="{6245A8F2-EA17-418F-A350-7BB0C37FB771}" ShortID="738623074">
+					<PropertyList>
+						<Property Name="UserAuxSendVolume0" Type="Real64">
+							<ValueList>
+								<Value>-22</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="ADPCM Auto Detect Medium" ID="{1ADE8C79-CF88-45CD-8D8B-13FFA25639DF}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{4D49DF85-7923-407D-AF7F-D5EF8BC3A2C9}" WorkUnitID="{1AFF3748-F24E-4DDB-83DB-ACF142A51E26}"/>
+						</Reference>
+						<Reference Name="UserAuxSend0">
+							<ObjectRef Name="Reverb" ID="{2F1F6335-8DB3-40D0-AFE9-E30D2BC6101C}" WorkUnitID="{1AFF3748-F24E-4DDB-83DB-ACF142A51E26}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<RandomSequenceContainer Name="GenericGunFire" ID="{51A5D0D3-F73B-42AD-ADA9-126B327BB394}" ShortID="568968232">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Generic" ID="{174B3308-DE0D-4BEB-B7E0-E883C15787F5}" WorkUnitID="{E9D5D73C-F1BC-4663-A32D-9FE569D404D2}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{27C4C6F1-2FD8-4ACA-8D46-EE8F25CB73E3}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1AFF3748-F24E-4DDB-83DB-ACF142A51E26}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="SFX_ Generic Fire_1" ID="{C9118F82-BF77-4B60-B54A-5BA1921B95D8}" ShortID="71141278">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{27C4C6F1-2FD8-4ACA-8D46-EE8F25CB73E3}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1AFF3748-F24E-4DDB-83DB-ACF142A51E26}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_ Generic Fire_1" ID="{B94F9818-3B73-4A01-9D40-5B08773985D6}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_ Generic Fire_1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="845797820"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_ Generic Fire_1" ID="{B94F9818-3B73-4A01-9D40-5B08773985D6}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="SFX_ Generic Fire_2" ID="{41796000-A38A-4EF1-BB96-0E749C94E394}" ShortID="135878796">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{27C4C6F1-2FD8-4ACA-8D46-EE8F25CB73E3}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1AFF3748-F24E-4DDB-83DB-ACF142A51E26}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_ Generic Fire_2" ID="{3A86C06B-3609-4B2D-A607-65B0701C7D4D}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_ Generic Fire_2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="156829457"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_ Generic Fire_2" ID="{3A86C06B-3609-4B2D-A607-65B0701C7D4D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="SFX_ Generic Fire_3" ID="{46FCCAB4-743E-4514-B8F1-DC9E8317A74A}" ShortID="396364855">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{27C4C6F1-2FD8-4ACA-8D46-EE8F25CB73E3}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1AFF3748-F24E-4DDB-83DB-ACF142A51E26}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_ Generic Fire_3" ID="{49BE3737-4AFF-4157-84D4-77B6C55A743C}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_ Generic Fire_3.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="403898318"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_ Generic Fire_3" ID="{49BE3737-4AFF-4157-84D4-77B6C55A743C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="SFX_ Generic Fire_4" ID="{9A3C0293-A36A-46B9-9542-BE94364EFE92}" ShortID="417610598">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{27C4C6F1-2FD8-4ACA-8D46-EE8F25CB73E3}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1AFF3748-F24E-4DDB-83DB-ACF142A51E26}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_ Generic Fire_4" ID="{8C83973D-F576-4DA2-BA3B-52BA7A0BB561}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_ Generic Fire_4.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="384138613"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_ Generic Fire_4" ID="{8C83973D-F576-4DA2-BA3B-52BA7A0BB561}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<Sound Name="GenericGunHit" ID="{FBF64E16-7DC2-427D-B7EB-D9F164CF0E7D}" ShortID="965727549">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Generic" ID="{174B3308-DE0D-4BEB-B7E0-E883C15787F5}" WorkUnitID="{E9D5D73C-F1BC-4663-A32D-9FE569D404D2}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{27C4C6F1-2FD8-4ACA-8D46-EE8F25CB73E3}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1AFF3748-F24E-4DDB-83DB-ACF142A51E26}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="SFX_Generic Gun Hit" ID="{F1B5BCC3-87EE-4EDC-B6ED-8F70109BD5A8}">
+									<Language>SFX</Language>
+									<AudioFile>SFX_Generic Gun Hit.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="216443230"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="SFX_Generic Gun Hit" ID="{F1B5BCC3-87EE-4EDC-B6ED-8F70109BD5A8}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="GenericGunReload" ID="{B1EF789C-30B1-4E0F-9829-37510E88FB77}" ShortID="136861218">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Generic" ID="{174B3308-DE0D-4BEB-B7E0-E883C15787F5}" WorkUnitID="{E9D5D73C-F1BC-4663-A32D-9FE569D404D2}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{27C4C6F1-2FD8-4ACA-8D46-EE8F25CB73E3}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1AFF3748-F24E-4DDB-83DB-ACF142A51E26}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="SFX_Generic Gun Reload" ID="{E34D996C-794F-4C4E-B8D4-54DD7B314888}">
+									<Language>SFX</Language>
+									<AudioFile>SFX_Generic Gun Reload.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="890321165"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="SFX_Generic Gun Reload" ID="{E34D996C-794F-4C4E-B8D4-54DD7B314888}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="GenericGunSwitch" ID="{1E6BA4DE-2E79-40B6-B353-CE2368054201}" ShortID="362410321">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Generic" ID="{174B3308-DE0D-4BEB-B7E0-E883C15787F5}" WorkUnitID="{E9D5D73C-F1BC-4663-A32D-9FE569D404D2}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{27C4C6F1-2FD8-4ACA-8D46-EE8F25CB73E3}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1AFF3748-F24E-4DDB-83DB-ACF142A51E26}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="SFX_Generic Gun Switch" ID="{2ACDF505-8BC4-44A5-8C6F-151FFBA3F5E3}">
+									<Language>SFX</Language>
+									<AudioFile>SFX_Generic Gun Switch.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="992993740"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="SFX_Generic Gun Switch" ID="{2ACDF505-8BC4-44A5-8C6F-151FFBA3F5E3}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

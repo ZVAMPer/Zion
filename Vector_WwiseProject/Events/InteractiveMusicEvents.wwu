@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{4674D043-DAE0-465F-A3D3-D4A42E001F9A}" SchemaVersion="123">
+	<Events>
+		<WorkUnit Name="InteractiveMusicEvents" ID="{4674D043-DAE0-465F-A3D3-D4A42E001F9A}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="4"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<Event Name="Menus" ID="{284E0505-29BE-46BA-8AF5-90F081810E84}">
+					<ChildrenList>
+						<Action Name="" ID="{DEE0A36C-7505-42B7-8F2D-DE944602F37B}" ShortID="541868501">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="12"/>
+								<Property Name="FadeTime" Type="Real64" Value="1.5"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-96"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AmbienceMixer" ID="{D033987D-1EBB-4A27-945C-BF11BF5AD0BC}" WorkUnitID="{2AFF4BC2-A1A9-40B1-BB3C-270325962333}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{51F04A7F-BF65-4B89-A294-42937B401AAE}" ShortID="679621723">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Menu" ID="{B88788EE-B052-4EF2-AD21-C383D6661739}" WorkUnitID="{6273A212-D78F-48C1-B41F-74D3C7281238}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="StartLevel" ID="{C5B56CB3-76AB-4B0A-893C-AA1973CA5966}">
+					<ChildrenList>
+						<Action Name="" ID="{EE968928-DBFC-4C37-ADD5-25FDA6DC18BB}" ShortID="548719322">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="12"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AmbienceMixer" ID="{D033987D-1EBB-4A27-945C-BF11BF5AD0BC}" WorkUnitID="{2AFF4BC2-A1A9-40B1-BB3C-270325962333}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{AE037FE6-3B01-413F-8A44-AF9FA1612C5C}" ShortID="741487453">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Race" ID="{4A39D284-97FD-4EA5-A928-02AC90C0EC89}" WorkUnitID="{6273A212-D78F-48C1-B41F-74D3C7281238}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SetFightState" ID="{CE4BAFC8-6515-4BC5-B76C-F5430611212E}">
+					<ChildrenList>
+						<Action Name="" ID="{0F7EA4C9-6FFD-4C1B-A64F-CF6E44BE665B}" ShortID="289401488">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Fight" ID="{DECF8CE5-1A24-4123-A1F9-921E8F106616}" WorkUnitID="{6273A212-D78F-48C1-B41F-74D3C7281238}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SetRaceState" ID="{B947F898-159F-48B4-9D8A-C23A33AE57F2}">
+					<ChildrenList>
+						<Action Name="" ID="{9AB8063A-AE58-4A61-A549-35D2E12F9181}" ShortID="147849136">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Race" ID="{4A39D284-97FD-4EA5-A928-02AC90C0EC89}" WorkUnitID="{6273A212-D78F-48C1-B41F-74D3C7281238}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
