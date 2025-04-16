@@ -53,3 +53,4 @@
 /ServerBuilds/SurfTogetherServer_0.1.000_Data/level0 filter=lfs diff=lfs merge=lfs -text
 *.0 filter=lfs diff=lfs merge=lfs -text
 *.bytes filter=lfs diff=lfs merge=lfs -text
+*.prof filter=lfs diff=lfs merge=lfs -text
