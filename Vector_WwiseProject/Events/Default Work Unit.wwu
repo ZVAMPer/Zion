@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{45B578F5-A390-40F3-87B4-431C72D6DFE1}" SchemaVersion="123">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{45B578F5-A390-40F3-87B4-431C72D6DFE1}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="StartGame" ID="{8D13B9FD-F2F5-4149-A84E-66D52B61C2C0}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="4"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{11BB1B92-BDFA-4F15-8CB7-9DB2343F73A8}" ShortID="580353452">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MainMusicSwitch" ID="{01B02379-710C-4684-82FB-064CE05B22D7}" WorkUnitID="{2A3697A0-CF13-4D1A-8F5C-460113140F76}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{4CF4C2AF-4E38-436C-B56A-123DB6D7FDBE}" ShortID="315965487">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="12"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-96"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AmbienceMixer" ID="{D033987D-1EBB-4A27-945C-BF11BF5AD0BC}" WorkUnitID="{2AFF4BC2-A1A9-40B1-BB3C-270325962333}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{DF602F31-9434-4210-90BF-7CF1DFCD8B17}" ShortID="995058253">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MainAmbience" ID="{0B54E45F-792C-4452-825B-3CCEB2A0ADCF}" WorkUnitID="{2AFF4BC2-A1A9-40B1-BB3C-270325962333}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{267B37FF-D715-4037-9186-F76DA2773DC2}" ShortID="16979281">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Waves" ID="{36CFCB27-E133-446F-B573-15DD7C8170FB}" WorkUnitID="{2AFF4BC2-A1A9-40B1-BB3C-270325962333}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{1888FFA0-9178-4696-8A37-740BFA3EAD90}" ShortID="123230615">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Menu" ID="{B88788EE-B052-4EF2-AD21-C383D6661739}" WorkUnitID="{6273A212-D78F-48C1-B41F-74D3C7281238}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="StopAll" ID="{EB427AE1-A13C-4437-9C98-80CA77BBE38C}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="10"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{618D5B2F-E7AD-4378-8F47-0ECE28CFB807}" ShortID="766106385">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="3"/>
+							</PropertyList>
+							<ReferenceList/>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

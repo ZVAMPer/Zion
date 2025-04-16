@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{6273A212-D78F-48C1-B41F-74D3C7281238}" SchemaVersion="123">
+	<States>
+		<WorkUnit Name="GameStates" ID="{6273A212-D78F-48C1-B41F-74D3C7281238}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="15"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<StateGroup Name="GameStateGroup" ID="{626CC601-8E8A-44CC-9484-6A8DC9CE5289}">
+					<ChildrenList>
+						<State Name="None" ID="{DA9E7107-8BDE-41E8-92D0-4391DEBB65BE}"/>
+						<State Name="Menu" ID="{B88788EE-B052-4EF2-AD21-C383D6661739}"/>
+						<State Name="Race" ID="{4A39D284-97FD-4EA5-A928-02AC90C0EC89}"/>
+						<State Name="Fight" ID="{DECF8CE5-1A24-4123-A1F9-921E8F106616}"/>
+					</ChildrenList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
+	</States>
+</WwiseDocument>

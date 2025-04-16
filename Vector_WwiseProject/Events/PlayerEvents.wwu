@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{E21FEAF4-DBE3-4826-A3AF-8FAC7B5B821C}" SchemaVersion="123">
+	<Events>
+		<WorkUnit Name="PlayerEvents" ID="{E21FEAF4-DBE3-4826-A3AF-8FAC7B5B821C}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="10"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<Event Name="Play_JumpShort" ID="{79516B09-817E-4FD7-A1C7-0D15114F8C21}">
+					<ChildrenList>
+						<Action Name="" ID="{8FD969ED-6AB3-4F89-9E06-807B8EBD84C3}" ShortID="378097266">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="JumpShort" ID="{28481738-C687-4854-BCA0-F25A154EF5D0}" WorkUnitID="{09A30750-830F-45E5-8707-9F19C7548873}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_SlideMove" ID="{9F57BA55-12E9-4C31-AC84-15001900BE61}">
+					<ChildrenList>
+						<Action Name="" ID="{E02E7EDA-FE9A-4911-B69F-78A79F44AD3E}" ShortID="654476844">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SlideMove" ID="{8281CFB0-CF87-444B-BB64-D381CB7062F5}" WorkUnitID="{09A30750-830F-45E5-8707-9F19C7548873}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_PlayerFootsteps" ID="{238892F7-9F3F-4ECD-B42F-02ACF8213947}">
+					<ChildrenList>
+						<Action Name="" ID="{5BFADF24-6BA4-4F57-9C66-9462C07653CF}" ShortID="304858731">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayerFootsteps" ID="{E57F470A-A644-4F6C-BD39-89DB0EB2765B}" WorkUnitID="{09A30750-830F-45E5-8707-9F19C7548873}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_JumpLong" ID="{B50B9CDA-289D-4A0D-8A69-40B28463D023}">
+					<ChildrenList>
+						<Action Name="" ID="{C6D5B670-B5F0-4439-822F-E00A4C92A33B}" ShortID="1067293252">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="JumpLong" ID="{54075EA6-B2C9-4247-A620-436EA5EDC573}" WorkUnitID="{09A30750-830F-45E5-8707-9F19C7548873}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_SlideStart" ID="{C39F6AF1-0ED7-4E4A-A89E-941DD139ED0F}">
+					<ChildrenList>
+						<Action Name="" ID="{A2EC14E5-51EE-4CBC-944C-B13DD5C56BD2}" ShortID="798431187">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SlideStart" ID="{C6C06E66-E420-4A6F-9FEC-81751CBB0988}" WorkUnitID="{09A30750-830F-45E5-8707-9F19C7548873}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Landing" ID="{AE38BBBE-E857-4051-B55C-87C7A1E005AD}">
+					<ChildrenList>
+						<Action Name="" ID="{85CDF526-570C-4231-9AE3-8835F10C9E8C}" ShortID="970236218">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Landing" ID="{203F3621-E647-44AD-B191-93218C30A2E4}" WorkUnitID="{09A30750-830F-45E5-8707-9F19C7548873}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_SlideStop" ID="{775CCCB0-627E-41C7-B2DF-7A3C481CED2F}">
+					<ChildrenList>
+						<Action Name="" ID="{1CC8D9FB-E124-440B-9C64-84009D5B395B}" ShortID="1051702034">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SlideStop" ID="{FB0B90EE-918E-45C3-8BEA-9A75F193F390}" WorkUnitID="{09A30750-830F-45E5-8707-9F19C7548873}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{FEC9D5D5-AA59-4849-B724-9E4D17D7A89D}" ShortID="27584362">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SlideMove" ID="{8281CFB0-CF87-444B-BB64-D381CB7062F5}" WorkUnitID="{09A30750-830F-45E5-8707-9F19C7548873}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_SlideStop" ID="{14365740-F01D-45F5-BDCB-417534AE69AC}">
+					<ChildrenList>
+						<Action Name="" ID="{AB46EF50-59B2-468C-A9AE-1095FC5563D9}" ShortID="889827304">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SlideStop" ID="{FB0B90EE-918E-45C3-8BEA-9A75F193F390}" WorkUnitID="{09A30750-830F-45E5-8707-9F19C7548873}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_JumpLong" ID="{0C509007-1A02-46C0-B231-6CE0386ECDF2}">
+					<ChildrenList>
+						<Action Name="" ID="{54ABA8D7-39AC-4418-A921-7CFFA5594550}" ShortID="443528768">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="JumpLong" ID="{54075EA6-B2C9-4247-A620-436EA5EDC573}" WorkUnitID="{09A30750-830F-45E5-8707-9F19C7548873}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
