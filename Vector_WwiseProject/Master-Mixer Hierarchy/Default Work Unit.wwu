@@ -21,6 +21,11 @@
 										<Value>3584</Value>
 									</ValueList>
 								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ObjectLists>
 								<ObjectList Name="RTPC">
@@ -173,6 +178,11 @@
 								<Property Name="BusChannelConfig" Type="int32">
 									<ValueList>
 										<Value>3584</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>

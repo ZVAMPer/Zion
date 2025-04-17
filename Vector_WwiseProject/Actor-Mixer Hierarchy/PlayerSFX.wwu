@@ -9,7 +9,7 @@
 			<ChildrenList>
 				<ActorMixer Name="PlayerSFXActorMixer" ID="{A5659960-1528-4887-A57F-0BCA24DFAA80}" ShortID="659933470">
 					<PropertyList>
-						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
 						<Property Name="UserAuxSendVolume0" Type="Real64">
 							<ValueList>
 								<Value>-23</Value>
