@@ -97,7 +97,7 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="Playerspeed" ID="{3D5831B3-6D4B-455B-A588-8C00A485E7D5}"/>
-							<Value>0</Value>
+							<Value>1.84691338150482E-312</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="SFXVolume" ID="{51684B88-F1C0-47B5-839C-E879D1624D65}"/>
@@ -113,7 +113,7 @@
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="Race" ID="{4A39D284-97FD-4EA5-A928-02AC90C0EC89}"/>
+						<CurrentStateRef Name="Menu" ID="{B88788EE-B052-4EF2-AD21-C383D6661739}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true"/>
 				</SoundcasterSession>

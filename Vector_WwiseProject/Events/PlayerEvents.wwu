@@ -75,13 +75,6 @@
 				</Event>
 				<Event Name="Play_SlideStop" ID="{775CCCB0-627E-41C7-B2DF-7A3C481CED2F}">
 					<ChildrenList>
-						<Action Name="" ID="{1CC8D9FB-E124-440B-9C64-84009D5B395B}" ShortID="1051702034">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="SlideStop" ID="{FB0B90EE-918E-45C3-8BEA-9A75F193F390}" WorkUnitID="{09A30750-830F-45E5-8707-9F19C7548873}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
 						<Action Name="" ID="{FEC9D5D5-AA59-4849-B724-9E4D17D7A89D}" ShortID="27584362">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="2"/>
@@ -101,6 +94,13 @@
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="2"/>
 							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SlideMove" ID="{8281CFB0-CF87-444B-BB64-D381CB7062F5}" WorkUnitID="{09A30750-830F-45E5-8707-9F19C7548873}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{C7DB9125-5C67-4844-B765-2A82A47B6177}" ShortID="15278933">
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="SlideStop" ID="{FB0B90EE-918E-45C3-8BEA-9A75F193F390}" WorkUnitID="{09A30750-830F-45E5-8707-9F19C7548873}"/>

@@ -9,6 +9,7 @@
 			<ChildrenList>
 				<ActorMixer Name="PlayerSFXActorMixer" ID="{A5659960-1528-4887-A57F-0BCA24DFAA80}" ShortID="659933470">
 					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
 						<Property Name="UserAuxSendVolume0" Type="Real64">
 							<ValueList>
 								<Value>-23</Value>
@@ -16,6 +17,9 @@
 						</Property>
 					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Generic" ID="{174B3308-DE0D-4BEB-B7E0-E883C15787F5}" WorkUnitID="{E9D5D73C-F1BC-4663-A32D-9FE569D404D2}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="ADPCM Auto Detect Medium" ID="{1ADE8C79-CF88-45CD-8D8B-13FFA25639DF}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
@@ -89,11 +93,6 @@
 						<RandomSequenceContainer Name="PlayerFootsteps" ID="{E57F470A-A644-4F6C-BD39-89DB0EB2765B}" ShortID="395273633">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="2"/>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>7</Value>
-									</ValueList>
-								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -376,9 +375,9 @@
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 								<Property Name="OverrideEffect" Type="bool" Value="True"/>
 								<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
-								<Property Name="UserAuxSendVolume0" Type="Real64">
+								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>8</Value>
+										<Value>-11</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -492,12 +491,12 @@
 																									</PropertyList>
 																									<PointList>
 																										<Point>
-																											<XPos>0</XPos>
+																											<XPos>20</XPos>
 																											<YPos>76.73157</YPos>
 																											<Flags>5</Flags>
 																										</Point>
 																										<Point>
-																											<XPos>50</XPos>
+																											<XPos>100</XPos>
 																											<YPos>3128.50453</YPos>
 																											<Flags>37</Flags>
 																										</Point>
@@ -527,12 +526,12 @@
 																									</PropertyList>
 																									<PointList>
 																										<Point>
-																											<XPos>0</XPos>
+																											<XPos>20</XPos>
 																											<YPos>279.66114</YPos>
 																											<Flags>5</Flags>
 																										</Point>
 																										<Point>
-																											<XPos>50</XPos>
+																											<XPos>100</XPos>
 																											<YPos>3896.49008</YPos>
 																											<Flags>37</Flags>
 																										</Point>

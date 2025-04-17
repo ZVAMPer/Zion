@@ -8,7 +8,7 @@
 	<ValidationCacheItem File="C:\UnityProjects\Zion\Vector_WwiseProject\Switches\Default Work Unit.wwu" DateLow="1744694324" DateHigh="0"/>
 	<ValidationCacheItem File="C:\UnityProjects\Zion\Vector_WwiseProject\States\GameStates.wwu" DateLow="1744694324" DateHigh="0"/>
 	<ValidationCacheItem File="C:\UnityProjects\Zion\Vector_WwiseProject\States\Default Work Unit.wwu" DateLow="1744694324" DateHigh="0"/>
-	<ValidationCacheItem File="C:\UnityProjects\Zion\Vector_WwiseProject\Soundcaster Sessions\Default Work Unit.wwu" DateLow="1744694324" DateHigh="0"/>
+	<ValidationCacheItem File="C:\UnityProjects\Zion\Vector_WwiseProject\Soundcaster Sessions\Default Work Unit.wwu" DateLow="1744868131" DateHigh="0"/>
 	<ValidationCacheItem File="C:\UnityProjects\Zion\Vector_WwiseProject\SoundBanks\Default Work Unit.wwu" DateLow="1744694324" DateHigh="0"/>
 	<ValidationCacheItem File="C:\UnityProjects\Zion\Vector_WwiseProject\Queries\Factory Queries.wwu" DateLow="1744694324" DateHigh="0"/>
 	<ValidationCacheItem File="C:\UnityProjects\Zion\Vector_WwiseProject\Queries\Default Work Unit.wwu" DateLow="1744694324" DateHigh="0"/>
@@ -25,7 +25,7 @@
 	<ValidationCacheItem File="C:\UnityProjects\Zion\Vector_WwiseProject\Game Parameters\MusicRTPCs.wwu" DateLow="1744694324" DateHigh="0"/>
 	<ValidationCacheItem File="C:\UnityProjects\Zion\Vector_WwiseProject\Game Parameters\Default Work Unit.wwu" DateLow="1744694324" DateHigh="0"/>
 	<ValidationCacheItem File="C:\UnityProjects\Zion\Vector_WwiseProject\Events\UIEvents.wwu" DateLow="1744694324" DateHigh="0"/>
-	<ValidationCacheItem File="C:\UnityProjects\Zion\Vector_WwiseProject\Events\PlayerEvents.wwu" DateLow="1744695836" DateHigh="0"/>
+	<ValidationCacheItem File="C:\UnityProjects\Zion\Vector_WwiseProject\Events\PlayerEvents.wwu" DateLow="1744868211" DateHigh="0"/>
 	<ValidationCacheItem File="C:\UnityProjects\Zion\Vector_WwiseProject\Events\LevelEvents.wwu" DateLow="1744694324" DateHigh="0"/>
 	<ValidationCacheItem File="C:\UnityProjects\Zion\Vector_WwiseProject\Events\InteractiveMusicEvents.wwu" DateLow="1744694324" DateHigh="0"/>
 	<ValidationCacheItem File="C:\UnityProjects\Zion\Vector_WwiseProject\Events\GunEvents.wwu" DateLow="1744694324" DateHigh="0"/>
@@ -41,7 +41,7 @@
 	<ValidationCacheItem File="C:\UnityProjects\Zion\Vector_WwiseProject\Attenuations\SFXAttenuations.wwu" DateLow="1744694324" DateHigh="0"/>
 	<ValidationCacheItem File="C:\UnityProjects\Zion\Vector_WwiseProject\Attenuations\Default Work Unit.wwu" DateLow="1744694324" DateHigh="0"/>
 	<ValidationCacheItem File="C:\UnityProjects\Zion\Vector_WwiseProject\Actor-Mixer Hierarchy\UISFX.wwu" DateLow="1744694324" DateHigh="0"/>
-	<ValidationCacheItem File="C:\UnityProjects\Zion\Vector_WwiseProject\Actor-Mixer Hierarchy\PlayerSFX.wwu" DateLow="1744694324" DateHigh="0"/>
+	<ValidationCacheItem File="C:\UnityProjects\Zion\Vector_WwiseProject\Actor-Mixer Hierarchy\PlayerSFX.wwu" DateLow="1744864266" DateHigh="0"/>
 	<ValidationCacheItem File="C:\UnityProjects\Zion\Vector_WwiseProject\Actor-Mixer Hierarchy\LevelSFX.wwu" DateLow="1744694324" DateHigh="0"/>
 	<ValidationCacheItem File="C:\UnityProjects\Zion\Vector_WwiseProject\Actor-Mixer Hierarchy\GenericGunSFX.wwu" DateLow="1744694324" DateHigh="0"/>
 	<ValidationCacheItem File="C:\UnityProjects\Zion\Vector_WwiseProject\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1744694324" DateHigh="0"/>
