@@ -93,7 +93,7 @@
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
 							<GameParameterRef Name="MusicVolume" ID="{006E2A01-FD7F-4282-BA66-54057E31BD6B}"/>
-							<Value>70</Value>
+							<Value>55</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="Playerspeed" ID="{3D5831B3-6D4B-455B-A588-8C00A485E7D5}"/>
@@ -105,7 +105,7 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="AmbienceVolume" ID="{FF8471AC-53FA-4841-9A92-AA573AEC84B6}"/>
-							<Value>70</Value>
+							<Value>55</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="SFXLevel" ID="{0C4D0672-88EA-4EC9-9ABC-62A0AFB65ABA}"/>
