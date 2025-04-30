@@ -50,6 +50,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_GenericShotsFlyby" ID="{C5E7FBBB-57C0-4C5C-9A25-FC78E2EC6214}">
+					<ChildrenList>
+						<Action Name="" ID="{A5F1CA7A-BBE3-4FE4-9452-18F6D97BB6FF}" ShortID="588276322">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="GenericShotsFlyby" ID="{B08252B1-4A09-49D8-8B9A-CF31E7B2D4E0}" WorkUnitID="{506B1D80-F258-468D-B014-604CDFDD491D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

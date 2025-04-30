@@ -217,6 +217,28 @@
 								<ActiveSource Name="SFX_Generic Gun Switch" ID="{2ACDF505-8BC4-44A5-8C6F-151FFBA3F5E3}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="GenericShotsFlyby" ID="{B08252B1-4A09-49D8-8B9A-CF31E7B2D4E0}" ShortID="2438954">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{27C4C6F1-2FD8-4ACA-8D46-EE8F25CB73E3}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1AFF3748-F24E-4DDB-83DB-ACF142A51E26}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="GenericShotsFlyby" ID="{B91599C5-11BF-4CA1-89D8-94D67A71ED86}">
+									<Language>SFX</Language>
+									<AudioFile>GenericShotsFlyby.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="305281320"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="GenericShotsFlyby" ID="{B91599C5-11BF-4CA1-89D8-94D67A71ED86}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</ActorMixer>
 			</ChildrenList>
