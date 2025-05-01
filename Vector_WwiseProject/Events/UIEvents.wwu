@@ -29,6 +29,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_UI_Type" ID="{F9B7C7C7-EB31-4EFB-8C35-AE337F04BC8E}">
+					<ChildrenList>
+						<Action Name="" ID="{C29D7F9D-AC16-4CD2-9AA7-1F4CD52A6CFC}" ShortID="297037802">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_Type" ID="{4AA8BD02-EACC-46B8-92D2-12677E8840E3}" WorkUnitID="{B15C617F-69BD-404E-9603-DB82EAEF4840}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

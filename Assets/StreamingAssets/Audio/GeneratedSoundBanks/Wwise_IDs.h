@@ -18,6 +18,7 @@ namespace AK
         static const AkUniqueID PLAY_GENERICGUNHIT = 3170300332U;
         static const AkUniqueID PLAY_GENERICGUNRELOAD = 2952966750U;
         static const AkUniqueID PLAY_GENERICGUNSWITCH = 3156900497U;
+        static const AkUniqueID PLAY_GENERICSHOTSFLYBY = 2726173764U;
         static const AkUniqueID PLAY_JUMPLONG = 2583132648U;
         static const AkUniqueID PLAY_JUMPPAD = 2302271445U;
         static const AkUniqueID PLAY_JUMPSHORT = 2438667432U;
@@ -28,6 +29,7 @@ namespace AK
         static const AkUniqueID PLAY_SLIDESTOP = 119185489U;
         static const AkUniqueID PLAY_UI_BACK = 1386224142U;
         static const AkUniqueID PLAY_UI_CLICK = 1749424733U;
+        static const AkUniqueID PLAY_UI_TYPE = 142592887U;
         static const AkUniqueID SETFIGHTSTATE = 3140965326U;
         static const AkUniqueID SETRACESTATE = 4039232591U;
         static const AkUniqueID STARTGAME = 1521187885U;

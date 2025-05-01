@@ -5,13 +5,13 @@
 			<ChildrenList>
 				<GameParameter Name="AmbienceVolume" ID="{FF8471AC-53FA-4841-9A92-AA573AEC84B6}">
 					<PropertyList>
-						<Property Name="InitialValue" Type="Real64" Value="70"/>
+						<Property Name="InitialValue" Type="Real64" Value="55"/>
 						<Property Name="RTPCRamping" Type="int16" Value="1"/>
 					</PropertyList>
 				</GameParameter>
 				<GameParameter Name="MusicVolume" ID="{006E2A01-FD7F-4282-BA66-54057E31BD6B}">
 					<PropertyList>
-						<Property Name="InitialValue" Type="Real64" Value="70"/>
+						<Property Name="InitialValue" Type="Real64" Value="55"/>
 						<Property Name="RTPCRamping" Type="int16" Value="1"/>
 					</PropertyList>
 				</GameParameter>

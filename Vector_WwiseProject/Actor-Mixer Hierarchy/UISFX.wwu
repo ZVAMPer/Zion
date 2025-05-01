@@ -68,6 +68,35 @@
 								<ActiveSource Name="UI_Click" ID="{1C99627D-B7D9-4289-93DE-D648700A83DD}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="UI_Type" ID="{4AA8BD02-EACC-46B8-92D2-12677E8840E3}" ShortID="607832706">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-7</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{27C4C6F1-2FD8-4ACA-8D46-EE8F25CB73E3}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1AFF3748-F24E-4DDB-83DB-ACF142A51E26}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Chip" ID="{0E01B9AD-6155-4CAD-976A-EBAD87A6EAE5}">
+									<Language>SFX</Language>
+									<AudioFile>Chip.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="460443423"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Chip" ID="{0E01B9AD-6155-4CAD-976A-EBAD87A6EAE5}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</ActorMixer>
 			</ChildrenList>

@@ -23,9 +23,11 @@
 						<ObjectRef Name="StartLevel" ID="{C5B56CB3-76AB-4B0A-893C-AA1973CA5966}" WorkUnitID="{4674D043-DAE0-465F-A3D3-D4A42E001F9A}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="SetFightState" ID="{CE4BAFC8-6515-4BC5-B76C-F5430611212E}" WorkUnitID="{4674D043-DAE0-465F-A3D3-D4A42E001F9A}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SlideMove" ID="{9F57BA55-12E9-4C31-AC84-15001900BE61}" WorkUnitID="{E21FEAF4-DBE3-4826-A3AF-8FAC7B5B821C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_GenericShotsFlyby" ID="{C5E7FBBB-57C0-4C5C-9A25-FC78E2EC6214}" WorkUnitID="{018DFC39-1D04-44B4-9488-FC72BE4806B9}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_GenericGunFire" ID="{F296B9DD-1B86-4D02-B3AA-8A540CAB3436}" WorkUnitID="{018DFC39-1D04-44B4-9488-FC72BE4806B9}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SlideStart" ID="{C39F6AF1-0ED7-4E4A-A89E-941DD139ED0F}" WorkUnitID="{E21FEAF4-DBE3-4826-A3AF-8FAC7B5B821C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_PlayerFootsteps" ID="{238892F7-9F3F-4ECD-B42F-02ACF8213947}" WorkUnitID="{E21FEAF4-DBE3-4826-A3AF-8FAC7B5B821C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_UI_Type" ID="{F9B7C7C7-EB31-4EFB-8C35-AE337F04BC8E}" WorkUnitID="{514BC323-8ADC-40EE-8F89-C83A46E1A7DC}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_JumpShort" ID="{79516B09-817E-4FD7-A1C7-0D15114F8C21}" WorkUnitID="{E21FEAF4-DBE3-4826-A3AF-8FAC7B5B821C}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
